@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Element Tags</title>
+  </head>
+  <body>
+    <h1>HTML Element Tags</h1>
+
+    <!-- Div -->
+    <!-- <div>: A generic container for grouping content. -->
+    <h3>Div</h3>
+    <div style="border: 1px solid black; padding: 10px">
+      This is a <code>div</code> element used for grouping content.
+    </div>
+
+    <!-- Semantic HTML Elements -->
+    <!-- Semantic elements: Define the structure and meaning of content. -->
+    <h3>Semantic HTML Elements</h3>
+    <header>
+      <h4>Header Section</h4>
+      <nav>
+        Navigation: <a href="#">Home</a> | <a href="#">About</a> |
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h4>Section Title</h4>
+        <article>
+          <h5>Article Title</h5>
+          <p>This is an example of an article inside a section.</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>Footer Section: © 2024</p>
+    </footer>
+
+    <!-- HTML Canvas -->
+    <!-- <canvas>: A container for drawing graphics via JavaScript. -->
+    <h3>HTML Canvas</h3>
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="100"
+      style="border: 1px solid black"
+    >
+      Your browser does not support the canvas element.
+    </canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "blue";
+      ctx.fillRect(20, 20, 150, 50);
+    </script>
+
+    <!-- Button -->
+    <!-- <button>: Represents a clickable button. -->
+    <h3>Button</h3>
+    <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+
+    <!-- Details -->
+    <!-- <details>: Creates collapsible content. -->
+    <h3>Details</h3>
+    <details>
+      <summary>More Information</summary>
+      <p>This is additional information that is hidden by default.</p>
+    </details>
+
+    <!-- Meter -->
+    <!-- <meter>: Displays a measurement within a range. -->
+    <h3>Meter</h3>
+    <p>Disk Usage:</p>
+    <meter value="0.5" min="0" max="1">50%</meter>
+
+    <!-- Progress -->
+    <!-- <progress>: Displays the progress of a task. -->
+    <h3>Progress</h3>
+    <p>File Upload Progress:</p>
+    <progress value="70" max="100">70%</progress>
+
+    <!-- No Script -->
+    <!-- <noscript>: Displays content when JavaScript is disabled. -->
+    <h3>No Script</h3>
+    <noscript>
+      JavaScript is disabled in your browser. Some features may not work.
+    </noscript>
+
+    <!-- SVG -->
+    <!-- <svg>: A container for Scalable Vector Graphics. -->
+    <h3>SVG</h3>
+    <svg width="100" height="100">
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="red"
+      />
+    </svg>
+
+    <!-- Template -->
+    <!-- <template>: Defines reusable content that is not rendered until used via JavaScript. -->
+    <h3>Template</h3>
+    <template id="myTemplate">
+      <p>This content comes from the template.</p>
+    </template>
+    <button onclick="useTemplate()">Use Template</button>
+    <script>
+      function useTemplate() {
+        const template = document.getElementById("myTemplate");
+        document.body.appendChild(template.content.cloneNode(true));
+      }
+    </script>
+
+    <!-- Time -->
+    <!-- <time>: Represents a specific time or duration. -->
+    <h3>Time</h3>
+    <p>Published on: <time datetime="2024-11-20">November 20, 2024</time></p>
+
+    <!-- Dialog -->
+    <!-- <dialog>: Represents a dialog box or modal. -->
+    <h3>Dialog</h3>
+    <dialog id="myDialog">
+      <p>This is a dialog box.</p>
+      <button onclick="document.getElementById('myDialog').close()">
+        Close
+      </button>
+    </dialog>
+    <button onclick="document.getElementById('myDialog').show()">
+      Open Dialog
+    </button>
+  </body>
+</html>
