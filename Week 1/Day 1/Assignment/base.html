@@ -263,5 +263,32 @@ This is preformatted text.
       <bdi>123-456</bdi> is the user's ID, ensuring proper alignment regardless
       of direction.
     </p>
+    <hr />
+    <h1>HTML Ruby Text (Annotations)</h1>
+
+    <!-- Ruby Text -->
+    <!-- Ruby: Used to display annotations (pronunciations or explanations) above or beside text, commonly used in East Asian languages. -->
+    <h3>Ruby Text</h3>
+    <p>Below is an example of ruby text with annotations for pronunciation:</p>
+    <ruby> 漢 <rt>Kan</rt> 字 <rt>Ji</rt></ruby>
+    <!-- Explanation: The <rt> (Ruby Text) tag provides the annotation for the base characters. -->
+
+    <!-- Ruby with Parentheses for Unsupported Browsers -->
+    <!-- RP: Used to provide fallback parentheses for browsers that do not support <ruby>. -->
+    <h3>Ruby Text with Fallback</h3>
+    <p>Here’s an example with fallback parentheses for unsupported browsers:</p>
+    <ruby>
+      例 <rp>(</rp><rt>Rei</rt><rp>)</rp> 文 <rp>(</rp><rt>Bun</rt><rp>)</rp>
+    </ruby>
+    <!-- Explanation: The <rp> tag adds parentheses around the ruby text for browsers that don’t support <ruby>. -->
+
+    <!-- Ruby Example in Context -->
+    <h3>Ruby Text in Context</h3>
+    <p>
+      Here is a sentence with ruby annotations for the Japanese word "日本
+      (Japan)":
+      <br />
+      <ruby> 日本 <rt>Nihon</rt> </ruby> is the Japanese word for "Japan".
+    </p>
   </body>
 </html>
