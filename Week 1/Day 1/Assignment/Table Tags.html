@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table Elements</title>
+  </head>
+  <body>
+    <h1>HTML Table Elements</h1>
+
+    <!-- Table -->
+    <!-- <table>: Defines the table structure. -->
+    <h3>Table with Caption, Header, Body, Footer, and Colgroup</h3>
+    <table border="1" width="100%">
+      <!-- Caption -->
+      <!-- <caption>: Provides a title for the table, displayed above it. -->
+      <caption>
+        Monthly Sales Report
+      </caption>
+
+      <!-- Colgroup -->
+      <!-- <colgroup>: Groups columns to apply shared attributes or styles. -->
+      <colgroup>
+        <!-- <col>: Defines styles for individual columns. -->
+        <col style="background-color: lightgray" />
+        <col style="background-color: lightblue" />
+        <col style="background-color: lightcoral" />
+      </colgroup>
+
+      <!-- Thead -->
+      <!-- <thead>: Groups the table's header rows. -->
+      <thead>
+        <tr>
+          <!-- <th>: Defines a header cell, typically bold and centered. -->
+          <th>Month</th>
+          <th>Sales</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+
+      <!-- Tbody -->
+      <!-- <tbody>: Groups the table's body rows containing data. -->
+      <tbody>
+        <tr>
+          <!-- <td>: Defines a standard data cell. -->
+          <td>January</td>
+          <td>PKR 1000</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>PKR 1500</td>
+          <td>2024</td>
+        </tr>
+      </tbody>
+
+      <!-- Tfoot -->
+      <!-- <tfoot>: Groups the table's footer rows, often for summaries or totals. -->
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td colspan="2">PKR 2500</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Simple Table Example -->
+    <h3>Simple Table Example</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apples</td>
+          <td>10</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Oranges</td>
+          <td>5</td>
+          <td>200</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total</td>
+          <td>300</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
