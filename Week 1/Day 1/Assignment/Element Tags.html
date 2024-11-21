@@ -19,22 +19,34 @@
     <!-- Semantic elements: Define the structure and meaning of content. -->
     <h3>Semantic HTML Elements</h3>
     <header>
+      <!-- <header>: Represents introductory content or a container for navigational links. -->
       <h4>Header Section</h4>
       <nav>
-        Navigation: <a href="#">Home</a> | <a href="#">About</a> |
+        <!-- <nav>: Represents a section for navigation links. -->
+        Navigation:
+        <a href="#">Home</a> |
+        <!-- <a>: Creates a hyperlink. -->
+        <a href="#">About</a> |
         <a href="#">Contact</a>
       </nav>
     </header>
+
     <main>
+      <!-- <main>: Represents the primary content of the document. -->
       <section>
+        <!-- <section>: Groups related content together. -->
         <h4>Section Title</h4>
         <article>
+          <!-- <article>: Represents independent, self-contained content like a blog post or news article. -->
           <h5>Article Title</h5>
           <p>This is an example of an article inside a section.</p>
+          <!-- <p>: Represents a paragraph of text. -->
         </article>
       </section>
     </main>
+
     <footer>
+      <!-- <footer>: Represents footer content, such as contact information or copyright notices. -->
       <p>Footer Section: © 2024</p>
     </footer>
 
@@ -49,12 +61,6 @@
     >
       Your browser does not support the canvas element.
     </canvas>
-    <script>
-      const canvas = document.getElementById("myCanvas");
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "blue";
-      ctx.fillRect(20, 20, 150, 50);
-    </script>
 
     <!-- Button -->
     <!-- <button>: Represents a clickable button. -->
@@ -97,7 +103,7 @@
         cy="50"
         r="40"
         stroke="black"
-        stroke-width="3"
+        stroke-width="10"
         fill="red"
       />
     </svg>
@@ -108,13 +114,6 @@
     <template id="myTemplate">
       <p>This content comes from the template.</p>
     </template>
-    <button onclick="useTemplate()">Use Template</button>
-    <script>
-      function useTemplate() {
-        const template = document.getElementById("myTemplate");
-        document.body.appendChild(template.content.cloneNode(true));
-      }
-    </script>
 
     <!-- Time -->
     <!-- <time>: Represents a specific time or duration. -->
@@ -122,7 +121,7 @@
     <p>Published on: <time datetime="2024-11-20">November 20, 2024</time></p>
 
     <!-- Dialog -->
-    <!-- <dialog>: Represents a dialog box or modal. -->
+    <!-- <dialog>: Represents a dialog box or modal which is an absolute positioned element, meaning it's not part of the natural flow of the page layout. It will be centered on the screen and it will overlape any existing content around it. -->
     <h3>Dialog</h3>
     <dialog id="myDialog">
       <p>This is a dialog box.</p>
@@ -133,5 +132,23 @@
     <button onclick="document.getElementById('myDialog').show()">
       Open Dialog
     </button>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A possimus,
+      inventore rerum eveniet fuga ullam quasi velit ab perspiciatis dolor
+      quaerat ut architecto? Repellendus vel, quaerat ipsum atque eligendi vero.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quas
+      quibusdam exercitationem voluptate fuga incidunt blanditiis quos libero
+      ad, harum nemo maiores vel voluptates molestias aspernatur architecto
+      voluptatibus commodi sint!
+    </p>
+    <dialog id="anotherDialog" open>This is an open dialog box.</dialog>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
+      distinctio odit, eos aliquid, voluptates eius animi laborum ea, in a iste
+      aut delectus non nihil? Quis obcaecati porro error consequuntur.
+    </p>
   </body>
 </html>
