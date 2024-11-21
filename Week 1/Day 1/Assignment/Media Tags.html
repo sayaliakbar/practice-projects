@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Media Tags</title>
+  </head>
+  <body>
+    <h1>HTML Media Tags</h1>
+
+    <!-- Image -->
+    <!-- <img>: Embeds an image into the document. -->
+    <h3>Image</h3>
+    <img
+      src="https://images.unsplash.com/photo-1731839247695-d9b697748a6b?q=80&w=1560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Nature Image"
+      width="300"
+      height="200"
+    />
+    <p>This is an example of an <code>&lt;img&gt;</code> element.</p>
+
+    <!-- Picture -->
+    <!-- <picture>: Provides responsive images for different screen sizes or resolutions. -->
+    <h3>Picture</h3>
+    <picture>
+      <source
+        srcset="
+          https://images.unsplash.com/photo-1721333091090-e9ebe5b5f496?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D
+        "
+        media="(max-width: 600px)"
+      />
+      <source
+        srcset="
+          https://images.unsplash.com/photo-1719937051230-8798ae2ebe86?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        "
+        media="(min-width: 601px)"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1719937051230-8798ae2ebe86?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Drone Image"
+      />
+    </picture>
+    <p>
+      This is an example of a <code>&lt;picture&gt;</code> element for
+      responsive images.
+    </p>
+
+    <!-- Map and Area -->
+    <!-- <map>: Defines an image map where specific areas are clickable. -->
+    <!-- <area>: Defines the clickable areas on the map. -->
+    <h3>Map and Area</h3>
+    <img
+      src="https://images.unsplash.com/photo-1720048170972-020a4c5677af?q=80&w=1406&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      usemap="#imagemap"
+      alt="Image Map"
+    />
+    <map name="imagemap">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        href="https://images.unsplash.com/photo-1720048170972-020a4c5677af?q=80&w=1406&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Rectangle Area"
+      />
+      <area
+        shape="circle"
+        coords="337,300,44"
+        href="https://images.unsplash.com/photo-1720048170972-020a4c5677af?q=80&w=1406&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Circle Area"
+      />
+    </map>
+
+    <!-- Figure -->
+    <!-- <figure>: Groups media content with a caption. -->
+    <!-- <figcaption>: Provides a caption for the figure. -->
+    <h3>Figure</h3>
+    <figure>
+      <img
+        src="https://images.unsplash.com/photo-1720048172033-6652d845e891?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Figure Example"
+      />
+      <figcaption>Figure 1: A sample image with a caption.</figcaption>
+    </figure>
+
+    <!-- Audio -->
+    <!-- <audio>: Embeds an audio file with playback controls. -->
+    <h3>Audio</h3>
+    <audio
+      src="https://file-examples.com/storage/fef4e75e176737761a179bf/2017/11/file_example_MP3_700KB.mp3"
+      controls
+    >
+      Your browser does not support the <code>&lt;audio&gt;</code> element.
+    </audio>
+
+    <!-- Video -->
+    <!-- <video>: Embeds a video file with playback controls. -->
+    <h3>Video</h3>
+    <video
+      src="https://youtu.be/sJsg4bbsMZI?si=TG-djVxx2cIDWsZR"
+      controls
+      width="400"
+      height="300"
+    >
+      Your browser does not support the <code>&lt;video&gt;</code> element.
+    </video>
+
+    <!-- Video with Subtitles -->
+    <!-- <track>: Adds subtitles or captions to the video. -->
+    <h3>Video with Subtitles</h3>
+    <video
+      src="https://youtu.be/sJsg4bbsMZI?si=TG-djVxx2cIDWsZR"
+      controls
+      width="400"
+      height="300"
+    >
+      <track
+        src="subtitles-en.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+      />
+    </video>
+    <p>
+      This is an example of a video with subtitles using the
+      <code>&lt;track&gt;</code> element.
+    </p>
+
+    <!-- Iframe -->
+    <!-- <iframe>: Embeds another HTML document within the current page. -->
+    <h3>Iframe</h3>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/sJsg4bbsMZI?si=TG-djVxx2cIDWsZR"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      >Your browser does not support the
+      <code>&lt;iframe&gt;</code> element.</iframe
+    >
+
+    <!-- Object and Param -->
+    <!-- <object>: Embeds external resources like PDFs or media files. -->
+    <!-- <param>: Defines parameters for the embedded content. -->
+    <h3>Object and Param</h3>
+    <object
+      data="https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf"
+      type="application/pdf"
+      width="600"
+      height="400"
+    >
+      <param name="autostart" value="true" />
+      Your browser does not support the <code>&lt;object&gt;</code> element.
+    </object>
+
+    <!-- Embed -->
+    <!-- <embed>: Embeds external content, such as videos or interactive media. -->
+    <h3>Embed</h3>
+    <embed
+      src="https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf"
+      type="pdf"
+      width="400"
+      height="300"
+    />
+  </body>
+</html>
