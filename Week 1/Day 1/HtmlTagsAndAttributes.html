@@ -1,11 +1,69 @@
 <!DOCTYPE html>
+<!-- 1. <html>: Root element -->
+<!-- The <html> tag is already used at the top to define the document root -->
 <html lang="en">
+  <!-- 2. <head>: Contains metadata -->
+  <!-- Metadata and title are already in the <head> tag above -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 3. <title>: Sets the title -->
+    <!-- Displayed on the browser tab -->
     <title>HTML Tags & Attributes</title>
   </head>
+  <!-- 4. <body>: Main content -->
   <body>
-    <h1>HTML Tags & Attributes</h1>
+    <!-- 5. <h1> to <h6>: Headings -->
+    <h1>HTML Tags and Attributes</h1>
+    <h2>Heading Tags</h2>
+    <p>Examples of heading tags:</p>
+    <h1>Main Heading (h1)</h1>
+    <h2>Subheading (h2)</h2>
+    <h3>Section Heading (h3)</h3>
+
+    <!-- 6. <p>: Paragraph -->
+    <p align="center">This is a centered paragraph.</p>
+
+    <!-- 7. <a>: Hyperlink -->
+    <h2>Hyperlink</h2>
+    <p>
+      <a href="https://www.example.com" target="_blank" rel="nofollow">
+        Visit Example.com (opens in a new tab)
+      </a>
+    </p>
+
+    <!-- 8. <img>: Image -->
+    <h2>Image</h2>
+    <img
+      src="https://images.unsplash.com/photo-1719937206667-ac87c15ad3e9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Placeholder Image"
+      width="150"
+      height="150"
+      loading="lazy"
+    />
+
+    <!-- 9. <div>: Container -->
+    <h2>Container</h2>
+    <div
+      id="main-container"
+      class="content-box"
+      style="border: 1px solid black; padding: 10px"
+    >
+      <p>
+        This is a <code>div</code> container. Useful for layout and grouping.
+      </p>
+    </div>
+
+    <!-- 10. <form>: Form -->
+    <h2>Form</h2>
+    <form action="/submit" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
