@@ -115,7 +115,3 @@ In future projects, I aim to:
 A special thanks to Frontend Mentor for providing this challenge! It helped me practice my front-end development skills, including responsive design and CSS best practices.
 
 ---
-
-```
-
-```
