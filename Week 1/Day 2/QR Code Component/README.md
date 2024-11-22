@@ -29,7 +29,7 @@ This is a solution to the [QR Code component challenge on Frontend Mentor](https
 
 ### Links
 
-- **Solution URL**: [QRCode Card Solution](https://github.com/sayakbarali/NetixsolCode/blob/main/Week%201/Day%202/QR%20Code%20Component/QR%20Code.html)
+- **URL**: [QRCode Card](https://feeble-wine.surge.sh/)
 
 ---
 
