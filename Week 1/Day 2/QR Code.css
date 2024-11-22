@@ -12,9 +12,9 @@ body {
 /* QR Code Card */
 #card {
   background-color: white;
-  width: 20%;
+  width: 288px;
   max-width: 288px;
-  height: 58%;
+  height: 464px;
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -50,4 +50,10 @@ p {
 #card-text {
   color: hsla(218, 44%, 22%, 0.6);
   margin: 0.5rem;
+}
+@media (max-width: 375px) {
+  #card {
+    width: 73%;
+    height: 70%;
+  }
 }
