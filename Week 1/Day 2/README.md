@@ -29,8 +29,7 @@ This is a solution to the [QR Code component challenge on Frontend Mentor](https
 
 ### Links
 
-- **Solution URL**: [Your Solution on Frontend Mentor](https://your-solution-url.com)
-- **Live Site URL**: [Live Site URL](https://your-live-site-url.com)
+- **Solution URL**: [QRCode Card Solution](http://127.0.0.1:5500/NetixsolCode/Week%201/Day%202/QR%20Code.html)
 
 ---
 
@@ -106,8 +105,8 @@ In future projects, I aim to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourtwitterhandle](https://www.twitter.com/yourtwitterhandle)
+- GitHub - [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn - [@sayaliakbar](https://www.linkedin.com/in/sayaliakbar/)
 
 ---
 
@@ -116,8 +115,6 @@ In future projects, I aim to:
 A special thanks to Frontend Mentor for providing this challenge! It helped me practice my front-end development skills, including responsive design and CSS best practices.
 
 ---
-
-**Feel free to customize the links and text as per your personal details and project! Let me know if you'd like help updating this further. 😊**
 
 ```
 
