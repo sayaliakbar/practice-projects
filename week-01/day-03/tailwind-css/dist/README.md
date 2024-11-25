@@ -1,10 +1,6 @@
-Here is the **README.md** file based on your provided HTML code and the given template:
+Profile Card Component Solution
 
----
-
-# Frontend Mentor - Profile Card Component Solution
-
-This is a solution to the Profile Card component project. This project showcases a simple yet elegant profile card design with basic HTML and CSS, designed to enhance front-end development skills.
+This is a solution to the Profile Card component project. This project showcases a simple yet elegant profile card design with basic HTML and TailwindCSS, designed to enhance front-end development skills.
 
 ---
 
@@ -19,7 +15,6 @@ This is a solution to the Profile Card component project. This project showcases
   - [Continued Development](#continued-development)
   - [Useful Resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -27,13 +22,13 @@ This is a solution to the Profile Card component project. This project showcases
 
 ### Screenshot
 
-![Profile Card Component](./assets/profile-card-screenshot.jpg)
+![Profile Card Component](./profileCardComponentScreenshot.jpg)
 
 ---
 
 ### Links
 
-- **Live Link**: [Profile Card Component](https://your-live-site-url.com/)
+- **Live Link**: [Profile Card Component](http://open-volcano.surge.sh/)
 
 ---
 
@@ -54,13 +49,19 @@ This is a solution to the Profile Card component project. This project showcases
 Here are some key concepts and techniques I learned while working on this project:
 
 1. **Using Tailwind CSS for Rapid Styling**:
+
    - Tailwind’s utility-first approach allowed me to style the component quickly without writing custom CSS.
+
    ```html
-   <div class="w-60 h-[400px] bg-gray-200 rounded-md shadow-2xl shadow-black border-2 border-black"></div>
+   <div
+     class="w-60 h-[400px] bg-gray-200 rounded-md shadow-2xl shadow-black border-2 border-black"
+   ></div>
    ```
 
 2. **Flexbox for Centering and Layout**:
+
    - Used `flexbox` for aligning and centering elements inside the card:
+
    ```css
    display: flex;
    justify-content: center;
@@ -68,6 +69,7 @@ Here are some key concepts and techniques I learned while working on this projec
    ```
 
 3. **Responsive Design**:
+
    - Tailwind’s responsive utilities allowed me to ensure the design works well across different screen sizes without needing custom media queries.
 
 4. **Semantic HTML**:
@@ -98,15 +100,7 @@ In future projects, I aim to:
 
 ## Author
 
-- GitHub - [@yourgithubusername](https://github.com/yourgithubusername)
-- LinkedIn - [@yourlinkedinprofile](https://linkedin.com/in/yourlinkedinprofile)
+- GitHub - [@yourgithubusername](https://github.com/sayakbarali/)
+- LinkedIn - [@yourlinkedinprofile](https://linkedin.com/in/sayaliakbar)
 
 ---
-
-## Acknowledgments
-
-Special thanks to **Frontend Mentor** for inspiring this project idea! It helped me practice front-end development using Tailwind CSS and enhance my understanding of layout techniques.
-
----
-
-You can adjust the placeholder links and descriptions (like GitHub username, live site URL, and LinkedIn profile) according to your details.
