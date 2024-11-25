@@ -10,7 +10,7 @@ body {
 }
 
 /* QR Code Card */
-#card {
+.card {
   background-color: white;
   width: 288px;
   max-width: 288px;
@@ -20,7 +20,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 /* QR Code Image Background */
-#qr-background {
+.qr-background {
   background-color: hsl(219, 96%, 63%);
   padding: 1.5rem;
   height: 54%;
@@ -31,12 +31,12 @@ body {
   align-items: center;
 }
 /* QR Code Image */
-#qr-image {
+.qr-image {
   width: 70%;
 }
 
 /* QR Code Card Title */
-#card-title {
+.card-title {
   font-weight: 700;
   font-size: 1.4rem;
   margin: 1rem 0;
@@ -47,7 +47,7 @@ p {
   color: hsl(218, 44%, 22%);
 }
 /* QR Code Card Detail Text */
-#card-text {
+.card-text {
   color: hsla(218, 44%, 22%, 0.6);
   margin: 0.5rem;
 }
