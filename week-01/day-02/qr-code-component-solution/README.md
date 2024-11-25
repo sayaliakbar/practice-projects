@@ -29,7 +29,7 @@ This is a solution to the [QR Code component challenge on Frontend Mentor](https
 
 ### Links
 
-- **Live Link**: [QR Code Component](best-lace.surge.sh)
+- **Live Link**: [QR Code Component](https://best-lace.surge.sh/)
 
 ---
 
