@@ -51,7 +51,7 @@ Here are some key concepts and techniques I learned while working on this projec
 1. **Using Semantic HTML**: I structured the card with semantic tags for better accessibility.
 
    ```html
-   <section id="card" aria-label="QR Code Card"></section>
+   <section class="card" aria-label="QR Code Card"></section>
    ```
 
 2. **Flexbox for Centering**:
