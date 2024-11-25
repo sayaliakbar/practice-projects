@@ -1,4 +1,4 @@
-Profile Card Component Solution
+# Profile Card Component Solution
 
 This is a solution to the Profile Card component project. This project showcases a simple yet elegant profile card design with basic HTML and TailwindCSS, designed to enhance front-end development skills.
 
@@ -40,7 +40,6 @@ This is a solution to the Profile Card component project. This project showcases
 - **CSS3** custom properties
 - **Tailwind CSS** for rapid styling
 - **Flexbox** for layout
-- **Mobile-first workflow**
 
 ---
 
@@ -72,7 +71,7 @@ Here are some key concepts and techniques I learned while working on this projec
 
    - Tailwind’s responsive utilities allowed me to ensure the design works well across different screen sizes without needing custom media queries.
 
-4. **Semantic HTML**:
+4. **Structured HTML**:
    - Focused on structuring the HTML properly for better readability and accessibility:
    ```html
    <p class="text-black font-bold text-2xl">Robert Downey Jr</p>
@@ -100,7 +99,7 @@ In future projects, I aim to:
 
 ## Author
 
-- GitHub - [@yourgithubusername](https://github.com/sayakbarali/)
-- LinkedIn - [@yourlinkedinprofile](https://linkedin.com/in/sayaliakbar)
+- GitHub - [@sayaliakbar](https://github.com/sayakbarali/)
+- LinkedIn - [@sayaliakbar](https://linkedin.com/in/sayaliakbar)
 
 ---
