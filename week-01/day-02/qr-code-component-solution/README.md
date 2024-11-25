@@ -29,7 +29,7 @@ This is a solution to the [QR Code component challenge on Frontend Mentor](https
 
 ### Links
 
-- **URL**: [QRCode Card](https://feeble-wine.surge.sh/)
+- **Live Link**: [QR Code Component](best-lace.surge.sh)
 
 ---
 
@@ -64,15 +64,7 @@ Here are some key concepts and techniques I learned while working on this projec
    align-items: center;
    ```
 
-3. **Customizing Styles with Variables**:
-
-   - Organized color schemes using HSL for reusability and consistency:
-
-   ```css
-   background-color: hsl(212, 45%, 89%);
-   ```
-
-4. **Responsive Design**:
+3. **Responsive Design**:
    - Implemented a mobile-first workflow using media queries:
    ```css
    @media (max-width: 375px) {
