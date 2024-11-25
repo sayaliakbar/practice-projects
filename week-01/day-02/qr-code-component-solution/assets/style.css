@@ -1,6 +1,6 @@
 /* Body of the page */
 body {
-  background-color: hsl(212, 45%, 89%);
+  background-color: rgb(220, 235, 242);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ body {
 }
 /* QR Code Image Background */
 .qr-background {
-  background-color: hsl(219, 96%, 63%);
+  background-color: rgb(54, 148, 232);
   padding: 1.5rem;
   height: 54%;
   text-align: center;
@@ -44,11 +44,11 @@ body {
 /* QR Code Card Complete Texts */
 p {
   text-align: center;
-  color: hsl(218, 44%, 22%);
+  color: rgb(31, 43, 56);
 }
 /* QR Code Card Detail Text */
 .card-text {
-  color: hsla(218, 44%, 22%, 0.6);
+  color: rgba(31, 43, 56, 0.6);
   margin: 0.5rem;
 }
 @media (max-width: 375px) {
