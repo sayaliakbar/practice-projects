@@ -4,9 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coming Soon Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body>
-    <h2 class="bg-black">Hello World!</h2>
+  <body class="m-0 p-0 flex flex-col items-center h-screen font-libre">
+    <!-- logo starts here -->
+    <header class="m-12">
+      <img src="./assets/logo.svg" alt="PING Logo" />
+    </header>
+    <!-- logo ends here -->
+    <!-- content starts here -->
+    <main class="w-screen flex flex-col items-center item mb-12">
+      <div class="flex flex-col items-center w-full mb-6">
+        <p class="text-3xl text-slate-500 mb-4">
+          We are launching <b class="text-black">soon!</b>
+        </p>
+        <p>Subscribe and get notified</p>
+      </div>
+      <!-- content ends here -->
+      <!-- form starts here -->
+      <div class="w-4/5 sm:w-1/3 sm:flex">
+        <input
+          class="rounded-full border-2 px-6 p-2 w-full border-blue-700 mb-2"
+          type="email"
+          placeholder="Your email address..."
+        /><br />
+        <button
+          class="w-full rounded-full border-2 bg-blue-700 text-white p-2 m-0 sm:ml-1 sm:rounded-3xl sm:px-8"
+        >
+          Notify Me
+        </button>
+      </div>
+    </main>
+    <!-- form ends here -->
+    <!-- dashboard starts here -->
+    <div class="w-4/5">
+      <img src="./assets/illustration-dashboard.png" alt="dashboard picture" />
+    </div>
+    <!-- dashboard ends here -->
+    <!-- logos start here -->
+    <footer class="w-full flex flex-col items-center absolute bottom-0 mb-4">
+      <div class="flex mb-10">
+        <img
+          class="w-10 h-10 border-2 rounded-full p-2 mx-2"
+          src="https://cdn1.iconfinder.com/data/icons/logotypes/32/facebook-512.png"
+          alt="facebook logo"
+        />
+        <img
+          class="w-10 h-10 border-2 rounded-full p-2 mx-2"
+          src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-512.png"
+          alt="twitter logo"
+        />
+        <img
+          class="w-10 h-10 border-2 rounded-full p-2 mx-2"
+          src="https://cdn0.iconfinder.com/data/icons/social-media-2473/128/instagram_social_media_social_media_network-512.png"
+          alt="instagram logo"
+        />
+      </div>
+
+      <!-- copyright starts here -->
+      <div>
+        <p class="text-slate-500">
+          &#169; Copyright Ping. All rights reserved.
+        </p>
+      </div>
+      <!-- copyright ends here -->
+    </footer>
+    <!-- logo ends here -->
   </body>
 </html>
