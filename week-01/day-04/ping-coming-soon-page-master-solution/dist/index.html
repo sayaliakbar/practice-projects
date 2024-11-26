@@ -12,14 +12,18 @@
     />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body class="m-0 p-0 flex flex-col items-center h-screen font-libre">
+  <body
+    class="m-0 p-0 flex flex-col items-center min-h-screen font-libre max-w-full"
+  >
     <!-- logo starts here -->
     <header class="mt-8">
       <img class="w-12 h-auto" src="./assets/logo.svg" alt="PING Logo" />
     </header>
     <!-- logo ends here -->
     <!-- content starts here -->
-    <main class="w-screen flex flex-col items-center item my-4 mb-12">
+    <main
+      class="w-screen flex flex-col flex-grow-0 items-center item my-4 mb-12"
+    >
       <div class="flex flex-col items-center w-full mb-4">
         <p class="text-xl text-slate-500 mb-2">
           We are launching <b class="text-black">soon!</b>
@@ -49,14 +53,14 @@
     </main>
     <!-- form ends here -->
     <!-- dashboard starts here -->
-    <div class="w-4/5 sm:w-1/2">
+    <div class="w-4/5 sm:w-2/3 md:1/2">
       <img src="./assets/illustration-dashboard.png" alt="dashboard picture" />
     </div>
     <!-- dashboard ends here -->
     <!-- logos start here -->
 
     <footer
-      class="w-full flex flex-col items-center mt-4 sm:mt-8 absolute bottom-0 min-[375px]:static"
+      class="w-full flex flex-col items-center sm:mt-8 sm:relative absolute bottom-0"
     >
       <div class="flex mb-4">
         <img
