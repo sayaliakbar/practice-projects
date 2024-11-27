@@ -19,6 +19,11 @@ module.exports = {
         800: "800",
         900: "900",
       },
+      colors: {
+        "very-dark-blue": "rgb(5, 6, 19)", // Main background
+        "dark-desaturated-blue": "rgb(20, 21, 45)", // Card background
+        "soft-violet": "rgb(156, 112, 234)", // Accent
+      },
     },
   },
   plugins: [],

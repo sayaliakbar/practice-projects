@@ -554,11 +554,7 @@ video {
   display: none;
 }
 
-.font-lexendDeca {
-  font-family: Lexend Deca, sans-serif;
-}
-
-.text-purple-500 {
-  --tw-text-opacity: 1;
-  color: rgb(168 85 247 / var(--tw-text-opacity, 1));
+.bg-very-dark-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 6 19 / var(--tw-bg-opacity, 1));
 }
