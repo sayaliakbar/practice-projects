@@ -27,11 +27,18 @@
   <body class="bg-very-dark-blue flex justify-center min-h-screen">
     <!-- card body starts from here -->
     <main
-      class="flex flex-col bg-dark-desaturated-blue w-3/5 items-center h-screen my-14"
+      class="flex flex-col bg-dark-desaturated-blue w-3/5 items-center h-screen my-14 rounded-lg"
     >
       <!-- image starts from here -->
-      <div>
-        <img src="./assets/image-header-mobile.jpg" alt="image header" />
+      <div class="relative w-full object-contain rounded-t-lg">
+        <img
+          class="w-full h-full object-cover rounded-t-lg"
+          src="./assets/image-header-mobile.jpg"
+          alt="image header"
+        />
+        <div
+          class="absolute inset-0 bg-violet-900 bg-opacity-70 rounded-t-lg"
+        ></div>
       </div>
       <!-- contents body starts here -->
       <div class="flex flex-col items-center p-6">
