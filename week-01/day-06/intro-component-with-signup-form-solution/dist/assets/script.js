@@ -7,8 +7,8 @@ function handleSubmit(event) {
 }
 
 function validateForm() {
-  //   let errorIcon = document.getElementById("passwordErrorIcon");
-  //   errorIcon.classList.remove("hidden");
+  let errorIcon = document.getElementById("passwordErrorIcon");
+  errorIcon.classList.remove("hidden");
 
   // Get form fields
   const fields = [
