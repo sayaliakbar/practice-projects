@@ -1,6 +1,6 @@
-const button = document.getElementById("claim");
-button.addEventListener("click", doSomething);
+// const button = document.getElementById("claim");
+// button.addEventListener("click", doSomething);
 
-function doSomething() {
-  alert("Hello Worlds ");
-}
+// function doSomething() {
+//   alert("Hello Worlds ");
+// }

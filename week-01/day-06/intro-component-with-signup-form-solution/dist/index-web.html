@@ -15,81 +15,78 @@
     <script src="./assets/script.js" defer></script>
   </head>
   <body
-    class="m-0 p-0 w-screen h-screen bg-primary-red bg-[url('./assets/bg-intro-mobile.png')] font-Poppins flex flex-col items-center"
+    class="m-0 p-0 bg-primary-red font-Poppins w-screen h-screen flex justify-center items-center bg-[url('./assets/bg-intro-desktop.png')]"
   >
-    <!-- container begins here -->
+    <!-- containter begins here -->
     <div
-      class="container w-[85%] flex flex-col items-center my-16 border-white border-2 h-full justify-center"
+      class="container w-4/5 h-3/4 bg-whiteborder-black flex items-center justify-center"
     >
-      <!-- headings begins here -->
-      <div
-        class="headings text-center py-12 border-black border-2 flex flex-col gap-6"
-      >
-        <h1 class="font-600 text-white text-3xl">
-          Learn to code by watching others
-        </h1>
-        <p class="text-white">
+      <!-- title and paragraph within container starts here -->
+      <div class="title w-1/2 p-6 text-white flex flex-col gap-4">
+        <h1 class="font-700 text-5xl">Learn to code by watching others</h1>
+        <p>
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
         </p>
       </div>
-      <!-- headings ends here -->
-      <!-- form container starts here -->
-      <div
-        class="form-container w-full border-black border-2 text-center flex flex-col gap-6"
-      >
-        <p class="text-white w-full bg-accent-blue px-14 py-4 rounded-lg">
-          <span class="font-500">Try if free 7 days</span> then 20$/ mo,
+      <!-- title and paragraph within container ends here -->
+      <!-- form-container within container starts here -->
+      <div class="form-container w-1/2">
+        <p
+          class="text-center bg-accent-blue text-white p-6 rounded-lg shadow-2xl"
+        >
+          <span class="font-700">Try it free 7 days</span> then $20/mo,
           thereafter
         </p>
-        <!-- form body begins here -->
+        <!-- form starts here -->
         <form
           action=""
-          class="w-full p-4 bg-white rounded-lg flex flex-col gap-4"
+          class="flex flex-col items-center gap-5 bg-white rounded-lg mt-6 p-8 shadow-2xl"
         >
           <input
-            class="border-2 border-black/50 p-4 rounded-lg w-full"
+            class="border-black/50 border-2 w-full p-4 rounded-lg px-8 hover:border-2"
             type="text"
-            placeholder="First Name"
             name="firstName"
             id="firstName"
+            placeholder="First Name"
           />
+
           <input
-            class="border-2 border-black/50 p-4 rounded-lg w-full"
+            class="border-black/50 border-2 w-full p-4 rounded-lg px-8 hover:border-"
             type="text"
-            placeholder="Last Name"
             name="lastName"
             id="lastName"
+            placeholder="Last Name"
           />
           <input
-            class="border-2 border-black/50 p-4 rounded-lg w-full"
+            class="border-black/50 border-2 w-full p-4 rounded-lg px-8 hover:border-2"
             type="email"
-            placeholder="Email Address"
             name="email"
             id="email"
+            placeholder="Email Address"
           />
           <input
-            class="border-2 border-black/50 p-4 rounded-lg w-full"
+            class="border-black/50 border-2 w-full p-4 rounded-lg px-8 hover:border-2"
             type="password"
-            placeholder="Password"
             name="password"
             id="password"
+            placeholder="Password"
           />
           <button
-            class="uppercase bg-primary-green text-white py-4 rounded-lg w-full"
-            id="claimButton"
+            id="claim"
+            class="uppercase bg-primary-green w-full p-4 rounded-lg text-white"
           >
-            claim your free trail
+            claim your free trial
           </button>
-          <p class="text-[11px] px-4">
+          <p class="text-[12px] px-8 text-center">
             By clicking the button you are agreeing to our
             <span class="text-primary-red">Terms and Services</span>
           </p>
         </form>
-        <!-- form body ends here -->
+        <!-- form ends here -->
       </div>
-      <!-- form container ends here -->
+      <!-- form-container within container ends here -->
     </div>
     <!-- container ends here -->
   </body>
