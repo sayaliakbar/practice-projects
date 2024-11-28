@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <link rel="icon" type="png" href="./assets/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
     <script src="./assets/script.js" defer></script>
   </head>
   <body
-    class="m-0 p-0 w-screen h-screen bg-primary-red bg-[url('./assets/bg-intro-mobile.png')] font-Poppins flex flex-col items-center"
+    class="m-0 p-0 w-screen h-screen bg-primary-red font-Poppins flex flex-col items-center"
   >
     <!-- container begins here -->
     <div
@@ -45,32 +45,33 @@
         </p>
         <!-- form body begins here -->
         <form
-          action=""
+          action="#"
+          id="signupForm"
           class="w-full p-4 bg-white rounded-lg flex flex-col gap-4 drop-shadow-2xl"
         >
           <input
-            class="border-2 border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border-solid border-primary-red border p-4 rounded-lg w-full hover:border-black/100"
             type="text"
             placeholder="First Name"
             name="firstName"
             id="firstName"
           />
           <input
-            class="border-2 border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
             type="text"
             placeholder="Last Name"
             name="lastName"
             id="lastName"
           />
           <input
-            class="border-2 border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
             type="email"
             placeholder="Email Address"
             name="email"
             id="email"
           />
           <input
-            class="border-2 border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
             type="password"
             placeholder="Password"
             name="password"
@@ -79,6 +80,7 @@
           <button
             class="uppercase bg-primary-green text-white py-4 rounded-lg w-full hover:border-primary-green border-primary-green border-2 hover:border-2 hover:bg-white hover:text-primary-green"
             id="claimButton"
+            onclick="handleSubmit()"
           >
             claim your free trail
           </button>
@@ -89,10 +91,16 @@
             >
           </p>
         </form>
+
         <!-- form body ends here -->
       </div>
       <!-- form container ends here -->
     </div>
     <!-- container ends here -->
+    <script>
+      function submit() {
+        console.log("hello");
+      }
+    </script>
   </body>
 </html>

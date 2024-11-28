@@ -2,6 +2,12 @@
 module.exports = {
   content: ["./dist/*.html"],
   theme: {
+    extend: {
+      backgroundImage: {
+        "desktop-intro": "url('./assets/bg-intro-desktop.png')",
+        "mobile-intro": "url('./assets/bg-intro-mobile.png')",
+      },
+    },
     screens: {
       sm: "425px",
       // => @media (min-width: 640px) { ... }
