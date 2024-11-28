@@ -588,8 +588,20 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .m-0 {
   margin: 0px;
+}
+
+.m-4 {
+  margin: 1rem;
 }
 
 .my-16 {
@@ -597,8 +609,32 @@ video {
   margin-bottom: 4rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
@@ -627,6 +663,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -687,12 +727,24 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'assets\/bg-intro-mobile\.png\'\)\] {
-  background-image: url('assets/bg-intro-mobile.png');
+.bg-\[url\(\'\.\/assets\/bg-intro-mobile\.png\'\)\] {
+  background-image: url('./assets/bg-intro-mobile.png');
 }
 
 .bg-\[url\(\'\/assets\/bg-intro-mobile\.png\'\)\] {
   background-image: url('/assets/bg-intro-mobile.png');
+}
+
+.bg-\[url\(\'assets\/bg-intro-mobile\.png\'\)\] {
+  background-image: url('assets/bg-intro-mobile.png');
+}
+
+.bg-\[url\(\'\/\.assets\/bg-intro-mobile\.png\'\)\] {
+  background-image: url('/.assets/bg-intro-mobile.png');
+}
+
+.bg-\[url\(\'\.\/bg-intro-mobile\.png\'\)\] {
+  background-image: url('./bg-intro-mobile.png');
 }
 
 .p-0 {
@@ -728,8 +780,17 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .font-Poppins {
@@ -743,6 +804,19 @@ video {
 
 .text-\[11px\] {
   font-size: 11px;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
 }
 
 .font-500 {
@@ -759,6 +833,10 @@ video {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-black\/75 {
@@ -780,6 +858,11 @@ video {
 
 .text-white\/75 {
   color: rgb(255 255 255 / 0.75);
+}
+
+.text-primary-red {
+  --tw-text-opacity: 1;
+  color: hsl(0 100% 74% / var(--tw-text-opacity, 1));
 }
 
 .drop-shadow-2xl {
@@ -832,6 +915,10 @@ video {
 
   .lg\:gap-12 {
     gap: 3rem;
+  }
+
+  .lg\:bg-\[url\(\'\.\/bg-intro-desktop\.png\'\)\] {
+    background-image: url('./bg-intro-desktop.png');
   }
 
   .lg\:text-start {

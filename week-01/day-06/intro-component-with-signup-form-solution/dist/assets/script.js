@@ -1,21 +1,43 @@
-function handleSubmit() {
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form submission
+
   if (validateForm()) {
     alert("Submitted");
   }
 }
 
 function validateForm() {
-  let firstName = document.getElementById("firstName");
-  let lastName = document.getElementById("lastName");
-  let email = document.getElementById("email");
-  let password = document.getElementById("password");
+  // Get form fields
+  const fields = [
+    { id: "firstName", errorId: "firstNameError" },
+    { id: "lastName", errorId: "lastNameError" },
+    { id: "email", errorId: "emailError", validate: validateEmail },
+    { id: "password", errorId: "passwordError" },
+  ];
 
-  if (!firstName.value || !lastName.value || !email.value || !password.value) {
-    if (!firstName.value) {
-      console.log(firstName.classList);
-      //   firstName.classList.remove("border-solid");
-      //   firstName.classList.add("border-primary-red");
+  let isValid = true;
+
+  fields.forEach(({ id, errorId, validate }) => {
+    const field = document.getElementById(id);
+    const error = document.getElementById(errorId);
+
+    if (!field.value || (validate && !validate(field.value))) {
+      field.classList.remove("border-solid");
+      field.classList.add("border-primary-red");
+      error.classList.remove("hidden");
+      isValid = false;
+    } else {
+      field.classList.remove("border-primary-red");
+      field.classList.add("border-solid");
+      error.classList.add("hidden");
     }
-  }
-  return false;
+  });
+
+  return isValid;
+}
+
+function validateEmail(email) {
+  // Basic email format check
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }

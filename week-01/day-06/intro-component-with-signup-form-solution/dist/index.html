@@ -15,7 +15,7 @@
     <script src="./assets/script.js" defer></script>
   </head>
   <body
-    class="m-0 p-0 w-screen h-screen bg-primary-red font-Poppins flex flex-col items-center"
+    class="m-0 p-0 w-screen h-screen bg-primary-red font-Poppins flex flex-col items-center justify-start bg-[url('./bg-intro-mobile.png')] lg:bg-[url('./bg-intro-desktop.png')]"
   >
     <!-- container begins here -->
     <div
@@ -47,60 +47,78 @@
         <form
           action="#"
           id="signupForm"
-          class="w-full p-4 bg-white rounded-lg flex flex-col gap-4 drop-shadow-2xl"
+          class="w-full p-4 bg-white rounded-lg flex flex-col mb-4 drop-shadow-2xl"
         >
           <input
-            class="border-solid border-primary-red border p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
             type="text"
             placeholder="First Name"
             name="firstName"
             id="firstName"
           />
+          <span
+            class="italic text-end w-full text-primary-red text-[10px] relative mt-1 hidden"
+            id="firstNameError"
+          >
+            First Name cannot be empty
+          </span>
           <input
-            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100 mt-4"
             type="text"
             placeholder="Last Name"
             name="lastName"
             id="lastName"
           />
+          <span
+            class="italic text-end w-full text-primary-red text-[10px] relative mt-1 hidden"
+            id="lastNameError"
+          >
+            Last Name cannot be empty
+          </span>
           <input
-            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100 mt-4"
             type="email"
             placeholder="Email Address"
             name="email"
             id="email"
           />
+          <span
+            class="italic text-end w-full text-primary-red text-[10px] relative mt-1 hidden"
+            id="emailError"
+          >
+            Looks like this is not an email
+          </span>
           <input
-            class="border border-solid p-4 rounded-lg w-full hover:border-black/100"
+            class="border border-solid p-4 rounded-lg w-full hover:border-black/100 mt-4"
             type="password"
             placeholder="Password"
             name="password"
             id="password"
           />
+          <span
+            class="italic text-end w-full text-primary-red text-[10px] relative mt-1 hidden"
+            id="passwordError"
+          >
+            Password cannot be empty
+          </span>
           <button
-            class="uppercase bg-primary-green text-white py-4 rounded-lg w-full hover:border-primary-green border-primary-green border-2 hover:border-2 hover:bg-white hover:text-primary-green"
+            class="uppercase bg-primary-green text-white py-4 rounded-lg w-full hover:border-primary-green border-primary-green border-2 hover:border-2 hover:bg-white hover:text-primary-green mt-4"
             id="claimButton"
-            onclick="handleSubmit()"
+            onclick="handleSubmit(event)"
           >
             claim your free trail
           </button>
-          <p class="text-[11px] px-4 text-black/75">
+          <span class="text-[10px] px-2 text-black/75 m-4">
             By clicking the button you are agreeing to our
             <span class="text-primary-red/100 font-bold"
               >Terms and Services</span
             >
-          </p>
+          </span>
         </form>
-
         <!-- form body ends here -->
       </div>
       <!-- form container ends here -->
     </div>
     <!-- container ends here -->
-    <script>
-      function submit() {
-        console.log("hello");
-      }
-    </script>
   </body>
 </html>
