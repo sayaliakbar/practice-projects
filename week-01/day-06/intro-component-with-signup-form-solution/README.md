@@ -150,7 +150,7 @@ Future focus areas:
 
 ### Useful resources
 
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Helped me understand and utilize Tailwind classes effectively.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Helped me understand and utilize Tailwind classes.
 - [MDN Web Docs: Form Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - Great resource for understanding form validation basics.
 
 ## Author
