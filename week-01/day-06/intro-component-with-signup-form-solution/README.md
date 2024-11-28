@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Intro Component Sign Up Page Desktop](./introComponentSignUpFormDesktop.jpg)
+![Intro Component Sign Up Page Desktop](./desktop-design.jpg)
 
 ### Links
 
