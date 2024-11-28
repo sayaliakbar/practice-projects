@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Intro Component Sign Up Page Desktop](./dist/desktop-design.jpg)
+![Intro Component Sign Up Page Desktop](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-06/intro-component-with-signup-form-solution/dist/desktop-design.jpg)
 
 ### Links
 
