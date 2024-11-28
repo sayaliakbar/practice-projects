@@ -1,7 +1,3 @@
-Thank you for sharing the README.md template. I'll draft a version of the README.md based on your HTML, JavaScript code, and this template. Here's how it will look:
-
----
-
 # Frontend Mentor - Intro component with sign up form solution
 
 This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -29,17 +25,17 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size.
 - See hover states for all interactive elements on the page.
 - Receive an error message when the form is submitted if:
-  - Any input field is empty, with the message: "*[Field Name] cannot be empty*".
-  - The email address is not formatted correctly, with the message: "*Looks like this is not an email*".
+  - Any input field is empty, with the message: "_[Field Name] cannot be empty_".
+  - The email address is not formatted correctly, with the message: "_Looks like this is not an email_".
 
 ### Screenshot
 
-![Add your screenshot here](./screenshot.jpg)
+![Intro Component Sign Up Page Desktop](./images/intro-component-desktop.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/sayakbarali/netixsol-internship/blob/fb93ab423634a4cbf43af84b13ecabbc66c6ac85/week-01/day-06/intro-component-with-signup-form-solution/dist/index.html)
+- Live Site URL: [Add live site URL here](https://superficial-vacation.surge.sh/)
 
 ## My process
 
@@ -50,12 +46,35 @@ Users should be able to:
 - JavaScript for form validation
 - Mobile-first workflow
 
+---
+
 ### What I learned
 
-This project helped reinforce several concepts, including:
+This project provided a comprehensive learning experience, allowing me to improve in the following areas:
 
-1. **Form Validation**:
-   Using JavaScript to validate inputs, such as checking for empty fields and validating email format with a regex:
+1. **Form Validation with JavaScript**  
+   I practiced validating forms dynamically using JavaScript. This included ensuring that fields are not empty, providing specific error messages, and visually highlighting errors. For example, dynamically toggling error icons and messages:
+
+   ```js
+   function validateForm() {
+     const field = document.getElementById("firstName");
+     const error = document.getElementById("firstNameError");
+     const errorIcon = document.getElementById("firstNameErrorIcon");
+
+     if (!field.value) {
+       field.classList.add("border-primary-red");
+       error.classList.remove("hidden");
+       errorIcon.classList.remove("hidden");
+     } else {
+       field.classList.remove("border-primary-red");
+       error.classList.add("hidden");
+       errorIcon.classList.add("hidden");
+     }
+   }
+   ```
+
+2. **Regex for Email Validation**  
+   Learned to use regular expressions to validate email formats. This was an opportunity to dive deeper into understanding regex syntax and its application in real-world scenarios.
 
    ```js
    function validateEmail(email) {
@@ -64,8 +83,8 @@ This project helped reinforce several concepts, including:
    }
    ```
 
-2. **Tailwind CSS for Styling**:
-   Leveraging utility classes for responsive design, hover states, and error indicators.
+3. **Tailwind CSS for Modern UI Design**  
+   Tailwind's utility-first approach simplified styling. I explored responsive design features, hover states, and customizing the design system for error handling and hover effects:
 
    ```html
    <input
@@ -76,9 +95,55 @@ This project helped reinforce several concepts, including:
    />
    ```
 
+   This taught me how to balance flexibility and readability in my styles.
+
+4. **Mobile-First Workflow**  
+   I structured my styles to cater primarily to smaller devices first and scaled up for larger devices using Tailwind's responsive classes. This approach ensures that the layout looks great across different devices.
+
+   ```html
+   <div
+     class="container flex flex-col items-center lg:flex-row lg:gap-12 md:w-2/3"
+   ></div>
+   ```
+
+5. **Responsive Backgrounds**  
+   Using Tailwind’s responsive utilities, I set different background images for mobile and desktop views:
+
+   ```html
+   class="bg-[url('./bg-intro-mobile.png')]
+   lg:bg-[url('./bg-intro-desktop.png')]"
+   ```
+
+   This eliminated the need for complex CSS media queries.
+
+6. **Hover States and Interactivity**  
+   Styled interactive elements like buttons to change appearance on hover, making the design more dynamic:
+
+   ```html
+   <button
+     class="bg-primary-green hover:bg-white hover:text-primary-green border-primary-green border-2 rounded-lg"
+   >
+     Claim your free trial
+   </button>
+   ```
+
+7. **Error Messaging and Feedback**  
+   Improved user experience by providing clear, user-friendly error messages, emphasizing accessibility with color contrast and readable text.
+
+   ```html
+   <span class="italic text-primary-red text-[10px]">
+     First Name cannot be empty
+   </span>
+   ```
+
+This project was a great opportunity to apply theory in a hands-on project, reinforcing key skills in JavaScript and modern CSS frameworks like Tailwind.
+
+---
+
 ### Continued development
 
 Future focus areas:
+
 - Enhancing accessibility by ensuring proper ARIA attributes.
 - Exploring more advanced validation techniques, such as debouncing for real-time email validation.
 - Adding animations for better user experience.
@@ -90,9 +155,8 @@ Future focus areas:
 
 ## Author
 
-- Website - [Your Name](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- GitHub - [@sayakbarali](https://github.com/sayakbarali/)
+- LinkedIn - [@sayaliakbar](https://www.linkedin.com/in/sayaliakbar)
 
 ## Acknowledgments
 
