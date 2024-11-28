@@ -62,5 +62,6 @@ function validateForm() {
 function validateEmail(email) {
   // Basic email format check
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   return emailRegex.test(email);
 }
