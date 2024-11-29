@@ -1,8 +1,10 @@
-# Frontend Mentor - QR Code Component Solution
-
-This is a solution to the [QR Code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Thanks for sharing all the details! Here's a `README.md` file for your project based on the HTML, CSS, and template provided:
 
 ---
+
+# Frontend Mentor - QR Code Component Solution
+
+This is my solution to the [QR Code Component Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). This challenge helped me improve my HTML and CSS skills by creating a visually appealing and responsive QR code component.
 
 ## Table of Contents
 
@@ -17,93 +19,64 @@ This is a solution to the [QR Code component challenge on Frontend Mentor](https
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
----
-
 ## Overview
 
 ### Screenshot
 
-![QR Code Component](./assets/qrCodeScreenshot.jpg)
-
----
+![Screenshot of the QR Code Component](./qrCodeComponentScreenshot.jpg)
 
 ### Links
 
-- **Live Link**: [QR Code Component](https://best-lace.surge.sh/)
-
----
+- **Solution URL**: [View my solution](https://your-solution-url.com)
+- **Live Site URL**: [View live site](https://cute-position.surge.sh/)
 
 ## My Process
 
 ### Built With
 
-- **HTML5** for semantic markup
-- **CSS3** custom properties
-- **Flexbox** for layout
-- **Mobile-first workflow**
-
----
+- Semantic HTML5 markup
+- CSS Flexbox for layout
+- Mobile-first responsive design
+- Google Fonts for typography
 
 ### What I Learned
 
-Here are some key concepts and techniques I learned while working on this project:
+This project allowed me to practice creating a clean, responsive layout using Flexbox. I also improved my understanding of semantic HTML and how to apply consistent styling with CSS custom properties. Here's a small snippet of CSS I implemented:
 
-1. **Using Semantic HTML**: I structured the card with semantic tags for better accessibility.
-
-   ```html
-   <section class="card" aria-label="QR Code Card"></section>
-   ```
-
-2. **Flexbox for Centering**:
-
-   - I used `flexbox` to align the card and QR code image both horizontally and vertically:
-
-   ```css
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   ```
-
-3. **Responsive Design**:
-   - Implemented a mobile-first workflow using media queries:
-   ```css
-   @media (max-width: 375px) {
-     #card {
-       width: 73%;
-       height: 70%;
-     }
-   }
-   ```
-
----
+```css
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+```
 
 ### Continued Development
 
-In future projects, I aim to:
+I plan to focus on the following areas in future projects:
 
-- Deepen my understanding of **CSS Grid** for more complex layouts.
-- Practice **accessibility improvements** to make websites more inclusive.
-- Improve performance by optimizing images using modern formats like `webp`.
-
----
+- Improving accessibility for screen readers.
+- Enhancing responsiveness for different screen sizes.
+- Experimenting with CSS Grid for more complex layouts.
 
 ### Useful Resources
 
-- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This resource helped me understand how to align elements with Flexbox.
-- [Frontend Mentor Documentation](https://www.frontendmentor.io/resources) - A great starting point for this challenge.
-- [MDN Web Docs - Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) - This helped me implement responsive design.
-
----
+- [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive guides on HTML and CSS.
+- [CSS-Tricks Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Helped with understanding Flexbox layouts.
+- [Google Fonts](https://fonts.google.com/) - To find and use beautiful fonts.
 
 ## Author
 
-- GitHub - [@sayakbarali](https://github.com/sayakbarali)
-- LinkedIn - [@sayaliakbar](https://www.linkedin.com/in/sayaliakbar/)
-
----
+- **Frontend Mentor Profile**: [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- **Twitter**: [@yourusername](https://www.twitter.com/yourusername)
 
 ## Acknowledgments
 
-A special thanks to Frontend Mentor for providing this challenge! It helped me practice my front-end development skills, including responsive design and CSS best practices.
+Big thanks to the Frontend Mentor community for providing challenges like this to help developers grow. This project was a fun way to practice my skills!
 
 ---
+
+Let me know if you'd like any further adjustments! 😊
