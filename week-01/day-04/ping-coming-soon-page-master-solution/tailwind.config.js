@@ -8,32 +8,26 @@ module.exports = {
         libre: ['"Libre Franklin"', "sans-serif"],
       },
       fontWeight: {
-        100: "100",
-        200: "200",
         300: "300",
-        400: "400",
-        500: "500",
         600: "600",
         700: "700",
-        800: "800",
-        900: "900",
       },
-    },
-    screens: {
-      sm: "430px",
-      // => @media (min-width: 640px) { ... }
-
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
-
-      lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
-      xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
-
-      "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
+      colors: {
+        primary: {
+          blue: "hsl(223, 87%, 63%)", // Blue
+        },
+        secondary: {
+          paleBlue: "hsl(223, 100%, 88%)", // Pale Blue
+          lightRed: "hsl(354, 100%, 66%)", // Light Red
+        },
+        neutral: {
+          gray: "hsl(0, 0%, 59%)", // Gray
+          veryDarkBlue: "hsl(209, 33%, 12%)", // Very Dark Blue
+        },
+      },
+      fontSize: {
+        body: "20px", // Body Copy
+      },
     },
   },
   plugins: [],

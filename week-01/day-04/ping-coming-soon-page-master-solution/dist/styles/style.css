@@ -632,8 +632,8 @@ video {
   width: 100vw;
 }
 
-.max-w-full {
-  max-width: 100%;
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .flex-grow-0 {
@@ -730,7 +730,7 @@ video {
   font-size: 12px;
 }
 
-@media (min-width: 430px) {
+@media (min-width: 640px) {
   .sm\:relative {
     position: relative;
   }
