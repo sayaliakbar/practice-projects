@@ -1,59 +1,54 @@
-/* Body of the page */
+/* Body of the page*/
 body {
   background-color: rgb(220, 235, 242);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100wh;
   font-family: "Outfit", sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 /* QR Code Card */
 .card {
   background-color: white;
   width: 288px;
-  max-width: 288px;
-  height: 464px;
+  height: 50%;
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-/* QR Code Image Background */
-.qr-background {
-  background-color: rgb(54, 148, 232);
-  padding: 1.5rem;
-  height: 54%;
-  text-align: center;
-  border-radius: 16px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
-/* QR Code Image */
-.qr-image {
-  width: 70%;
+
+/* Card Detail */
+.card-detail {
+  margin-bottom: 16px;
+}
+
+/* Qr Image */
+img {
+  width: 288px;
+  height: 288px;
+  border-radius: 20px;
 }
 
 /* QR Code Card Title */
 .card-title {
   font-weight: 700;
   font-size: 1.4rem;
-  margin: 1rem 0;
 }
+
 /* QR Code Card Complete Texts */
 p {
   text-align: center;
   color: rgb(31, 43, 56);
 }
+
 /* QR Code Card Detail Text */
 .card-text {
   color: rgba(31, 43, 56, 0.6);
   margin: 0.5rem;
-}
-@media (max-width: 375px) {
-  #card {
-    width: 73%;
-    height: 70%;
-  }
 }
