@@ -19,7 +19,7 @@ This is my solution to the [QR Code Component Challenge on Frontend Mentor](http
 
 ### Screenshot
 
-![Screenshot of the QR Code Component](./qrCodeComponentScreenshot.jpg)
+![Screenshot of the QR Code Component](https://github.com/user-attachments/assets/05b62fd5-e9e4-4106-ada6-517c35f01f2d)
 
 ### Links
 
