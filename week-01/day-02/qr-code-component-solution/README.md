@@ -1,7 +1,3 @@
-Thanks for sharing all the details! Here's a `README.md` file for your project based on the HTML, CSS, and template provided:
-
----
-
 # Frontend Mentor - QR Code Component Solution
 
 This is my solution to the [QR Code Component Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). This challenge helped me improve my HTML and CSS skills by creating a visually appealing and responsive QR code component.
@@ -27,7 +23,7 @@ This is my solution to the [QR Code Component Challenge on Frontend Mentor](http
 
 ### Links
 
-- **Solution URL**: [View my solution](https://your-solution-url.com)
+- **Solution URL**: [View my solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-02/qr-code-component-solution/index.html)
 - **Live Site URL**: [View live site](https://cute-position.surge.sh/)
 
 ## My Process
@@ -39,20 +35,62 @@ This is my solution to the [QR Code Component Challenge on Frontend Mentor](http
 - Mobile-first responsive design
 - Google Fonts for typography
 
+---
+
 ### What I Learned
 
-This project allowed me to practice creating a clean, responsive layout using Flexbox. I also improved my understanding of semantic HTML and how to apply consistent styling with CSS custom properties. Here's a small snippet of CSS I implemented:
+This project was a great opportunity to strengthen my front-end development skills. Here are the key takeaways from working on this challenge:
 
-```css
-.card {
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-```
+1. **Semantic HTML Structure**  
+   I focused on writing clean and semantic HTML5 code, ensuring that the page is well-structured and accessible. For example, I used the `<section>` tag with an `aria-label` attribute to enhance accessibility for screen readers.
+
+   ```html
+   <section class="card" aria-label="QR Code Card"></section>
+   ```
+
+2. **Responsive Design with Flexbox**  
+   This project allowed me to practice using Flexbox for layout alignment. I applied `display: flex` with properties like `justify-content` and `align-items` to center the card within the viewport.
+
+   ```css
+   body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+   }
+   ```
+
+3. **Consistent Styling with Custom Properties**  
+   I applied consistent styling across the page by using CSS properties like `font-family` and `box-shadow`, which helped maintain a unified look. Using Google Fonts was particularly useful for enhancing the visual appeal.
+
+4. **Responsive Units**  
+   I learned the importance of using responsive units like percentages (`%`) and `rem` to ensure the layout adapts to different screen sizes. This makes the design scalable and better suited for mobile-first development.
+
+5. **Optimizing Image Use**  
+   I used the `loading="lazy"` attribute for the QR code image, which is a modern best practice to optimize page loading performance.
+
+   ```html
+   <img
+     src="./assets/image-qr-code.png"
+     alt="Profile QR Code"
+     class="qr-image"
+     loading="lazy"
+   />
+   ```
+
+6. **Typography and Color Contrast**  
+   By using the Google Fonts API and maintaining strong color contrast between the text and the background, I created a visually appealing and accessible design. I also experimented with font weights to establish a clear visual hierarchy.
+
+   ```css
+   .card-title {
+     font-weight: 700;
+     font-size: 1.4rem;
+   }
+   ```
+
+This project reinforced the importance of building small, focused components that are reusable and visually polished. It also highlighted areas where I can further improve, such as advanced responsiveness techniques and accessibility best practices.
+
+---
 
 ### Continued Development
 
@@ -70,13 +108,11 @@ I plan to focus on the following areas in future projects:
 
 ## Author
 
-- **Frontend Mentor Profile**: [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- **Twitter**: [@yourusername](https://www.twitter.com/yourusername)
+- GitHub - [@sayakbarali](https://github.com/sayakbarali/)
+- LinkedIn - [@sayaliakbar](https://www.linkedin.com/in/sayaliakbar)
 
 ## Acknowledgments
 
 Big thanks to the Frontend Mentor community for providing challenges like this to help developers grow. This project was a fun way to practice my skills!
 
 ---
-
-Let me know if you'd like any further adjustments! 😊
