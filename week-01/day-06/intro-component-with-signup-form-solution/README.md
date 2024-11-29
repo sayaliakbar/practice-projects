@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://tinyurl.com/yuybtjck](https://github.com/sayakbarali/netixsol-internship/blob/fb93ab423634a4cbf43af84b13ecabbc66c6ac85/week-01/day-06/intro-component-with-signup-form-solution/dist/index.html)
-- Live Site URL: [https://superficial-vacation.surge.sh/](https://superficial-vacation.surge.sh/)
+- Live Site URL: [https://hateful-band.surge.sh/](https://hateful-band.surge.sh/)
 
 ## My process
 
