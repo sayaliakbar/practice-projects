@@ -22,13 +22,14 @@ This is a solution to the Profile Card component project. This project showcases
 
 ### Screenshot
 
-![Profile Card Component](./profileCardComponentScreenshot.jpg)
+![Profile Card Component](https://github.com/user-attachments/assets/0a43887e-81aa-4a6c-85c7-9103093edb71)
 
 ---
 
 ### Links
 
-- **Live Link**: [Profile Card Component](http://open-volcano.surge.sh/)
+- **Solution URL**: [View my solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-03/profile-card-component/index.html)
+- **Live Site URL**: [View live site](https://rabid-balloon.surge.sh/)
 
 ---
 
