@@ -53,6 +53,7 @@ function validateForm() {
       field.classList.remove("border-solid");
       field.classList.add("border-primary-red");
       error.classList.remove("hidden");
+      errorIcon.classList.add("flex");
       errorIcon.classList.remove("hidden");
       isValid = false;
     } else {
