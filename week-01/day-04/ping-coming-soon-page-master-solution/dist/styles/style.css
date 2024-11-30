@@ -777,6 +777,16 @@ video {
   background-color: hsl(209 33% 12% / var(--tw-bg-opacity, 1));
 }
 
+.hover\:text-red-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-secondary-lightRed:hover {
+  --tw-text-opacity: 1;
+  color: hsl(354 100% 66% / var(--tw-text-opacity, 1));
+}
+
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
