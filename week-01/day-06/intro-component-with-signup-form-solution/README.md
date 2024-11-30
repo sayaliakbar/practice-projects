@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/fb93ab423634a4cbf43af84b13ecabbc66c6ac85/week-01/day-06/intro-component-with-signup-form-solution/dist/index.html)
-- Live Site URL: [View Live Site](https://cheerful-detail.surge.sh/)
+- Live Site URL: [View Live Site](https://lamentable-exchange.surge.sh/)
 
 ## My process
 
