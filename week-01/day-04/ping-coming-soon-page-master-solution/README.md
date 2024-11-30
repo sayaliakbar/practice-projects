@@ -28,19 +28,17 @@ Users can:
 - See hover states for interactive elements.
 - Submit their email address using the input field.
 - Receive error messages if:
-  - The `input` field is empty. (_"Whoops! It looks like you forgot to add your email"_)
+  - The `input` field is empty. (_"It looks like you forgot to add your email"_)
   - The email address is incorrectly formatted. (_"Please provide a valid email address"_)
 
 ### Screenshot
 
-![Coming Soon Page Screenshot](./dist/assets/screenshot.jpg)
-
-> _Replace the above path with an actual screenshot of your project._
+![Coming Soon Page Screenshot](https://github.com/user-attachments/assets/9b33215a-a774-4f3e-849d-4891389a4061)
 
 ### Links
 
-- **Solution URL**: [Add solution URL here](#)
-- **Live Site URL**: [Add live site URL here](#)
+- **Solution URL**: [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-04/ping-coming-soon-page-master-solution/index.html)
+- **Live Site URL**: [Live Site](https://annoying-voice.surge.sh/)
 
 ---
 
@@ -54,8 +52,6 @@ Users can:
 - **Mobile-First Workflow**
 - **JavaScript for Form Validation**
 - **SweetAlert2 for Notification Popups**
-
-Here’s an expanded **What I Learned** section, reflecting all the potential learning opportunities from the provided HTML code:
 
 ---
 
@@ -188,9 +184,8 @@ In future projects, I aim to:
 
 ## Author
 
-- **GitHub**: [Your GitHub Profile](#)
-- **Frontend Mentor**: [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- **LinkedIn**: [Your LinkedIn Profile](#)
+- **GitHub**: [GitHub Profile](https://github.com/sayakbarali/)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/sayaliakbar/)
 
 ---
 
