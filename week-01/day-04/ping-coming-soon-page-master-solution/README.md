@@ -38,7 +38,7 @@ Users can:
 ### Links
 
 - **Solution URL**: [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-04/ping-coming-soon-page-master-solution/index.html)
-- **Live Site URL**: [Live Site](https://annoying-voice.surge.sh/)
+- **Live Site URL**: [Live Site](https://slow-dirt.surge.sh/)
 
 ---
 
