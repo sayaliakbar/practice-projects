@@ -184,8 +184,8 @@ In future projects, I aim to:
 
 ## Author
 
-- **GitHub**: [GitHub Profile](https://github.com/sayakbarali/)
-- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/sayaliakbar/)
+- **GitHub**: [@sayakbarali](https://github.com/sayakbarali/)
+- **LinkedIn**: [@sayaliakbar](https://www.linkedin.com/in/sayaliakbar/)
 
 ---
 
