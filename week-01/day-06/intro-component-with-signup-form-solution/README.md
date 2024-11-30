@@ -136,8 +136,8 @@ This project provided a comprehensive learning experience, allowing me to improv
    </span>
    ```
 
-   7. **Using SweetAlert2**  
-      Used **SweetAlert2** for enhanced feedback with stylish alert popups.
+8. **Using SweetAlert2**  
+    Used **SweetAlert2** for enhanced feedback with stylish alert popups.
 
    ```js
    if (validateForm()) {
