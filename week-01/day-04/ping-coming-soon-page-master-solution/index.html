@@ -11,12 +11,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./dist/styles/style.css" />
+    <link rel="preload" href="./dist/assets/logo.svg" as="image" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body
     class="m-0 p-0 font-libre min-w-screen min-h-screen flex flex-col items-center"
   >
     <div
-      class="container flex flex-col border-2 border-black w-[90%] items-center h-full my-8 flex-grow"
+      class="container flex flex-col w-[90%] items-center h-full my-8 flex-grow"
     >
       <!-- PING logo begins here -->
       <div class="my-4">
@@ -24,7 +32,9 @@
       </div>
       <div class="flex flex-col items-center w-full my-4 gap-4">
         <!-- headings begin here -->
-        <h1 class="text-3xl">We are launching soon!</h1>
+        <h1 class="text-3xl text-neutral-gray">
+          We are launching <strong class="text-black">soon!</strong>
+        </h1>
         <p>Subscribe and get notified</p>
       </div>
 
@@ -44,7 +54,7 @@
       </div>
 
       <!-- upper card ends here -->
-      <div class="flex flex-col items-center mb-auto">
+      <div class="flex flex-col items-center mb-auto mt-16">
         <!-- Dashboard image -->
         <div class="w-full">
           <img
@@ -54,8 +64,27 @@
         </div>
       </div>
       <div class="flex flex-col items-center gap-6">
-        <div>Icons</div>
-        <div>Copyright Ping. All rights reserved.</div>
+        <div class="flex gap-4 items-center">
+          <a
+            href="https://www.google.com/"
+            class="border border-solid flex items-center justify-center rounded-full w-12 h-12"
+            ><i class="fa-brands fa-facebook-f fa-lg" style="color: #748ece"></i
+          ></a>
+
+          <a
+            href="https://www.google.com/"
+            class="border border-solid flex items-center justify-center rounded-full w-12 h-12"
+            ><i class="fa-brands fa-twitter fa-lg" style="color: #748ece"></i
+          ></a>
+          <a
+            href="https://www.google.com/"
+            class="border border-solid flex items-center justify-center rounded-full w-12 h-12"
+            ><i class="fa-brands fa-instagram fa-lg" style="color: #748ece"></i
+          ></a>
+        </div>
+        <div class="text-neutral-gray">
+          &copy;Copyright Ping. All rights reserved.
+        </div>
       </div>
     </div>
   </body>
