@@ -192,5 +192,3 @@ In future projects, I aim to:
 ## Acknowledgments
 
 Special thanks to [Frontend Mentor](https://www.frontendmentor.io/) for providing a challenging yet enjoyable project. Inspiration was drawn from community solutions.
-
----

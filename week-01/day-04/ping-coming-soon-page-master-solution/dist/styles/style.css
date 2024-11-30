@@ -634,6 +634,18 @@ video {
   height: 100%;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -648,6 +660,18 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .flex-grow {
@@ -672,6 +696,14 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .rounded-full {
@@ -705,6 +737,14 @@ video {
   padding: 0px;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -731,6 +771,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .italic {
