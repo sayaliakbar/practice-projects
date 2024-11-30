@@ -49,6 +49,8 @@
             name="email"
             id="email"
             placeholder="Your email address..."
+            required
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
           />
           <span
             class="text-secondary-lightRed italic mt-1 pl-10 lg:pl-6 lg:absolute lg:top-14 lg:left-0 hidden"
@@ -70,8 +72,9 @@
         <!-- Dashboard image -->
         <div class="w-full">
           <img
+            class="object-contain w-full"
             src="./dist/assets/illustration-dashboard.png"
-            alt="dashboard image"
+            alt="Dashboard Image"
             loading="lazy"
           />
         </div>
