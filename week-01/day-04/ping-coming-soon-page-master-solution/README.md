@@ -33,7 +33,7 @@ Users can:
 
 ### Screenshot
 
-![Coming Soon Page Screenshot](https://github.com/user-attachments/assets/9b33215a-a774-4f3e-849d-4891389a4061)
+![Coming Soon Page Screenshot](https://github.com/user-attachments/assets/a4b56aa1-63dc-4e5f-8026-a4d23db045e8)
 
 ### Links
 
