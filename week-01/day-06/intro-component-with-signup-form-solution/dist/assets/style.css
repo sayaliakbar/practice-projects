@@ -862,14 +862,6 @@ video {
     margin: 0px;
   }
 
-  .lg\:mr-3 {
-    margin-right: 0.75rem;
-  }
-
-  .lg\:mr-4 {
-    margin-right: 1rem;
-  }
-
   .lg\:mr-10 {
     margin-right: 2.5rem;
   }
@@ -890,18 +882,6 @@ video {
     padding: 0px;
   }
 
-  .lg\:pr-4 {
-    padding-right: 1rem;
-  }
-
-  .lg\:pr-8 {
-    padding-right: 2rem;
-  }
-
-  .lg\:pr-10 {
-    padding-right: 2.5rem;
-  }
-
   .lg\:text-start {
     text-align: start;
   }
@@ -917,10 +897,6 @@ video {
 }
 
 @media (min-width: 1440px) {
-  .xl\:mr-12 {
-    margin-right: 3rem;
-  }
-
   .xl\:mr-6 {
     margin-right: 1.5rem;
   }
@@ -931,9 +907,5 @@ video {
 
   .xl\:justify-center {
     justify-content: center;
-  }
-
-  .xl\:p-0 {
-    padding: 0px;
   }
 }

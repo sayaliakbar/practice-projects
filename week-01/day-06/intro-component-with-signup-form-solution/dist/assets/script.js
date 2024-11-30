@@ -2,7 +2,17 @@ function handleSubmit(event) {
   event.preventDefault(); // Prevent default form submission
 
   if (validateForm()) {
-    alert("Submitted");
+    Swal.fire({
+      icon: "success", // Alert type
+      title: "Success!",
+      text: "Your email has been saved!",
+      confirmButtonText: "OK",
+      timer: 3000, // Auto-dismiss after 3 seconds
+      timerProgressBar: true,
+    }).then(() => {
+      // Submit the form programmatically after SweetAlert is closed
+      document.querySelector("form").submit();
+    });
   }
 }
 
