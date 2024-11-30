@@ -117,8 +117,11 @@
         event.preventDefault();
         let email = document.getElementById("email");
         let emailError = document.getElementById("emailError");
-
-        if (validateEmail(email.value)) {
+        if (email.value === "") {
+          email.classList.add("border-secondary-lightRed");
+          emailError.classList.remove("hidden");
+          emailError.innerText = "It looks like you forgot to add your email!";
+        } else if (validateEmail(email.value)) {
           email.classList.remove("border-secondary-lightRed");
           emailError.classList.add("hidden");
           Swal.fire({
