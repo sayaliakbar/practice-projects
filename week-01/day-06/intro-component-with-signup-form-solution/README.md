@@ -128,12 +128,30 @@ This project provided a comprehensive learning experience, allowing me to improv
    ```
 
 7. **Error Messaging and Feedback**  
-   Improved user experience by providing clear, user-friendly error messages, emphasizing accessibility with color contrast and readable text.
+    Improved user experience by providing clear, user-friendly error messages, emphasizing accessibility with color contrast and readable text.
 
    ```html
    <span class="italic text-primary-red text-[10px]">
      First Name cannot be empty
    </span>
+   ```
+
+   7. **Using SweetAlert2**  
+      Used **SweetAlert2** for enhanced feedback with stylish alert popups.
+
+   ```js
+   if (validateForm()) {
+     Swal.fire({
+       icon: "success", // Alert type
+       title: "Success!",
+       text: "Your email has been saved!",
+       confirmButtonText: "OK",
+       timer: 3000, //
+       timerProgressBar: true,
+     }).then(() => {
+       document.querySelector("form").submit();
+     });
+   }
    ```
 
 This project was a great opportunity to apply theory in a hands-on project, reinforcing key skills in JavaScript and modern CSS frameworks like Tailwind.
