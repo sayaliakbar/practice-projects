@@ -43,8 +43,8 @@ This project is a solution to the [Stats Preview Card Component challenge](https
 
 ### Live Demo
 
-Check out the live project: [View Live Demo](https://sore-airplane.surge.sh/)
-Check out the solution of the project: [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-05/stats-preview-card-component-solution/index.html)
+- Check out the live project: [View Live Demo](https://sore-airplane.surge.sh/)
+- Check out the solution of the project: [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-01/day-05/stats-preview-card-component-solution/index.html)
 
 ---
 
@@ -179,6 +179,6 @@ This project allowed me to strengthen my skills in **responsive design**, **CSS 
 
 ## Acknowledgments
 
-A big thanks to the Frontend Mentor community for providing such a great platform to practice and improve coding skills. Special thanks to [Your Inspiration, if any].
+A big thanks to the Frontend Mentor community for providing such a great platform to practice and improve coding skills.
 
 ---
