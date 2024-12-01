@@ -19,11 +19,86 @@
     />
   </head>
   <body
-    class="flex justify-center flex-col items-center font-poppins m-0 p-0 min-w-screen min-h-screen text-body bg-neutral-offWhite"
+    class="flex justify-center flex-col items-center font-poppins m-0 p-0 min-w-screen min-h-screen bg-neutral-offWhite"
   >
-    <div class="container w-5/6 bg-neutral-white">
-      <div>Input Div</div>
-      <div>Output Div</div>
+    <!-- Container card begins here -->
+    <div
+      class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%]"
+    >
+      <!-- Input part begins here -->
+
+      <form
+        action=""
+        class="w-full flex flex-col items-center justify-center gap-6"
+      >
+        <div class="flex gap-4 justify-center">
+          <div>
+            <label
+              for="day"
+              class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
+              >DAY</label
+            >
+            <input
+              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              type="number"
+              name="day"
+              id="day"
+              placeholder="DD"
+            />
+          </div>
+          <div>
+            <label
+              for="month"
+              class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
+              >MONTH</label
+            >
+            <input
+              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              type="number"
+              name="month"
+              id="month"
+              placeholder="MM"
+            />
+          </div>
+          <div>
+            <label
+              for="year"
+              class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
+              >YEAR</label
+            >
+            <input
+              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              type="number"
+              name="year"
+              id="year"
+              placeholder="YYYY"
+            />
+          </div>
+        </div>
+        <div
+          class="w-full flex flex-col items-center relative h-16 justify-center"
+        >
+          <button
+            class="bg-primary-purple rounded-full p-4 w-fit absolute"
+            type="submit"
+            id="submitButton"
+          >
+            <img
+              class="w-8"
+              src="./dist/assets/icon-arrow.svg"
+              alt="Submit Icon"
+            />
+          </button>
+          <div class="border border-solid w-full"></div>
+        </div>
+      </form>
+
+      <!-- Output part begins here -->
+      <div class="text-body font-800 italic text-5xl">
+        <h1><span class="text-primary-purple">--</span> years</h1>
+        <h1><span class="text-primary-purple">--</span> months</h1>
+        <h1><span class="text-primary-purple">--</span> days</h1>
+      </div>
     </div>
   </body>
 </html>
