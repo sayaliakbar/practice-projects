@@ -23,15 +23,12 @@
   >
     <!-- Container card begins here -->
     <div
-      class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%]"
+      class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%] sm:w-4/6 md:w-4/6 lg:w-1/2 lg:gap-6 xl:w-4/12"
     >
       <!-- Input part begins here -->
 
-      <form
-        action=""
-        class="w-full flex flex-col items-center justify-center gap-6"
-      >
-        <div class="flex gap-4 justify-center">
+      <form action="" class="w-full flex flex-col gap-6">
+        <div class="flex gap-4 justify-start lg:pr-32">
           <div>
             <label
               for="day"
@@ -82,8 +79,9 @@
           </div>
         </div>
         <div
-          class="w-full flex flex-col items-center relative h-16 justify-center"
+          class="w-full flex flex-col items-center relative h-16 justify-center lg:items-end"
         >
+          <div class="border border-solid w-full"></div>
           <button
             class="bg-primary-purple rounded-full p-4 w-fit absolute hover:bg-black"
             type="submit"
@@ -95,7 +93,6 @@
               alt="Submit Icon"
             />
           </button>
-          <div class="border border-solid w-full"></div>
         </div>
       </form>
 
