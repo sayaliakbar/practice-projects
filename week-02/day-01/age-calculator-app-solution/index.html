@@ -39,11 +39,13 @@
               >DAY</label
             >
             <input
-              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              class="border border-solid w-full p-3 rounded-lg font-800 text-xl hover:border-primary-purple"
               type="number"
               name="day"
               id="day"
               placeholder="DD"
+              min="1"
+              max="31"
             />
           </div>
           <div>
@@ -53,11 +55,13 @@
               >MONTH</label
             >
             <input
-              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              class="border border-solid w-full p-3 rounded-lg font-800 text-xl hover:border-primary-purple"
               type="number"
               name="month"
               id="month"
               placeholder="MM"
+              min="1"
+              max="12"
             />
           </div>
           <div>
@@ -67,11 +71,13 @@
               >YEAR</label
             >
             <input
-              class="border-2 border-solid w-full p-3 rounded-lg font-800 text-xl"
+              class="border border-solid w-full p-3 rounded-lg font-800 text-xl hover:border-primary-purple"
               type="number"
               name="year"
               id="year"
               placeholder="YYYY"
+              min="1"
+              max="9999"
             />
           </div>
         </div>
@@ -79,7 +85,7 @@
           class="w-full flex flex-col items-center relative h-16 justify-center"
         >
           <button
-            class="bg-primary-purple rounded-full p-4 w-fit absolute"
+            class="bg-primary-purple rounded-full p-4 w-fit absolute hover:bg-black"
             type="submit"
             id="submitButton"
           >

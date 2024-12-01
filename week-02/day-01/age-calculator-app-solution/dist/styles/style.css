@@ -920,3 +920,18 @@ video {
   --tw-text-opacity: 1;
   color: hsl(259 100% 65% / var(--tw-text-opacity, 1));
 }
+
+.hover\:border-primary-purple:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(259 100% 65% / var(--tw-border-opacity, 1));
+}
+
+.hover\:bg-primary-purple:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(259 100% 65% / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-black:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
