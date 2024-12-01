@@ -59,22 +59,6 @@ This project is a solution to the [Stats Preview Card Component challenge](https
 
 ## Learnings
 
-This project reinforced the following concepts:
-
-1. **Tailwind CSS**: Efficient styling and theming using utility-first classes.
-2. **Responsive Design**: Adapting layouts for diverse screen sizes.
-3. **Accessibility Best Practices**: Ensuring content is readable and accessible to all users.
-
----
-
-## Future Enhancements
-
-Here’s a detailed **Learnings** section for your README.md, tailored to your project:
-
----
-
-## Learnings
-
 Working on the **Stats Preview Card Component** project provided valuable insights into modern web development practices, particularly in the following areas:
 
 ### 1. **Utility-First CSS with Tailwind CSS**
