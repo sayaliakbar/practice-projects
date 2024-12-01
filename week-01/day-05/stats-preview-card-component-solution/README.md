@@ -146,6 +146,12 @@ This project allowed me to strengthen my skills in **responsive design**, **CSS 
 
 ---
 
+## Future Enhancements
+
+- **Interactive Elements:** Add hover effects or animations for a more dynamic experience.
+- **Dark/Light Modes:** Implement theme toggling for user customization.
+- **Additional Features:** Include more statistics or a detailed insights section.
+
 ## Resources
 
 - [Frontend Mentor](https://www.frontendmentor.io/) - Source of the challenge.
