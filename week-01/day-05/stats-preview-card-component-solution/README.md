@@ -170,5 +170,3 @@ This project allowed me to strengthen my skills in **responsive design**, **CSS 
 ## Acknowledgments
 
 A big thanks to the Frontend Mentor community for providing such a great platform to practice and improve coding skills.
-
----
