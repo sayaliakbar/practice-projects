@@ -9,20 +9,23 @@ module.exports = {
         lexendDeca: ["Lexend Deca", "sans-serif"],
       },
       fontWeight: {
-        100: "100",
-        200: "200",
-        300: "300",
         400: "400",
-        500: "500",
-        600: "600",
         700: "700",
-        800: "800",
-        900: "900",
       },
       colors: {
-        "very-dark-blue": "rgb(5, 6, 19)", // Main background
-        "dark-desaturated-blue": "rgb(20, 21, 45)", // Card background
-        "soft-violet": "rgb(156, 112, 234)", // Accent
+        primary: {
+          veryDarkBlue: "hsl(233, 47%, 7%)",
+          darkDesaturatedBlue: "hsl(244, 38%, 16%)",
+          softViolet: "hsl(277, 64%, 61%)",
+        },
+        neutral: {
+          white: "hsl(0, 0%, 100%)",
+          transparentWhite: "hsla(0, 0%, 100%, 0.75)",
+          transparentStatWhite: "hsla(0, 0%, 100%, 0.6)",
+        },
+      },
+      fontSize: {
+        body: "15px",
       },
     },
   },
