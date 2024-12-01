@@ -41,10 +41,6 @@ This project is a solution to the [Stats Preview Card Component challenge](https
 
 ![Mobile View](https://github.com/user-attachments/assets/84dd61ab-bcb6-41d1-be02-7b8c84051779)
 
-<p align="center">
-  <img src="./stats-preview-card-component-mobile.png" alt="Description of Image" width="600"/>
-</p>
-
 ### Live Demo
 
 - Check out the live project: [View Live Demo](https://sore-airplane.surge.sh/)
