@@ -22,9 +22,9 @@
     class="min-h-screen min-w-screen flex justify-center lg:items-center p-0 m-0 font-inter bg-primary-veryDarkBlue"
   >
     <main
-      class="w-4/5 sm:w-4/6 md:w-4/6 lg:w-4/5 flex flex-col lg:flex-row-reverse lg:h-4/5 gap-8 bg-primary-darkDesaturatedBlue my-14 rounded-lg"
+      class="w-4/5 sm:w-4/6 md:w-4/6 lg:w-4/5 flex flex-col lg:flex-row-reverse lg:gap-0 gap-8 bg-primary-darkDesaturatedBlue my-14 rounded-lg"
     >
-      <div class="relative w-full object-contain rounded-t-lg">
+      <div class="relative lg:w-1/2 object-contain rounded-t-lg">
         <picture>
           <source
             srcset="./dist/assets/image-header-desktop.jpg"
@@ -39,40 +39,46 @@
         </picture>
         <div class="absolute inset-0 bg-violet-900/70 rounded-t-lg"></div>
       </div>
-      <div class="flex flex-col items-center px-5 gap-8">
+      <div
+        class="flex lg:w-1/2 flex-col items-center px-5 gap-8 lg:p-14 lg:gap-0 lg:justify-between lg:items-start"
+      >
         <header class="flex flex-col gap-6 items-center">
-          <h1 class="text-white font-bold text-center text-[28px] leading-8">
+          <h1
+            class="text-white font-bold text-center lg:text-left text-[28px] lg:text-4xl leading-8"
+          >
             Get <span class="text-primary-softViolet">insights</span> that help
             your business grow.
           </h1>
           <p
-            class="text-body text-neutral-transparentWhite text-center leading-6"
+            class="text-body text-neutral-transparentWhite text-center lg:text-start leading-6"
           >
             Discover the benefits of data analytics and make better decisions
             regarding revenue, customer experience, and overall efficiency.
           </p>
         </header>
-        <section class="flex flex-col gap-8 pb-10 items-center">
-          <div class="text-center">
+        <section
+          class="flex flex-col gap-8 pb-10 lg:pb-0 items-center lg:flex-row lg:w-full lg:gap-14"
+        >
+          <div class="text-center lg:text-start">
             <h2 class="text-white font-bold text-2xl">10k+</h2>
             <p
-              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-base"
+              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-body"
             >
               companies
             </p>
           </div>
-          <div class="text-center">
+          <div class="text-center lg:text-start">
             <h2 class="text-white font-bold text-2xl">314</h2>
             <p
-              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-base"
+              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-body"
             >
               templates
             </p>
           </div>
-          <div class="text-center">
+          <div class="text-center lg:text-start">
             <h2 class="text-white font-bold text-2xl">12M+</h2>
             <p
-              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-base"
+              class="uppercase text-neutral-transparentStatWhite font-lexendDeca text-body"
             >
               queries
             </p>
