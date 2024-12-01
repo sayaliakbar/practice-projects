@@ -35,7 +35,7 @@ This project is a solution to the [Stats Preview Card Component challenge](https
 
 #### Desktop View:
 
-![Desktop View](https://github.com/user-attachments/assets/ab03156f-2157-464e-8890-a55b339b0619)
+![Desktop View](https://github.com/user-attachments/assets/ccc52c2a-6bc4-4bb8-9545-8caf8a4be5c4)
 
 #### Mobile View:
 
