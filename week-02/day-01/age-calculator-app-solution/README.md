@@ -94,7 +94,7 @@ function calculateAge(day, month, year) {
 
 3. **Date Validation in JavaScript:**
 
-- Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
+   - Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
 
 ```js
 function isValidDate(day, month, year) {
@@ -134,8 +134,8 @@ function isValidDate(day, month, year) {
 
 9. **Problem-Solving and Debugging**
 
-- Troubleshooting issues like incorrect age calculations or validation logic errors.
-- Learning how to debug using browser developer tools.
+   - Troubleshooting issues like incorrect age calculations or validation logic errors.
+   - Learning how to debug using browser developer tools.
 
 10. **Improved Project Structuring**
     - Organizing code into reusable functions for better readability and maintainability.
