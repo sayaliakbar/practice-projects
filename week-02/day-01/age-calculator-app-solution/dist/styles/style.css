@@ -787,6 +787,11 @@ video {
   border-style: solid;
 }
 
+.border-primary-lightRed {
+  --tw-border-opacity: 1;
+  border-color: hsl(0 100% 67% / var(--tw-border-opacity, 1));
+}
+
 .bg-neutral-smokeyGrey {
   --tw-bg-opacity: 1;
   background-color: hsl(0 1% 44% / var(--tw-bg-opacity, 1));
