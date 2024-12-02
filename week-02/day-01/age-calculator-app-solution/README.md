@@ -61,27 +61,7 @@ Users should be able to:
 
 ### What I Learned
 
-This project allowed me to deepen my understanding of:
-
-- Validating form inputs using JavaScript.
-- Handling edge cases like invalid or incomplete dates.
-- Dynamically manipulating the DOM to provide real-time feedback.
-- Tailoring layouts for various screen sizes using Tailwind CSS.
-
-#### Code Snippets
-
-**Date Validation in JavaScript:**
-
-```js
-function isValidDate(day, month, year) {
-  const date = new Date(year, month - 1, day);
-  return (
-    date.getDate() === parseInt(day) &&
-    date.getMonth() + 1 === parseInt(month) &&
-    date.getFullYear() === parseInt(year)
-  );
-}
-```
+This project offered several learning opportunities:
 
 **Dynamic Age Calculation:**
 
@@ -105,14 +85,6 @@ function calculateAge(day, month, year) {
 }
 ```
 
-Here's an expanded version of the **What I Learned** section:
-
----
-
-### What I Learned
-
-This project offered several learning opportunities:
-
 1. **Form Validation with JavaScript**
 
    - Understanding how to validate form inputs effectively, including checks for required fields, range validation, and logical validations (e.g., verifying if a date is valid).
@@ -123,42 +95,57 @@ This project offered several learning opportunities:
    - Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
    - Accounting for edge cases like leap years and months with varying days.
 
-3. **DOM Manipulation**
+   #### Code Snippets
+
+3. **Date Validation in JavaScript:**
+
+```js
+function isValidDate(day, month, year) {
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getDate() === parseInt(day) &&
+    date.getMonth() + 1 === parseInt(month) &&
+    date.getFullYear() === parseInt(year)
+  );
+}
+```
+
+4. **DOM Manipulation**
 
    - Dynamically adding and removing CSS classes to provide visual cues for errors or valid input states.
    - Displaying real-time updates for calculated values directly in the UI.
 
-4. **Responsive Design Principles**
+5. **Responsive Design Principles**
 
    - Applying a mobile-first design approach to ensure the app looks great on devices of all sizes.
    - Utilizing CSS properties and media queries to adjust layouts and styling for optimal usability.
 
-5. **Error Handling and UX Enhancement**
+6. **Error Handling and UX Enhancement**
 
    - Highlighting input fields with issues using error messages and color cues, making the validation process intuitive for users.
    - Handling edge cases such as future dates and invalid combinations like `31/04/2022`.
 
-6. **Animation Techniques** (Bonus Feature)
+7. **Animation Techniques** (Bonus Feature)
 
    - Animating numeric values to smoothly transition to the final calculated age for a better user experience.
    - Understanding the use of JavaScript and CSS animations to create visually appealing interactions.
 
-7. **Utility-First Styling with Tailwind CSS**
+8. **Utility-First Styling with Tailwind CSS**
 
    - Leveraging Tailwind's utility classes to speed up styling, ensuring a consistent design across the app.
    - Customizing Tailwind configurations for brand-specific colors and typography.
 
-8. **Accessibility Considerations**
+9. **Accessibility Considerations**
 
    - Learning how to enhance accessibility by labeling form elements properly and considering keyboard navigation.
    - Using semantic HTML to ensure compatibility with screen readers.
 
-9. **Problem-Solving and Debugging**
+10. **Problem-Solving and Debugging**
 
-   - Troubleshooting issues like incorrect age calculations or validation logic errors.
-   - Learning how to debug using browser developer tools.
+- Troubleshooting issues like incorrect age calculations or validation logic errors.
+- Learning how to debug using browser developer tools.
 
-10. **Improved Project Structuring**
+11. **Improved Project Structuring**
     - Organizing code into reusable functions for better readability and maintainability.
     - Separating concerns like validation, UI updates, and calculations for scalability.
 
