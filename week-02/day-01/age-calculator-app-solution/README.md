@@ -63,7 +63,16 @@ Users should be able to:
 
 This project offered several learning opportunities:
 
-**Dynamic Age Calculation:**
+1. **Form Validation with JavaScript**
+
+   - Understanding how to validate form inputs effectively, including checks for required fields, range validation, and logical validations (e.g., verifying if a date is valid).
+   - Providing meaningful feedback to users for errors, improving overall user experience.
+
+2. **Date and Time Calculations**
+
+   - Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
+   - Accounting for edge cases like leap years and months with varying days.
+     **_Dynamic Age Calculation:_**
 
 ```js
 function calculateAge(day, month, year) {
@@ -84,18 +93,6 @@ function calculateAge(day, month, year) {
   return { years, months, days };
 }
 ```
-
-1. **Form Validation with JavaScript**
-
-   - Understanding how to validate form inputs effectively, including checks for required fields, range validation, and logical validations (e.g., verifying if a date is valid).
-   - Providing meaningful feedback to users for errors, improving overall user experience.
-
-2. **Date and Time Calculations**
-
-   - Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
-   - Accounting for edge cases like leap years and months with varying days.
-
-   #### Code Snippets
 
 3. **Date Validation in JavaScript:**
 
