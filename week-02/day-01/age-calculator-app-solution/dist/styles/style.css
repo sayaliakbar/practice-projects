@@ -612,8 +612,36 @@ video {
   margin: 0px;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-16 {
@@ -705,6 +733,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .rounded-lg {
@@ -873,6 +905,27 @@ video {
   line-height: 1;
 }
 
+.text-\[4px\] {
+  font-size: 4px;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
+}
+
+.text-\[6px\] {
+  font-size: 6px;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -925,6 +978,11 @@ video {
 .text-primary-purple {
   --tw-text-opacity: 1;
   color: hsl(259 100% 65% / var(--tw-text-opacity, 1));
+}
+
+.text-primary-lightRed {
+  --tw-text-opacity: 1;
+  color: hsl(0 100% 67% / var(--tw-text-opacity, 1));
 }
 
 .\[appearance\:textfield\] {
@@ -986,6 +1044,43 @@ video {
   .md\:w-4\/6 {
     width: 66.666667%;
   }
+
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .md\:text-\[10px\] {
+    font-size: 10px;
+  }
+
+  .md\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .md\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -995,6 +1090,14 @@ video {
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .lg\:w-7\/12 {
+    width: 58.333333%;
   }
 
   .lg\:flex-row {
@@ -1007,6 +1110,10 @@ video {
 
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:gap-8 {
+    gap: 2rem;
   }
 
   .lg\:p-6 {
@@ -1032,6 +1139,15 @@ video {
   .lg\:pr-32 {
     padding-right: 8rem;
   }
+
+  .lg\:pr-20 {
+    padding-right: 5rem;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1053,6 +1169,18 @@ video {
 
   .xl\:w-4\/12 {
     width: 33.333333%;
+  }
+
+  .xl\:w-8\/12 {
+    width: 66.666667%;
+  }
+
+  .xl\:w-6\/12 {
+    width: 50%;
+  }
+
+  .xl\:w-5\/12 {
+    width: 41.666667%;
   }
 }
 

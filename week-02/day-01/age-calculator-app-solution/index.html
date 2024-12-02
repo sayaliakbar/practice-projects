@@ -23,20 +23,20 @@
   >
     <!-- Container card begins here -->
     <div
-      class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%] sm:w-4/6 md:w-4/6 lg:w-1/2 lg:gap-6 xl:w-4/12"
+      class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%] sm:w-4/6 md:w-4/6 lg:w-7/12 xl:w-5/12 lg:gap-6"
     >
       <!-- Input part begins here -->
 
-      <form action="" class="w-full flex flex-col gap-6">
-        <div class="flex gap-4 justify-start lg:pr-32">
-          <div>
+      <form action="/" class="w-full flex flex-col gap-8 md:gap-10">
+        <div class="flex gap-4 justify-start lg:pr-32 w-full">
+          <div class="w-full relative">
             <label
               for="day"
               class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
               >DAY</label
             >
             <input
-              class="border border-solid w-full p-3 rounded-lg font-800 text-xl hover:border-primary-purple [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              class="border border-solid w-full p-3 rounded-lg font-800 text-x hover:border-primary-purple [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
               name="day"
               id="day"
@@ -44,15 +44,20 @@
               min="1"
               max="31"
             />
+            <span
+              id="errorText"
+              class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute block mt-1 hidden"
+              >This field is required</span
+            >
           </div>
-          <div>
+          <div class="w-full relative">
             <label
               for="month"
               class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
               >MONTH</label
             >
             <input
-              class="border border-solid w-full p-3 rounded-lg font-800 text-xl hover:border-primary-purple [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              class="border border-solid w-full p-3 rounded-lg font-800 text-x hover:border-primary-purple [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
               name="month"
               id="month"
@@ -60,8 +65,13 @@
               min="1"
               max="12"
             />
+            <span
+              id="errorText"
+              class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute block mt-1 hidden"
+              >This field is required</span
+            >
           </div>
-          <div>
+          <div class="w-full relative">
             <label
               for="year"
               class="text-neutral-smokeyGrey text-sm font-bold tracking-widest"
@@ -75,7 +85,11 @@
               placeholder="YYYY"
               min="1"
               max="9999"
-            />
+            /><span
+              id="errorText"
+              class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute block mt-1 hidden"
+              >This field is required</span
+            >
           </div>
         </div>
         <div
@@ -97,7 +111,7 @@
       </form>
 
       <!-- Output part begins here -->
-      <div class="text-body font-800 italic text-5xl">
+      <div class="font-800 italic text-5xl md:text-7xl">
         <h1><span class="text-primary-purple">--</span> years</h1>
         <h1><span class="text-primary-purple">--</span> months</h1>
         <h1><span class="text-primary-purple">--</span> days</h1>
