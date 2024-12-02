@@ -93,11 +93,6 @@ function displayAge({ years, months, days }) {
   const monthsOutput = document.getElementById("outputMonths");
   const daysOutput = document.getElementById("outputDays");
 
-  // Add an animation effect
-  yearsOutput.classList.add("animate-pulse");
-  monthsOutput.classList.add("animate-pulse");
-  daysOutput.classList.add("animate-pulse");
-
   // Function to generate random numbers
   function generateRandomNumbers() {
     yearsOutput.innerHTML = Math.floor(Math.random() * 100); // Random years
@@ -114,11 +109,6 @@ function displayAge({ years, months, days }) {
     yearsOutput.innerHTML = years;
     monthsOutput.innerHTML = months;
     daysOutput.innerHTML = days;
-
-    // Remove the animation class
-    yearsOutput.classList.remove("animate-pulse");
-    monthsOutput.classList.remove("animate-pulse");
-    daysOutput.classList.remove("animate-pulse");
   }, 1000);
 }
 
