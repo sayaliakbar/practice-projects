@@ -89,9 +89,37 @@ function validateFields() {
 
 // Displays the calculated age
 function displayAge({ years, months, days }) {
-  document.getElementById("outputYears").innerHTML = `${years}`;
-  document.getElementById("outputMonths").innerHTML = `${months}`;
-  document.getElementById("outputDays").innerHTML = `${days}`;
+  const yearsOutput = document.getElementById("outputYears");
+  const monthsOutput = document.getElementById("outputMonths");
+  const daysOutput = document.getElementById("outputDays");
+
+  // Add an animation effect
+  yearsOutput.classList.add("animate-pulse");
+  monthsOutput.classList.add("animate-pulse");
+  daysOutput.classList.add("animate-pulse");
+
+  // Function to generate random numbers
+  function generateRandomNumbers() {
+    yearsOutput.innerHTML = Math.floor(Math.random() * 100); // Random years
+    monthsOutput.innerHTML = Math.floor(Math.random() * 12) + 1; // Random months
+    daysOutput.innerHTML = Math.floor(Math.random() * 31) + 1; // Random days
+  }
+
+  // Start mixing numbers for 2 seconds
+  const interval = setInterval(generateRandomNumbers, 100);
+
+  // Stop animation after 2 seconds and show actual output
+  setTimeout(() => {
+    clearInterval(interval); // Stop random number generation
+    yearsOutput.innerHTML = years;
+    monthsOutput.innerHTML = months;
+    daysOutput.innerHTML = days;
+
+    // Remove the animation class
+    yearsOutput.classList.remove("animate-pulse");
+    monthsOutput.classList.remove("animate-pulse");
+    daysOutput.classList.remove("animate-pulse");
+  }, 1000);
 }
 
 // Shows an error message for an invalid field
