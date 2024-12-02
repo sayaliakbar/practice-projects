@@ -554,7 +554,28 @@ video {
   display: none;
 }
 
-.bg-black {
+.m-0 {
+  margin: 0px;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-primary-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  background-color: hsl(1 90% 64% / var(--tw-bg-opacity, 1));
+}
+
+.bg-neutral-very-light-blue {
+  --tw-bg-opacity: 1;
+  background-color: hsl(210 60% 98% / var(--tw-bg-opacity, 1));
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.font-plusJakartaSans {
+  font-family: Plus Jakarta Sans, sans-serif;
 }
