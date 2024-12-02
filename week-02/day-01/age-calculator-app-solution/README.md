@@ -1,7 +1,3 @@
-Here's a refined and polished version of your README file for the Age Calculator App:
-
----
-
 # Frontend Mentor - Age Calculator App Solution
 
 This is my solution to the [Age Calculator App Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges provide an excellent opportunity to improve coding skills by working on realistic projects.
@@ -37,18 +33,19 @@ Users should be able to:
   - The entered date is invalid (e.g., 31/04/1991, as April has 30 days).
 - Experience an optimal layout depending on their device's screen size.
 - Interact with hover and focus states for all interactive elements.
-- **Bonus Feature**: See the age numbers animate to their final values when the form is submitted.
 
-### Screenshot
+#### Desktop View:
 
-![Age Calculator App Screenshot](./screenshot.jpg)
+![Desktop View](https://github.com/user-attachments/assets/ad561dae-a39d-4440-9354-19c5093803a3)
 
-> **Tip:** To take a screenshot, use browser tools like Firefox's "Take Screenshot" feature or extensions like [FireShot](https://getfireshot.com/).
+#### Mobile View:
+
+![Mobile View](https://github.com/user-attachments/assets/d2431e00-0f37-47c4-b7d3-2329b6348a51)
 
 ### Links
 
-- [Solution URL](#) <!-- Replace with your Frontend Mentor solution link -->
-- [Live Demo](#) <!-- Replace with the live site link -->
+- [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-02/day-01/age-calculator-app-solution/index.html)
+- [Live Demo](http://safe-able.surge.sh/)
 
 ---
 
@@ -108,6 +105,65 @@ function calculateAge(day, month, year) {
 }
 ```
 
+Here's an expanded version of the **What I Learned** section:
+
+---
+
+### What I Learned
+
+This project offered several learning opportunities:
+
+1. **Form Validation with JavaScript**
+
+   - Understanding how to validate form inputs effectively, including checks for required fields, range validation, and logical validations (e.g., verifying if a date is valid).
+   - Providing meaningful feedback to users for errors, improving overall user experience.
+
+2. **Date and Time Calculations**
+
+   - Using the JavaScript `Date` object to handle dates and perform calculations for age in years, months, and days.
+   - Accounting for edge cases like leap years and months with varying days.
+
+3. **DOM Manipulation**
+
+   - Dynamically adding and removing CSS classes to provide visual cues for errors or valid input states.
+   - Displaying real-time updates for calculated values directly in the UI.
+
+4. **Responsive Design Principles**
+
+   - Applying a mobile-first design approach to ensure the app looks great on devices of all sizes.
+   - Utilizing CSS properties and media queries to adjust layouts and styling for optimal usability.
+
+5. **Error Handling and UX Enhancement**
+
+   - Highlighting input fields with issues using error messages and color cues, making the validation process intuitive for users.
+   - Handling edge cases such as future dates and invalid combinations like `31/04/2022`.
+
+6. **Animation Techniques** (Bonus Feature)
+
+   - Animating numeric values to smoothly transition to the final calculated age for a better user experience.
+   - Understanding the use of JavaScript and CSS animations to create visually appealing interactions.
+
+7. **Utility-First Styling with Tailwind CSS**
+
+   - Leveraging Tailwind's utility classes to speed up styling, ensuring a consistent design across the app.
+   - Customizing Tailwind configurations for brand-specific colors and typography.
+
+8. **Accessibility Considerations**
+
+   - Learning how to enhance accessibility by labeling form elements properly and considering keyboard navigation.
+   - Using semantic HTML to ensure compatibility with screen readers.
+
+9. **Problem-Solving and Debugging**
+
+   - Troubleshooting issues like incorrect age calculations or validation logic errors.
+   - Learning how to debug using browser developer tools.
+
+10. **Improved Project Structuring**
+    - Organizing code into reusable functions for better readability and maintainability.
+    - Separating concerns like validation, UI updates, and calculations for scalability.
+
+These insights not only strengthened my JavaScript skills but also improved my ability to create user-friendly and accessible web applications.
+
 ### Continued Development
 
 Future improvements include:
@@ -126,17 +182,11 @@ Future improvements include:
 
 ## Author
 
-- **Name:** [Your Name] <!-- Add your name -->
-- **Frontend Mentor Profile:** [@yourusername](https://www.frontendmentor.io/profile/yourusername) <!-- Add your username -->
-- **Portfolio:** [yourwebsite.com](https://yourwebsite.com) <!-- Add your portfolio link -->
-- **Twitter:** [@yourusername](https://twitter.com/yourusername) <!-- Add your Twitter handle -->
+- GitHub - [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn - [@sayaliakbar](https://linkedin.com/in/sayaliakbar)
 
 ---
 
 ## Acknowledgments
 
 Thanks to Frontend Mentor for this engaging challenge and the supportive developer community for their resources and guidance.
-
----
-
-Feel free to personalize the placeholders and adapt the text as needed!
