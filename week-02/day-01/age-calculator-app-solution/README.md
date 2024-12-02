@@ -122,27 +122,22 @@ function isValidDate(day, month, year) {
    - Highlighting input fields with issues using error messages and color cues, making the validation process intuitive for users.
    - Handling edge cases such as future dates and invalid combinations like `31/04/2022`.
 
-7. **Animation Techniques** (Bonus Feature)
-
-   - Animating numeric values to smoothly transition to the final calculated age for a better user experience.
-   - Understanding the use of JavaScript and CSS animations to create visually appealing interactions.
-
-8. **Utility-First Styling with Tailwind CSS**
+7. **Utility-First Styling with Tailwind CSS**
 
    - Leveraging Tailwind's utility classes to speed up styling, ensuring a consistent design across the app.
    - Customizing Tailwind configurations for brand-specific colors and typography.
 
-9. **Accessibility Considerations**
+8. **Accessibility Considerations**
 
    - Learning how to enhance accessibility by labeling form elements properly and considering keyboard navigation.
    - Using semantic HTML to ensure compatibility with screen readers.
 
-10. **Problem-Solving and Debugging**
+9. **Problem-Solving and Debugging**
 
 - Troubleshooting issues like incorrect age calculations or validation logic errors.
 - Learning how to debug using browser developer tools.
 
-11. **Improved Project Structuring**
+10. **Improved Project Structuring**
     - Organizing code into reusable functions for better readability and maintainability.
     - Separating concerns like validation, UI updates, and calculations for scalability.
 
