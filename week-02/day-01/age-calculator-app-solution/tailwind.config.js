@@ -3,6 +3,9 @@ module.exports = {
   content: ["./*.html"],
   theme: {
     extend: {
+      animation: {
+        "spin-number": "spin 1s linear infinite",
+      },
       colors: {
         primary: {
           purple: "hsl(259, 100%, 65%)",
@@ -29,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

@@ -3,37 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A simple age calculator to determine age in years, months, and days."
-    />
     <title>Age Calculator</title>
-    <!-- Link to the stylesheet -->
     <link rel="stylesheet" href="./dist/styles/style.css" />
-    <!-- Favicon -->
-    <link rel="icon" sizes="32x32" href="./dist/assets/favicon-32x32.png" />
-    <!-- Preconnecting to Google Fonts for performance optimization -->
+    <link
+      rel="icon"
+      sizes="32x32"
+      type="png"
+      href="./dist/assets/favicon-32x32.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Font selection -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- Deferring the script to improve page load -->
-    <script src="./dist/script.js" defer></script>
+    <script src="./dist/script.js"></script>
   </head>
   <body
     class="flex justify-center flex-col items-center font-poppins m-0 p-0 min-w-screen min-h-screen bg-neutral-offWhite"
   >
-    <!-- Main container for the card -->
+    <!-- Container card begins here -->
     <div
       class="container w-[90%] bg-neutral-white flex flex-col gap-12 py-10 px-6 rounded-3xl rounded-br-[30%] sm:w-4/6 md:w-4/6 lg:w-7/12 xl:w-5/12 lg:gap-6"
     >
-      <!-- Input section -->
+      <!-- Input part begins here -->
+
       <form action="/" class="w-full flex flex-col gap-8 md:gap-10">
-        <div class="flex gap-4 justify-start lg:pr-32 w-full">
-          <!-- Day input -->
+        <div class="flex gap-4 justify-start lg:pr-28 w-full">
           <div class="w-full relative">
             <label
               id="labelDay"
@@ -50,13 +46,11 @@
               min="1"
               max="31"
             />
-            <!-- Error message for day input -->
             <span
               id="errorDay"
               class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute mt-1 hidden"
             ></span>
           </div>
-          <!-- Month input -->
           <div class="w-full relative">
             <label
               id="labelMonth"
@@ -73,13 +67,11 @@
               min="1"
               max="12"
             />
-            <!-- Error message for month input -->
             <span
               id="errorMonth"
-              class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute mt-1 hidden"
+              class="text-primary-lightRed italic text-[8px] md:text-xs w-full mt-1 hidden"
             ></span>
           </div>
-          <!-- Year input -->
           <div class="w-full relative">
             <label
               id="labelYear"
@@ -95,15 +87,13 @@
               placeholder="YYYY"
               min="1"
               max="9999"
-            />
-            <!-- Error message for year input -->
-            <span
+            /><span
               id="errorYear"
               class="text-primary-lightRed italic text-[8px] md:text-xs w-full absolute mt-1 hidden"
-            ></span>
+              >hi</span
+            >
           </div>
         </div>
-        <!-- Submit button -->
         <div
           class="w-full flex flex-col items-center relative h-16 justify-center lg:items-end"
         >
@@ -123,7 +113,7 @@
         </div>
       </form>
 
-      <!-- Output section -->
+      <!-- Output part begins here -->
       <div class="font-800 italic text-5xl md:text-7xl">
         <h1>
           <span id="outputYears" class="text-primary-purple">--</span> years
