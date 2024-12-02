@@ -45,7 +45,7 @@ Users should be able to:
 ### Links
 
 - [View Solution](https://github.com/sayakbarali/netixsol-internship/blob/main/week-02/day-01/age-calculator-app-solution/index.html)
-- [Live Demo](http://safe-able.surge.sh/)
+- [Live Demo](https://overt-rabbits.surge.sh/)
 
 ---
 
@@ -138,8 +138,34 @@ function isValidDate(day, month, year) {
    - Learning how to debug using browser developer tools.
 
 10. **Improved Project Structuring**
+
     - Organizing code into reusable functions for better readability and maintainability.
     - Separating concerns like validation, UI updates, and calculations for scalability.
+
+11. **Animating Age Numbers on Form Submission**
+
+In this bonus feature, I learned how to implement an engaging animation effect where the age numbers mix randomly before revealing their final values upon form submission. Using JavaScript and TailwindCSS, the animation leverages `setInterval` to display random numbers in the output fields every 100ms, simulating a mixing effect. After 1 seconds, `clearInterval` stops the animation, and the real calculated values are displayed. This approach enhances user experience by introducing dynamic interactivity. Here's a key code snippet:
+
+```javascript
+function displayAge({ years, months, days }) {
+  const yearsOutput = document.getElementById("outputYears");
+  const monthsOutput = document.getElementById("outputMonths");
+  const daysOutput = document.getElementById("outputDays");
+
+  const interval = setInterval(() => {
+    yearsOutput.innerHTML = Math.floor(Math.random() * 100);
+    monthsOutput.innerHTML = Math.floor(Math.random() * 12) + 1;
+    daysOutput.innerHTML = Math.floor(Math.random() * 31) + 1;
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    yearsOutput.innerHTML = years;
+    monthsOutput.innerHTML = months;
+    daysOutput.innerHTML = days;
+  }, 1000);
+}
+```
 
 These insights not only strengthened my JavaScript skills but also improved my ability to create user-friendly and accessible web applications.
 
