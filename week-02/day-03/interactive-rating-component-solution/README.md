@@ -33,10 +33,6 @@ The task was to build a fully functional rating component where users can:
 
 ![Desktop View](https://github.com/user-attachments/assets/107edf33-66c1-412c-b063-493b223ee0a5)
 
-#### **Mobile View:**
-
-![Mobile View](https://github.com/user-attachments/assets/116f1dbd-f6c6-4c5c-a3ce-2f11ac8dba69)
-
 #### **Desktop View (Active States):**
 
 ![Desktop View (Active States):](https://github.com/user-attachments/assets/77c27f45-96a3-4406-9259-54148bf1a402)
@@ -44,6 +40,10 @@ The task was to build a fully functional rating component where users can:
 #### **Desktop View (Thank You State):**
 
 ![Desktop View (Thank You State):](https://github.com/user-attachments/assets/658d8c24-cb11-4484-921c-55b1580cb2f5)
+
+#### **Mobile View:**
+
+![Mobile View](https://github.com/user-attachments/assets/116f1dbd-f6c6-4c5c-a3ce-2f11ac8dba69)
 
 ### **Live Demo**
 
