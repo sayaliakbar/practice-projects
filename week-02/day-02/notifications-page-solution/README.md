@@ -12,6 +12,7 @@ A clean, responsive notifications page that allows users to manage and view thei
 - [How It Works](#how-it-works)
 - [Setup and Usage](#setup-and-usage)
 - [Learnings and Insights](#learnings-and-insights)
+- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ---
@@ -96,6 +97,13 @@ Key functions:
 - Gained hands-on experience with **Tailwind CSS** for rapid UI development.
 - Improved understanding of **DOM manipulation** and JavaScript event handling.
 - Practiced responsive design principles to ensure cross-device compatibility.
+
+---
+
+## Author
+
+- GitHub - [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn - [@sayaliakbar](https://linkedin.com/in/sayaliakbar)
 
 ---
 
