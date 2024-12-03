@@ -983,4 +983,40 @@ video {
   .md\:w-1\/2 {
     width: 50%;
   }
+
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+
+  .lg\:w-7\/12 {
+    width: 58.333333%;
+  }
+
+  .lg\:w-6\/12 {
+    width: 50%;
+  }
+
+  .lg\:w-\[60\%\] {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-\[50\%\] {
+    width: 50%;
+  }
+
+  .xl\:w-\[40\%\] {
+    width: 40%;
+  }
+
+  .xl\:w-\[45\%\] {
+    width: 45%;
+  }
 }
