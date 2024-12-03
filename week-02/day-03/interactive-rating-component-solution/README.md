@@ -123,6 +123,13 @@ _Alternatively, you can serve the project using a local development server like 
 
 ---
 
+## Author
+
+- GitHub - [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn - [@sayaliakbar](https://linkedin.com/in/sayaliakbar)
+
+---
+
 ## **Acknowledgments**
 
 This project was inspired by Frontend Mentor's challenges, which provide a fantastic way to learn and improve coding skills. Special thanks to the Frontend Mentor community for their support and feedback.
