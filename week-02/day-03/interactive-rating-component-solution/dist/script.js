@@ -1,57 +1,60 @@
 // Select all elements with the class "rating"
-let ratings = document.querySelectorAll(".rating");
+const ratings = document.querySelectorAll(".rating");
 
 // Attach a click event listener to each rating button
-for (const rating of ratings) {
+ratings.forEach((rating) => {
   rating.addEventListener("click", select);
-}
+});
 
-// Variables to track whether a rating is selected and the currently selected rating
-let selected = true; // Indicates if a rating has been chosen for the first time
-let grip; // Stores the currently selected rating button
+// Variables to track the selected rating and whether it’s the first selection
+let isFirstSelection = true;
+let selectedRating;
 
 /**
- * Handles the "Submit" button click event
- * @param {Event} event - The event object
+ * Handles the "Submit" button click event.
+ * @param {Event} event - The event object.
  */
 function handleSubmit(event) {
-  // Check if a rating has been selected
-  if (!grip) {
-    // Display an error message if no rating is selected
-    let error = document.getElementById("error");
-    error.classList.remove("hidden"); // Make the error message visible
-    error.classList.add("flex"); // Use flexbox layout for the error message
-  } else {
-    // Hide the rating page and display the thank-you page
-    let rateDisp = document.getElementById("ratingPage");
-    let thankDisp = document.getElementById("thankYouPage");
-    rateDisp.classList.add("hidden"); // Hide the rating page
-    thankDisp.classList.add("flex"); // Show the thank-you page with flexbox layout
-    thankDisp.classList.remove("hidden"); // Ensure thank-you page is visible
+  const error = document.getElementById("error");
 
-    // Update the thank-you page with the selected rating
-    let ratingText = document.getElementById("ratingText");
-    ratingText.innerHTML = `You selected ${grip.innerHTML} out of 5`;
+  if (!selectedRating) {
+    // Display error if no rating is selected
+    error.classList.remove("hidden");
+    error.classList.add("flex");
+  } else {
+    // Hide the error message if previously visible
+    error.classList.add("hidden");
+
+    // Show thank-you page and hide rating page
+    document.getElementById("ratingPage").classList.add("hidden");
+    const thankYouPage = document.getElementById("thankYouPage");
+    thankYouPage.classList.add("flex");
+    thankYouPage.classList.remove("hidden");
+
+    // Update thank-you page with selected rating
+    document.getElementById(
+      "ratingText"
+    ).textContent = `You selected ${selectedRating.textContent} out of 5`;
+
+    // Move focus to the thank-you message for better accessibility
+    thankYouPage.focus();
   }
 }
 
 /**
- * Handles the selection of a rating button
- * @param {Event} event - The event object
+ * Handles the selection of a rating button.
+ * @param {Event} event - The event object.
  */
 function select(event) {
-  if (!selected) {
-    // If a rating was previously selected, reset its styles
-    grip.classList.remove("bg-white");
-    grip.classList.remove("text-black");
+  if (!isFirstSelection) {
+    // Reset styles for previously selected rating
+    selectedRating.classList.remove("bg-white", "text-black");
   }
 
-  // Update the currently selected rating
-  grip = document.getElementById(event.target.id);
-  // Apply styles to indicate the selected rating
-  grip.classList.add("bg-white");
-  grip.classList.add("text-black");
+  // Update selected rating and apply styles
+  selectedRating = event.currentTarget;
+  selectedRating.classList.add("bg-white", "text-black");
 
-  // Mark that a rating has been selected
-  selected = false;
+  // Mark as no longer the first selection
+  isFirstSelection = false;
 }
