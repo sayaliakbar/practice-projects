@@ -28,12 +28,15 @@
       <header class="w-full flex justify-between items-center">
         <div class="flex font-800 gap-2 items-center">
           <h1 class="text-xl">Notifications</h1>
-          <span class="text-neutral-white bg-primary-blue rounded-md px-2"
+          <span
+            id="notificationNumber"
+            class="text-neutral-white bg-primary-blue rounded-md px-2"
             >3</span
           >
         </div>
         <div>
           <a
+            onclick="handleSubmit(event)"
             href=""
             class="text-neutral-gray-blue hover:text-primary-blue text-sm"
             >Mark all as read</a
@@ -42,7 +45,7 @@
       </header>
       <main class="flex flex-col gap-2 w-full text-sm">
         <div
-          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
+          class="profiles bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
         >
           <img
             class="w-10 h-10"
@@ -61,13 +64,13 @@
             >
 
             <div
-              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+              class="notificationIcon p-1 ml-1 inline-block bg-primary-red rounded-full"
             ></div>
             <div class="text-neutral-gray-blue">1m ago</div>
           </div>
         </div>
         <div
-          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
+          class="profiles bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
         >
           <img
             class="w-10 h-10"
@@ -80,13 +83,13 @@
             >
             followed you
             <div
-              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+              class="notificationIcon p-1 ml-1 inline-block bg-primary-red rounded-full"
             ></div>
             <div class="text-neutral-gray-blue">5m ago</div>
           </div>
         </div>
         <div
-          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
+          class="profiles bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
         >
           <img
             class="w-10 h-10"
@@ -106,7 +109,7 @@
               >Chess Club</a
             >
             <div
-              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+              class="notificationIcon p-1 ml-1 inline-block bg-primary-red rounded-full"
             ></div>
             <div class="text-neutral-gray-blue">1 day ago</div>
           </div>
