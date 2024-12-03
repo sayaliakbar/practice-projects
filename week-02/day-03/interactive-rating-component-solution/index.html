@@ -23,52 +23,78 @@
     class="m-0 p-0 min-h-screen min-w-screen font-overpass text-base bg-neutral-very-dark-blue text-white flex justify-center items-center"
   >
     <div
-      class="container bg-neutral-dark-blue w-11/12 rounded-xl p-6 flex flex-col gap-6 sm:w-[45%] lg:w-[37%] xl:w-[28%]"
+      class="container bg-neutral-dark-blue w-11/12 rounded-xl p-6 sm:w-[45%] lg:w-[37%] xl:w-[28%]"
     >
-      <div class="p-3 rounded-full bg-neutral-light-grey/15 w-fit">
-        <img src="./dist/assets/icon-star.svg" alt="" />
-      </div>
+      <div id="ratingPage" class="flex flex-col gap-6">
+        <div class="p-3 rounded-full bg-neutral-light-grey/15 w-fit">
+          <img src="./dist/assets/icon-star.svg" alt="" />
+        </div>
 
-      <h1 class="font-700 text-[26px]">How did we do?</h1>
-      <p class="text-neutral-light-grey">
-        Please let us know how we did with your support request. All feedback is
-        appreciated to help us improve our offering!
-      </p>
-      <div
-        class="flex justify-between items-center w-full text-center font-400 text-neutral-light-grey"
-      >
+        <h1 class="font-700 text-[26px]">How did we do?</h1>
+        <p class="text-neutral-light-grey">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
         <div
-          class="p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          class="flex justify-between items-center w-full text-center font-400 text-neutral-light-grey"
         >
-          1
+          <button
+            id="one"
+            class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          >
+            1
+          </button>
+          <button
+            id="two"
+            class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          >
+            2
+          </button>
+          <button
+            id="three"
+            class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          >
+            3
+          </button>
+          <button
+            id="four"
+            class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          >
+            4
+          </button>
+          <button
+            id="five"
+            class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          >
+            5
+          </button>
         </div>
         <div
-          class="p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+          id="error"
+          class="text-primary-orange justify-center relative hidden mb-3"
         >
-          2
+          <p class="absolute">Select a rating first!</p>
         </div>
-        <div
-          class="p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
+        <button
+          type="submit"
+          onclick="handleSubmit(event)"
+          class="w-full bg-primary-orange p-3 rounded-full text-black font-700 hover:bg-white"
         >
-          3
-        </div>
-        <div
-          class="p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
-        >
-          4
-        </div>
-        <div
-          class="p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
-        >
-          5
-        </div>
+          SUBMIT
+        </button>
       </div>
-      <button
-        type="submit"
-        class="w-full bg-primary-orange p-3 rounded-full text-black font-700 hover:bg-white"
-      >
-        SUBMIT
-      </button>
+      <div id="thankYouPage" class="flex-col items-center gap-6 hidden">
+        <img src="./dist/assets/illustration-thank-you.svg" alt="" />
+        <p
+          id="ratingText"
+          class="bg-neutral-light-grey/15 p-2 rounded-full text-primary-orange"
+        ></p>
+        <h1 class="font-700 text-[26px]">Thank you!</h1>
+        <p class="text-center text-neutral-light-grey">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
     </div>
   </body>
 </html>
