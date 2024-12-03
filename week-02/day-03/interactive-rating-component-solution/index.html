@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Set character encoding to UTF-8 -->
     <meta charset="UTF-8" />
+    <!-- Ensure proper scaling and responsiveness for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Rating</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="./dist/styles/style.css" />
+    <!-- Link to external JavaScript file (deferred to ensure DOM loads first) -->
     <script src="./dist/script.js" defer></script>
+    <!-- Favicon for the browser tab -->
     <link
       rel="icon"
       href="./dist/assets/favicon-32x32.png"
       type="png"
       sizes="32x32"
     />
+    <!-- Preconnect to improve font loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Import Google Fonts (Overpass family) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -22,59 +29,76 @@
   <body
     class="m-0 p-0 min-h-screen min-w-screen font-overpass text-base bg-neutral-very-dark-blue text-white flex justify-center items-center"
   >
+    <!-- Main container for the interactive rating application -->
     <div
-      class="container bg-neutral-dark-blue w-11/12 rounded-xl p-6 sm:w-[45%] lg:w-[37%] xl:w-[28%]"
+      class="container bg-neutral-dark-blue w-11/12 rounded-3xl p-6 sm:w-[45%] lg:w-[37%] xl:w-[28%]"
     >
+      <!-- Rating page section -->
       <div id="ratingPage" class="flex flex-col gap-6">
+        <!-- Star icon for visual emphasis -->
         <div class="p-3 rounded-full bg-neutral-light-grey/15 w-fit">
           <img src="./dist/assets/icon-star.svg" alt="" />
         </div>
 
+        <!-- Heading for the rating page -->
         <h1 class="font-700 text-[26px]">How did we do?</h1>
+        <!-- Description providing context for the feedback -->
         <p class="text-neutral-light-grey">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
+
+        <!-- Rating options (1 to 5) -->
         <div
           class="flex justify-between items-center w-full text-center font-400 text-neutral-light-grey"
         >
+          <!-- Each button represents a rating, styled for interaction -->
           <button
+            type="button"
             id="one"
             class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
           >
             1
           </button>
           <button
+            type="button"
             id="two"
             class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
           >
             2
           </button>
           <button
+            type="button"
             id="three"
             class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
           >
             3
           </button>
           <button
+            type="button"
             id="four"
             class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
           >
             4
           </button>
           <button
+            type="button"
             id="five"
             class="rating p-4 rounded-full bg-neutral-light-grey/15 h-12 w-12 hover:bg-primary-orange hover:text-neutral-dark-blue"
           >
             5
           </button>
         </div>
+
+        <!-- Error message displayed when no rating is selected -->
         <div
           id="error"
           class="text-primary-orange justify-center relative hidden mb-3"
         >
           <p class="absolute">Select a rating first!</p>
         </div>
+
+        <!-- Submit button to finalize the rating -->
         <button
           type="submit"
           onclick="handleSubmit(event)"
@@ -83,13 +107,19 @@
           SUBMIT
         </button>
       </div>
+
+      <!-- Thank You page section (hidden by default) -->
       <div id="thankYouPage" class="flex-col items-center gap-6 hidden">
+        <!-- Illustration displayed on the thank-you page -->
         <img src="./dist/assets/illustration-thank-you.svg" alt="" />
+        <!-- Display selected rating dynamically -->
         <p
           id="ratingText"
           class="bg-neutral-light-grey/15 p-2 rounded-full text-primary-orange"
         ></p>
+        <!-- Thank-you message -->
         <h1 class="font-700 text-[26px]">Thank you!</h1>
+        <!-- Additional appreciation text -->
         <p class="text-center text-neutral-light-grey">
           We appreciate you taking the time to give a rating. If you ever need
           more support, don't hesitate to get in touch!
