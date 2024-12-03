@@ -12,6 +12,67 @@
       sizes="32x32"
       type="png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="m-0 p-0 min-h-screen min-w-screen"></body>
+  <body
+    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan"
+  >
+    <!-- title begins here -->
+    <div class="w-full h-1/6">
+      <p>SPLI</p>
+      <p>TTER</p>
+    </div>
+    <!-- main container begins here -->
+    <div class="container">
+      <!-- bill input begins here -->
+      <div>
+        <label for="bill">Bill</label>
+        <input type="number" name="bill" id="bill" />
+      </div>
+      <!-- Select tip input begins here -->
+      <div>
+        <p>Select Tip %</p>
+        <div>
+          <div>5%</div>
+          <div>10%</div>
+          <div>15%</div>
+          <div>25%</div>
+          <div>50%</div>
+          <div>Custom</div>
+        </div>
+      </div>
+      <!-- Number of people input begins here -->
+      <div>
+        <label for="people">Number of People</label>
+        <input type="number" />
+      </div>
+      <!-- output container begins here -->
+      <div>
+        <!-- Tip Amount begins here -->
+        <div>
+          <div>
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <div>--</div>
+        </div>
+
+        <!-- Total Amount begins here -->
+        <div>
+          <div>
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <div>--</div>
+        </div>
+        <!-- Reset button -->
+        <button>RESET</button>
+      </div>
+    </div>
+  </body>
 </html>
