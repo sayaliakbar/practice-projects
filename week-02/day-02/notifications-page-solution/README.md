@@ -6,7 +6,7 @@ A clean, responsive notifications page that allows users to manage and view thei
 
 - [Overview](#overview)
   - [Features](#features)
-  - [Screenshots](#screenshots)
+  - [Desktop View](#desktop-view)
   - [Live Demo](#live-demo)
 - [Technology Stack](#technology-stack)
 - [How It Works](#how-it-works)
