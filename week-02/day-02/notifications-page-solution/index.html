@@ -19,83 +19,188 @@
     />
   </head>
   <body
-    class="m-0 p-0 font-plusJakartaSans min-w-screen min-h-screen bg-white flex flex-col px-3 py-4"
+    class="m-0 p-0 font-plusJakartaSans min-w-screen min-h-screen flex items-center justify-center bg-neutral-very-light-blue"
   >
-    <header class="w-full flex justify-between">
-      <div class="flex font-800 gap-2">
-        <h1 class="">Notifications</h1>
-        <span
-          class="text-neutral-white bg-neutral-very-dark-blue rounded-md px-2"
-          >3</span
+    <div class="container flex flex-col p-6 gap-4 bg-white md:w-1/2">
+      <header class="w-full flex justify-between items-center">
+        <div class="flex font-800 gap-2 items-center">
+          <h1 class="text-xl">Notifications</h1>
+          <span class="text-neutral-white bg-primary-blue rounded-md px-2"
+            >3</span
+          >
+        </div>
+        <div>
+          <a
+            href=""
+            class="text-neutral-gray-blue hover:text-primary-blue text-sm"
+            >Mark all as read</a
+          >
+        </div>
+      </header>
+      <main class="flex flex-col gap-2 w-full text-sm">
+        <div
+          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
         >
-      </div>
-      <div>
-        <a href="" class="font-500">Mark all as read</a>
-      </div>
-    </header>
-    <main class="flex flex-col gap-4 w-full">
-      <div class="bg-slate-600 flex gap-2">
-        <img src="./dist/assets/avatar-mark-webber.webp" alt="" />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-mark-webber.webp"
+            alt=""
+          />
+          <div class="w-full">
+            <a href=""
+              ><strong class="hover:text-primary-blue">Mark Webber</strong></a
+            >
+            reacted to your recent post
+            <a
+              href=""
+              class="font-800 text-neutral-dark-gray-blue hover:text-primary-blue"
+              >My first tournament today!</a
+            >
+
+            <div
+              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+            ></div>
+            <div class="text-neutral-gray-blue">1m ago</div>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        Angela Gray<img src="./dist/assets/avatar-mark-webber.webp" alt="" />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div
+          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
+        >
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-angela-gray.webp"
+            alt=""
+          />
+          <div class="w-full">
+            <a href=""
+              ><strong class="hover:text-primary-blue">Angela Gray</strong></a
+            >
+            followed you
+            <div
+              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+            ></div>
+            <div class="text-neutral-gray-blue">5m ago</div>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        Jacob Thompson<img src="./dist/assets/avatar-mark-webber.webp" alt="" />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div
+          class="bg-neutral-light-blue-1 flex gap-2 p-4 items-start rounded-lg"
+        >
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-jacob-thompson.webp"
+            alt=""
+          />
+          <div>
+            <a href=""
+              ><strong class="hover:text-primary-blue"
+                >Jacob Thompson</strong
+              ></a
+            >
+            has joined your group
+            <a
+              href=""
+              class="font-800 text-neutral-dark-gray-blue hover:text-primary-blue"
+              >Chess Club</a
+            >
+            <div
+              class="p-1 ml-1 inline-block bg-primary-red rounded-full"
+            ></div>
+            <div class="text-neutral-gray-blue">1 day ago</div>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        RizkyHasanuddin<img
-          src="./dist/assets/avatar-mark-webber.webp"
-          alt=""
-        />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div class="flex gap-2 p-4 items-start rounded-lg">
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-rizky-hasanuddin.webp"
+            alt=""
+          />
+          <div>
+            <div>
+              <a href=""
+                ><strong class="hover:text-primary-blue"
+                  >Rizky Hasanuddin</strong
+                ></a
+              >
+              sent you a private message
+
+              <div class="text-neutral-gray-blue">5 days ago</div>
+            </div>
+            <a
+              href=""
+              class="border border-solid p-4 mt-2 rounded-lg hover:bg-neutral-light-blue-2 block"
+            >
+              Hello, thanks for setting up the Chess Club. I've been a member
+              for a few weeks now and I'm already having lots of fun and
+              improving my game.
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        Kimberly Smith<img src="./dist/assets/avatar-mark-webber.webp" alt="" />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div class="flex gap-2 p-4 items-start rounded-lg">
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-kimberly-smith.webp"
+            alt=""
+          />
+          <div class="flex justify-between w-full">
+            <div>
+              <a href=""
+                ><strong class="hover:text-primary-blue"
+                  >Kimberly Smith</strong
+                ></a
+              >
+              commented on your picture
+
+              <div class="text-neutral-gray-blue">1 week ago</div>
+            </div>
+            <a href=""
+              ><img
+                class="w-12 h-12 mx-2"
+                src="./dist/assets/image-chess.webp"
+                alt=""
+            /></a>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        Nathan Peterson<img
-          src="./dist/assets/avatar-mark-webber.webp"
-          alt=""
-        />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div class="flex gap-2 p-4 items-start rounded-lg">
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-nathan-peterson.webp"
+            alt=""
+          />
+          <div>
+            <a href="">
+              <strong class="hover:text-primary-blue"
+                >Nathan Peterson</strong
+              ></a
+            >
+            reacted to your recent post
+            <a
+              href=""
+              class="font-800 text-neutral-dark-gray-blue hover:text-primary-blue"
+              >5 end-game strategies to increase your win rate</a
+            >
+            <div class="text-neutral-gray-blue">2 weeks ago</div>
+          </div>
         </div>
-      </div>
-      <div class="bg-slate-600">
-        Anna Kim<img src="./dist/assets/avatar-mark-webber.webp" alt="" />
-        <div>
-          <strong>Mark Webber</strong> reacted to your recent post
-          <span class="font-500">My first tournamnet today!</span>
-          <div class="">1m ago</div>
+        <div class="flex gap-2 p-4 items-start rounded-lg">
+          <img
+            class="w-10 h-10"
+            src="./dist/assets/avatar-anna-kim.webp"
+            alt=""
+          />
+          <div>
+            <a href="">
+              <strong class="hover:text-primary-blue">Anna Kim</strong></a
+            >
+            left the group
+            <a
+              href=""
+              class="font-800 text-neutral-dark-gray-blue hover:text-primary-blue"
+              >Chess Club</a
+            >
+            <div class="text-neutral-gray-blue">2 weeks ago</div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
