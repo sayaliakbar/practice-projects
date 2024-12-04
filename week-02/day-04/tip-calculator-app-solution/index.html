@@ -20,70 +20,131 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center justify-between"
+    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center font-700 lg:justify-center"
   >
-    <!-- title begins here -->
-     
+    <!-- Title -->
     <div
-      class="w-full flex flex-col items-center p-10 font-700 text-3xl tracking-[.25em] text-neutral-very-dark-cyan" 
+      class="w-full justify-center flex flex-col items-center p-10 font-700 text-3xl tracking-[.25em] text-neutral-very-dark-cyan"
     >
       <p>SPLI</p>
       <p>TTER</p>
     </div>
-    <!-- main container begins here -->
-     <div class="container flex flex-col w-full flex-grow  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6">
-      <div>
-      <!-- bill input begins here -->
-      <div class="flex flex-col gap-1 text-lg"
-        <label class="" for="bill">Bill</label>
-        <div class="relative flex items-center">
-            <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="bill" id="bill" placeholder="0"/>
-            <img class="absolute left-3" src="./dist/assets/icon-dollar.svg" alt=""></div>
-        
-      </div>
-      <!-- Select tip input begins here -->
-      <div class="flex flex-col gap-2 text-lg">
-        <p>Select Tip %</p>
-        <div class="grid grid-cols-2 gap-3 w-full   text-center text-white ">
-          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">5%</button>
-          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">10%</button>
-          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">15%</button>
-          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">25%</button>
-          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">50%</button>
-          <input type="number" placeholder="Custom" class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-[4px] text-center appearance-none no-arrows border hover:border-primary-cyan">
-        </div>
-      </div>
-      <!-- Number of people input begins here -->
-      <div class="flex flex-col gap-1 text-lg"
-        <label  for="people">Number of People</label>
-        <div class="relative flex items-center">
-            <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="people" id="people" placeholder="0"/>
-            <img class="absolute left-3" src="./dist/assets/icon-person.svg" alt=""></div>
-        
-      </div>
-     </div>
-    
-      <!-- output container begins here -->
-      <div class="bg-neutral-very-dark-cyan text-white p-6 flex flex-col gap-6 rounded-xl">
-        <!-- Tip Amount begins here -->
-        <div class="flex justify-between mt-2">
-          <div>
-            <p>Tip Amount</p>
-            <p class="text-neutral-grayish-cyan">/ person</p>
+
+    <!-- Main container -->
+    <div
+      class="container flex flex-col flex-grow bg-white rounded-t-2xl sm:w-[60%] md:w-[55%] lg:w-[65%] xl:[40%] lg:flex-row lg:items-stretch lg:rounded-2xl lg:drop-shadow-lg h-fit lg:flex-grow-0"
+    >
+      <!-- Input container -->
+      <div
+        class="flex flex-col p-6 font-700 text-neutral-very-dark-cyan gap-6 lg:w-1/2 lg:flex-1"
+      >
+        <!-- Bill input -->
+        <div class="flex flex-col gap-1 text-lg">
+          <label for="bill">Bill</label>
+          <div class="relative flex items-center">
+            <input
+              class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan"
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="0"
+            />
+            <img
+              class="absolute left-3"
+              src="./dist/assets/icon-dollar.svg"
+              alt=""
+            />
           </div>
-          <div class="text-3xl text-primary-cyan">$0.00</div>
         </div>
 
-        <!-- Total Amount begins here -->
-        <div class="flex justify-between">
-          <div>
-            <p>Total</p>
-            <p class="text-neutral-grayish-cyan">/ person</p>
+        <!-- Select Tip input -->
+        <div class="flex flex-col gap-2 text-lg">
+          <p>Select Tip %</p>
+          <div
+            class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-full my-3 text-center text-white"
+          >
+            <button
+              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+            >
+              5%
+            </button>
+            <button
+              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+            >
+              10%
+            </button>
+            <button
+              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+            >
+              15%
+            </button>
+            <button
+              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+            >
+              25%
+            </button>
+            <button
+              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+            >
+              50%
+            </button>
+            <input
+              type="number"
+              placeholder="Custom"
+              class="bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-[4px] text-center appearance-none no-arrows border hover:border-primary-cyan"
+            />
           </div>
-          <div class="text-3xl text-primary-cyan">$0.00</div>
+        </div>
+
+        <!-- Number of People input -->
+        <div class="flex flex-col gap-1 text-lg">
+          <label for="people">Number of People</label>
+          <div class="relative flex items-center">
+            <input
+              class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan"
+              type="number"
+              name="people"
+              id="people"
+              placeholder="0"
+            />
+            <img
+              class="absolute left-3"
+              src="./dist/assets/icon-person.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Output container -->
+      <div
+        class="flex-grow bg-neutral-very-dark-cyan text-white p-6 m-6 flex flex-col gap-6 rounded-xl lg:flex-1 justify-between text-2xl"
+      >
+        <div class="flex flex-col justify-between">
+          <!-- Tip Amount -->
+          <div class="flex justify-between items-center">
+            <div>
+              <p>Tip Amount</p>
+              <p class="text-neutral-grayish-cyan">/ person</p>
+            </div>
+            <div class="text-3xl text-primary-cyan font-700">$0.00</div>
+          </div>
+
+          <!-- Total Amount -->
+          <div class="flex justify-between items-center">
+            <div>
+              <p>Total</p>
+              <p class="text-neutral-grayish-cyan">/ person</p>
+            </div>
+            <div class="text-3xl text-primary-cyan font-700">$0.00</div>
+          </div>
         </div>
         <!-- Reset button -->
-        <button class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">RESET</button>
+        <button
+          class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+        >
+          RESET
+        </button>
       </div>
     </div>
   </body>
