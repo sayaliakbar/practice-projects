@@ -635,12 +635,20 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
@@ -898,6 +906,11 @@ video {
 .text-neutral-dark-grayish-cyan {
   --tw-text-opacity: 1;
   color: hsl(186 14% 43% / var(--tw-text-opacity, 1));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
 .no-arrows::-webkit-inner-spin-button {

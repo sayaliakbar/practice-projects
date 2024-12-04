@@ -97,8 +97,11 @@
         </div>
 
         <!-- Number of People input -->
-        <div class="flex flex-col gap-1 text-lg">
+        <div class="flex flex-col gap-1 text-lg relative">
           <label for="people">Number of People</label>
+          <span class="absolute text-right w-full text-red-600 hidden"
+            >Can't be zero</span
+          >
           <div class="relative flex items-center">
             <input
               class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan"
@@ -120,6 +123,7 @@
       <div
         class="flex-grow bg-neutral-very-dark-cyan text-white p-6 m-6 flex flex-col gap-6 rounded-xl lg:flex-1 justify-between text-2xl"
       >
+        <!-- Calculated amounts -->
         <div class="flex flex-col justify-between">
           <!-- Tip Amount -->
           <div class="flex justify-between items-center">
@@ -141,6 +145,8 @@
         </div>
         <!-- Reset button -->
         <button
+          onclick="handleSubmit(event);"
+          type="submit"
           class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
         >
           RESET
