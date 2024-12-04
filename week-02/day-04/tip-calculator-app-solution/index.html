@@ -20,58 +20,68 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan flex flex-col items-center"
+    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center "
   >
     <!-- title begins here -->
-    <div class="w-full">
+    <div
+      class="w-full flex flex-col items-center p-10 font-700 text-xl tracking-[.25em] text-neutral-very-dark-cyan"
+    >
       <p>SPLI</p>
       <p>TTER</p>
     </div>
     <!-- main container begins here -->
-    <div class="container">
+    <div
+      class="container flex flex-col w-full  h-full  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6"
+    >
       <!-- bill input begins here -->
-      <div>
-        <label for="bill">Bill</label>
-        <input type="number" name="bill" id="bill" />
+      <div class="flex flex-col gap-1"
+        <label class="" for="bill">Bill</label>
+        <div class="relative">
+            <input class="w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg" type="number" name="bill" id="bill" placeholder="0"/>
+            <img class="absolute top-5 left-3" src="./dist/assets/icon-dollar.svg" alt=""></div>
+        
       </div>
       <!-- Select tip input begins here -->
-      <div>
+      <div class="flex flex-col gap-2">
         <p>Select Tip %</p>
-        <div>
-          <div>5%</div>
-          <div>10%</div>
-          <div>15%</div>
-          <div>25%</div>
-          <div>50%</div>
-          <div>Custom</div>
+        <div class="grid grid-cols-2 gap-3 w-full   text-center text-white ">
+          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">5%</div>
+          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">10%</div>
+          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">15%</div>
+          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">25%</div>
+          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">50%</div>
+          <div class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-sm">Custom</div>
         </div>
       </div>
       <!-- Number of people input begins here -->
-      <div>
-        <label for="people">Number of People</label>
-        <input type="number" />
+      <div class="flex flex-col gap-1"
+        <label class="" for="people">Number of People</label>
+        <div class="relative">
+            <input class="w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg" type="number" name="people" id="people" placeholder="0"/>
+            <img class="absolute top-5 left-3" src="./dist/assets/icon-person.svg" alt=""></div>
+        
       </div>
       <!-- output container begins here -->
-      <div>
+      <div class="bg-neutral-very-dark-cyan text-white p-6 flex flex-col gap-6 rounded-xl">
         <!-- Tip Amount begins here -->
-        <div>
+        <div class="flex justify-between mt-2">
           <div>
             <p>Tip Amount</p>
-            <p>/ person</p>
+            <p class="text-neutral-grayish-cyan">/ person</p>
           </div>
-          <div>--</div>
+          <div class="text-3xl text-primary-cyan">$0.00</div>
         </div>
 
         <!-- Total Amount begins here -->
-        <div>
+        <div class="flex justify-between">
           <div>
-            <p>Tip Amount</p>
-            <p>/ person</p>
+            <p>Total</p>
+            <p class="text-neutral-grayish-cyan">/ person</p>
           </div>
-          <div>--</div>
+          <div class="text-3xl text-primary-cyan">$0.00</div>
         </div>
         <!-- Reset button -->
-        <button>RESET</button>
+        <button class="w-full bg-primary-cyan p-3 rounded-lg text-neutral-very-dark-cyan tracking-wide font-700 text-base">RESET</button>
       </div>
     </div>
   </body>
