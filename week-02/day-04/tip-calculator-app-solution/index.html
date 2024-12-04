@@ -64,34 +64,40 @@
             class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-full my-3 text-center text-white"
           >
             <button
-              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+              id="tip5"
+              class="tip bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
             >
               5%
             </button>
             <button
-              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+              id="tip10"
+              class="tip bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
             >
               10%
             </button>
             <button
-              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+              id="tip15"
+              class="tip bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
             >
               15%
             </button>
             <button
-              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+              id="tip25"
+              class="tip bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
             >
               25%
             </button>
             <button
-              class="bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+              id="tip50"
+              class="tip bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
             >
               50%
             </button>
             <input
+              id="tip"
               type="number"
               placeholder="Custom"
-              class="bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-[4px] text-center appearance-none no-arrows border hover:border-primary-cyan"
+              class="tip bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-[4px] text-center appearance-none no-arrows border hover:border-primary-cyan"
             />
           </div>
         </div>
@@ -99,7 +105,9 @@
         <!-- Number of People input -->
         <div class="flex flex-col gap-1 text-lg relative">
           <label for="people">Number of People</label>
-          <span class="absolute text-right w-full text-red-600 hidden"
+          <span
+            id="error"
+            class="absolute text-right w-full text-red-600 hidden"
             >Can't be zero</span
           >
           <div class="relative flex items-center">
@@ -131,7 +139,9 @@
               <p>Tip Amount</p>
               <p class="text-neutral-grayish-cyan">/ person</p>
             </div>
-            <div class="text-3xl text-primary-cyan font-700">$0.00</div>
+            <div id="tipAmount" class="text-3xl text-primary-cyan font-700">
+              $0.00
+            </div>
           </div>
 
           <!-- Total Amount -->
@@ -140,14 +150,16 @@
               <p>Total</p>
               <p class="text-neutral-grayish-cyan">/ person</p>
             </div>
-            <div class="text-3xl text-primary-cyan font-700">$0.00</div>
+            <div id="totalAmount" class="text-3xl text-primary-cyan font-700">
+              $0.00
+            </div>
           </div>
         </div>
         <!-- Reset button -->
         <button
-          onclick="handleSubmit(event);"
+          onclick="reset(event);"
           type="submit"
-          class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan"
+          class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base"
         >
           RESET
         </button>

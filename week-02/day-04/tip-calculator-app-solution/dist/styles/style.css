@@ -769,6 +769,11 @@ video {
   border-color: hsl(172 67% 45% / var(--tw-border-opacity, 1));
 }
 
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity, 1));
+}
+
 .bg-neutral-very-dark-cyan {
   --tw-bg-opacity: 1;
   background-color: hsl(183 100% 15% / var(--tw-bg-opacity, 1));
