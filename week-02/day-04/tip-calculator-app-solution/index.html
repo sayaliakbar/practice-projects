@@ -20,9 +20,10 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center justify-between "
+    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center justify-between"
   >
     <!-- title begins here -->
+     
     <div
       class="w-full flex flex-col items-center p-10 font-700 text-3xl tracking-[.25em] text-neutral-very-dark-cyan" 
     >
@@ -30,37 +31,38 @@
       <p>TTER</p>
     </div>
     <!-- main container begins here -->
-    <div
-      class="container flex flex-col w-full flex-grow  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6"
-    >
+     <div class="container flex flex-col w-full flex-grow  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6">
+      <div>
       <!-- bill input begins here -->
       <div class="flex flex-col gap-1 text-lg"
         <label class="" for="bill">Bill</label>
-        <div class="relative">
+        <div class="relative flex items-center">
             <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="bill" id="bill" placeholder="0"/>
-            <img class="absolute top-5 left-3" src="./dist/assets/icon-dollar.svg" alt=""></div>
+            <img class="absolute left-3" src="./dist/assets/icon-dollar.svg" alt=""></div>
         
       </div>
       <!-- Select tip input begins here -->
       <div class="flex flex-col gap-2 text-lg">
         <p>Select Tip %</p>
         <div class="grid grid-cols-2 gap-3 w-full   text-center text-white ">
-          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">5%</div>
-          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">10%</div>
-          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">15%</div>
-          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">25%</div>
-          <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">50%</div>
-          <input type="number" placeholder="Custom" class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-sm text-center appearance-none no-arrows border hover:border-primary-cyan">
+          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">5%</button>
+          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">10%</button>
+          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">15%</button>
+          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">25%</button>
+          <button class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px] hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">50%</button>
+          <input type="number" placeholder="Custom" class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-[4px] text-center appearance-none no-arrows border hover:border-primary-cyan">
         </div>
       </div>
       <!-- Number of people input begins here -->
       <div class="flex flex-col gap-1 text-lg"
         <label  for="people">Number of People</label>
-        <div class="relative">
+        <div class="relative flex items-center">
             <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="people" id="people" placeholder="0"/>
-            <img class="absolute top-5 left-3" src="./dist/assets/icon-person.svg" alt=""></div>
+            <img class="absolute left-3" src="./dist/assets/icon-person.svg" alt=""></div>
         
       </div>
+     </div>
+    
       <!-- output container begins here -->
       <div class="bg-neutral-very-dark-cyan text-white p-6 flex flex-col gap-6 rounded-xl">
         <!-- Tip Amount begins here -->
@@ -81,7 +83,7 @@
           <div class="text-3xl text-primary-cyan">$0.00</div>
         </div>
         <!-- Reset button -->
-        <button class="w-full bg-primary-cyan p-3 rounded-lg text-neutral-very-dark-cyan tracking-wide font-700 text-base">RESET</button>
+        <button class="w-full bg-neutral-dark-grayish-cyan/50 p-3 rounded-lg text-neutral-dark-grayish-cyan tracking-wide font-700 text-base hover:bg-neutral-light-grayish-cyan hover:text-neutral-very-dark-cyan">RESET</button>
       </div>
     </div>
   </body>
