@@ -20,29 +20,29 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center "
+    class="m-0 p-0 min-h-screen min-w-screen text-[11px] font-spaceMono bg-primary-cyan/25 flex flex-col items-center justify-between "
   >
     <!-- title begins here -->
     <div
-      class="w-full flex flex-col items-center p-10 font-700 text-xl tracking-[.25em] text-neutral-very-dark-cyan"
+      class="w-full flex flex-col items-center p-10 font-700 text-3xl tracking-[.25em] text-neutral-very-dark-cyan" 
     >
       <p>SPLI</p>
       <p>TTER</p>
     </div>
     <!-- main container begins here -->
     <div
-      class="container flex flex-col w-full  h-full  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6"
+      class="container flex flex-col w-full flex-grow  bg-white rounded-t-2xl p-6 font-700 text-neutral-very-dark-cyan gap-6"
     >
       <!-- bill input begins here -->
-      <div class="flex flex-col gap-1"
+      <div class="flex flex-col gap-1 text-lg"
         <label class="" for="bill">Bill</label>
         <div class="relative">
-            <input class="w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg" type="number" name="bill" id="bill" placeholder="0"/>
+            <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="bill" id="bill" placeholder="0"/>
             <img class="absolute top-5 left-3" src="./dist/assets/icon-dollar.svg" alt=""></div>
         
       </div>
       <!-- Select tip input begins here -->
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 text-lg">
         <p>Select Tip %</p>
         <div class="grid grid-cols-2 gap-3 w-full   text-center text-white ">
           <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">5%</div>
@@ -50,14 +50,14 @@
           <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">15%</div>
           <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">25%</div>
           <div class=" bg-neutral-very-dark-cyan p-2 text-xl rounded-[4px]">50%</div>
-          <div class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-sm">Custom</div>
+          <input type="number" placeholder="Custom" class=" bg-neutral-very-light-grayish-cyan text-neutral-very-dark-cyan p-2 text-xl rounded-sm text-center appearance-none no-arrows border hover:border-primary-cyan">
         </div>
       </div>
       <!-- Number of people input begins here -->
-      <div class="flex flex-col gap-1"
-        <label class="" for="people">Number of People</label>
+      <div class="flex flex-col gap-1 text-lg"
+        <label  for="people">Number of People</label>
         <div class="relative">
-            <input class="w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg" type="number" name="people" id="people" placeholder="0"/>
+            <input class="no-arrows appearance-none w-full bg-neutral-very-light-grayish-cyan p-2 text-right text-formInputs text-neutral-very-dark-cyan rounded-lg border hover:border-primary-cyan" type="number" name="people" id="people" placeholder="0"/>
             <img class="absolute top-5 left-3" src="./dist/assets/icon-person.svg" alt=""></div>
         
       </div>
