@@ -604,6 +604,10 @@ video {
   top: 1.25rem;
 }
 
+.left-4 {
+  left: 1rem;
+}
+
 .m-0 {
   margin: 0px;
 }
