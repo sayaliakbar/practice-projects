@@ -31,7 +31,7 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between"
+    class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between relative"
   >
     <div
       class="flex flex-col w-full items-center border-2 border-black relative"
@@ -39,7 +39,7 @@
       <!-- Navbar begins here -->
       <div class="navbar flex justify-between w-full p-4 border-2 border-black">
         <img class="w-fit" src="./dist/assets/logo.svg" alt="" />
-        <a id="openMenu" href=""
+        <a id="openMenu" type="button"
           ><img
             src="./dist/assets/icon-menu.svg"
             alt="Menu Icon which shows a pop up menu"
@@ -96,30 +96,50 @@
         </div>
       </div>
       <div
-        class="menu w-[60%] bg-neutral-almost-white absolute flex flex-col h-full p-4 gap-8 text-neutral-medium-gray right-0 hidden"
+        id="sideMenu"
+        class="u w-[60%] bg-neutral-almost-white absolute flex-col h-full p-4 gap-8 text-neutral-medium-gray right-0 hidden"
       >
         <div class="crossMenu flex w-full justify-end">
-          <a id="closeMenu" href=""
+          <a id="closeMenu"
             ><img src="./dist/assets/icon-close-menu.svg" alt=""
           /></a>
         </div>
         <div class="menuList">
           <ul class="flex flex-col gap-4">
             <li class="">
-              <a class="flex items-center gap-2" href=""
+              <a id="features" class="flex items-center gap-2"
                 >Features
                 <img
                   src="./dist/assets/icon-arrow-down.svg"
                   alt="icon-arrow-down"
               /></a>
+              <ul id="featuresSubMenu" class="flex-col px-6 gap-2 pt-4 hidden">
+                <li class="flex gap-3 items-center">
+                  <img src="./dist/assets/icon-todo.svg" alt="" />Todo List
+                </li>
+                <li class="flex gap-3 items-center">
+                  <img src="./dist/assets/icon-calendar.svg" alt="" />Calender
+                </li>
+                <li class="flex gap-3 items-center">
+                  <img src="./dist/assets/icon-reminders.svg" alt="" />Reminders
+                </li>
+                <li class="flex gap-3 items-center">
+                  <img src="./dist/assets/icon-planning.svg" alt="" />Planning
+                </li>
+              </ul>
             </li>
             <li class="">
-              <a class="flex items-center gap-2" href=""
+              <a id="company" class="flex items-center gap-2"
                 >Company<img
                   src="./dist/assets/icon-arrow-down.svg"
                   alt="icon-arrow-down"
                 />
               </a>
+              <ul id="companySubMenu" class="flex-col px-6 pt-4 gap-4 hidden">
+                <li>History</li>
+                <li>Our Team</li>
+                <li>Blog</li>
+              </ul>
             </li>
             <li><a href="">Careers</a></li>
             <li><a href="">About</a></li>
@@ -133,5 +153,9 @@
         </div>
       </div>
     </div>
+    <div
+      id="darkBackground"
+      class="absolute w-[40%] h-full bg-black/70 hidden"
+    ></div>
   </body>
 </html>
