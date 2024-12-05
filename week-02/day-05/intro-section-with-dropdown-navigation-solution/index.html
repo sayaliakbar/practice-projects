@@ -33,16 +33,17 @@
   <body
     class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between"
   >
-    <div class="flex flex-col w-full items-center border-2 border-black">
+    <div
+      class="flex flex-col w-full items-center border-2 border-black relative"
+    >
       <!-- Navbar begins here -->
       <div class="navbar flex justify-between w-full p-4 border-2 border-black">
         <img class="w-fit" src="./dist/assets/logo.svg" alt="" />
-        <button>
-          <img
+        <a id="openMenu" href=""
+          ><img
             src="./dist/assets/icon-menu.svg"
             alt="Menu Icon which shows a pop up menu"
-          />
-        </button>
+        /></a>
       </div>
       <!-- Main dashboard image begins here -->
       <div class="image">
@@ -94,40 +95,42 @@
           />
         </div>
       </div>
-    </div>
-    <div
-      class="menu w-[60%] bg-neutral-almost-white absolute flex flex-col h-full p-4 gap-8 text-neutral-medium-gray"
-    >
-      <div class="crossMenu flex w-full justify-end">
-        <img src="./dist/assets/icon-close-menu.svg" alt="" />
-      </div>
-      <div class="menuList">
-        <ul class="flex flex-col gap-4">
-          <li class="">
-            <a class="flex items-center gap-2" href=""
-              >Features
-              <img
-                src="./dist/assets/icon-arrow-down.svg"
-                alt="icon-arrow-down"
-            /></a>
-          </li>
-          <li class="">
-            <a class="flex items-center gap-2" href=""
-              >Company<img
-                src="./dist/assets/icon-arrow-down.svg"
-                alt="icon-arrow-down"
-              />
-            </a>
-          </li>
-          <li><a href="">Careers</a></li>
-          <li><a href="">About</a></li>
-        </ul>
-      </div>
-      <div class="accounts flex flex-col gap-2">
-        <button class="p-2">Login</button>
-        <button class="border-2 border-neutral-medium-gray p-2 rounded-xl">
-          Register
-        </button>
+      <div
+        class="menu w-[60%] bg-neutral-almost-white absolute flex flex-col h-full p-4 gap-8 text-neutral-medium-gray right-0 hidden"
+      >
+        <div class="crossMenu flex w-full justify-end">
+          <a id="closeMenu" href=""
+            ><img src="./dist/assets/icon-close-menu.svg" alt=""
+          /></a>
+        </div>
+        <div class="menuList">
+          <ul class="flex flex-col gap-4">
+            <li class="">
+              <a class="flex items-center gap-2" href=""
+                >Features
+                <img
+                  src="./dist/assets/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+              /></a>
+            </li>
+            <li class="">
+              <a class="flex items-center gap-2" href=""
+                >Company<img
+                  src="./dist/assets/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </a>
+            </li>
+            <li><a href="">Careers</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+        </div>
+        <div class="accounts flex flex-col gap-2">
+          <button class="p-2">Login</button>
+          <button class="border-2 border-neutral-medium-gray p-2 rounded-xl">
+            Register
+          </button>
+        </div>
       </div>
     </div>
   </body>

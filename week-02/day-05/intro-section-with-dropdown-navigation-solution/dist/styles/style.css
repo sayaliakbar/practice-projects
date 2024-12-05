@@ -602,6 +602,14 @@ video {
   left: 76px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -621,6 +629,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-10 {
