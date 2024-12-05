@@ -13,6 +13,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Lessons Learned](#lessons-learned)
+- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ---
@@ -115,10 +116,6 @@ To view or modify the project locally:
 
 ## Lessons Learned
 
-Here are some additional points you can include in the **Lessons Learned** section based on your experience working on the Tip Calculator App:
-
----
-
 ### **Dynamic DOM Manipulation**
 
 - **State Management**: I improved my understanding of managing and updating the DOM based on user inputs. This project required a lot of dynamic changes, such as updating the tip and total amounts as soon as the user interacts with the inputs. The ability to programmatically manipulate the DOM elements helped me build a seamless and responsive user experience.
@@ -216,6 +213,13 @@ Here are some additional points you can include in the **Lessons Learned** secti
     updateOutput(); // Separate logic for updating the output
   }
   ```
+
+---
+
+## Author
+
+- GitHub - [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn - [@sayaliakbar](https://linkedin.com/in/sayaliakbar)
 
 ---
 
