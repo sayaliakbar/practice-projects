@@ -30,7 +30,105 @@
       rel="stylesheet"
     />
   </head>
-  <body class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph">
-    <h1 class="">Hello World</h1>
+  <body
+    class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between"
+  >
+    <div class="flex flex-col w-full items-center border-2 border-black">
+      <!-- Navbar begins here -->
+      <div class="navbar flex justify-between w-full p-4 border-2 border-black">
+        <img class="w-fit" src="./dist/assets/logo.svg" alt="" />
+        <button>
+          <img
+            src="./dist/assets/icon-menu.svg"
+            alt="Menu Icon which shows a pop up menu"
+          />
+        </button>
+      </div>
+      <!-- Main dashboard image begins here -->
+      <div class="image">
+        <img
+          src="./dist/assets/image-hero-mobile.png"
+          alt="Image of a person holding laptop"
+        />
+      </div>
+      <!-- Main heading and texts begins here -->
+      <div
+        class="lowerPart flex flex-col items-center gap-10 m-3 w-fit border border-black"
+      >
+        <div
+          class="text-container text-center flex flex-col gap-4 items-center w-full my-4"
+        >
+          <h1 class="font-700 text-4xl">Make remote work</h1>
+          <p class="text-neutral-medium-gray font-500">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button
+            class="bg-neutral-almost-black w-fit p-4 px-6 text-neutral-almost-white rounded-2xl font-700"
+          >
+            Learn more
+          </button>
+        </div>
+        <div
+          class="clients flex w-full items-center justify-between gap-2 border border-black"
+        >
+          <img
+            class="w-1/5"
+            src="./dist/assets/client-databiz.svg"
+            alt="client-databiz"
+          />
+          <img
+            class="w-1/5"
+            src="./dist/assets/client-audiophile.svg"
+            alt="client-audiophile"
+          />
+          <img
+            class="w-1/5"
+            src="./dist/assets/client-meet.svg"
+            alt="client-meet"
+          />
+          <img
+            class="w-1/5"
+            src="./dist/assets/client-maker.svg"
+            alt="client-maker"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="menu w-[60%] bg-neutral-almost-white absolute flex flex-col h-full p-4 gap-8 text-neutral-medium-gray"
+    >
+      <div class="crossMenu flex w-full justify-end">
+        <img src="./dist/assets/icon-close-menu.svg" alt="" />
+      </div>
+      <div class="menuList">
+        <ul class="flex flex-col gap-4">
+          <li class="">
+            <a class="flex items-center gap-2" href=""
+              >Features
+              <img
+                src="./dist/assets/icon-arrow-down.svg"
+                alt="icon-arrow-down"
+            /></a>
+          </li>
+          <li class="">
+            <a class="flex items-center gap-2" href=""
+              >Company<img
+                src="./dist/assets/icon-arrow-down.svg"
+                alt="icon-arrow-down"
+              />
+            </a>
+          </li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </div>
+      <div class="accounts flex flex-col gap-2">
+        <button class="p-2">Login</button>
+        <button class="border-2 border-neutral-medium-gray p-2 rounded-xl">
+          Register
+        </button>
+      </div>
+    </div>
   </body>
 </html>

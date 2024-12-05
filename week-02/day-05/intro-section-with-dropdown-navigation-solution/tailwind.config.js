@@ -14,7 +14,7 @@ module.exports = {
         },
       },
       fontSize: {
-        paragraph: "18px",
+        paragraph: "16px",
       },
     },
   },
