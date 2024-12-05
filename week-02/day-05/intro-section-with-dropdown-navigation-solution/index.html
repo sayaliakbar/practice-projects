@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic metadata for document setup -->
+    <!-- Sets character encoding and ensures proper rendering on different devices -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro Section</title>
 
-    <!-- Link to external stylesheet -->
+    <!-- Link to the external stylesheet for applying custom styles -->
     <link rel="stylesheet" href="./dist/styles/style.css" />
 
-    <!-- Link to external JavaScript file with defer to load after DOM -->
+    <!-- Link to external JavaScript file, loaded after DOM parsing -->
     <script src="./dist/script.js" defer></script>
 
-    <!-- Favicon for the browser tab -->
+    <!-- Favicon to display a small icon in the browser tab -->
     <link
       rel="icon"
       href="./dist/assets/favicon-32x32.png"
       sizes="32x32"
-      type="png"
+      type="image/png"
     />
 
-    <!-- Preconnect for faster font loading -->
+    <!-- Preconnect to Google's font servers for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Fonts link -->
+    <!-- Import the Google Font "Epilogue" -->
     <link
       href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -36,26 +36,33 @@
     <div
       class="flex flex-col w-full items-center border-2 border-black relative"
     >
-      <!-- Navbar begins here -->
+      <!-- Navbar containing logo and menu button -->
       <div class="navbar flex justify-between w-full p-4 border-2 border-black">
-        <img class="w-fit" src="./dist/assets/logo.svg" alt="" />
-        <a id="openMenu" type="button"
-          ><img
+        <!-- Logo image -->
+        <img class="w-fit" src="./dist/assets/logo.svg" alt="Company Logo" />
+
+        <!-- Button to open the side menu -->
+        <a id="openMenu" type="button">
+          <img
             src="./dist/assets/icon-menu.svg"
-            alt="Menu Icon which shows a pop up menu"
-        /></a>
+            alt="Menu Icon to open a pop-up menu"
+          />
+        </a>
       </div>
-      <!-- Main dashboard image begins here -->
+
+      <!-- Hero section displaying the main dashboard image -->
       <div class="image">
         <img
           src="./dist/assets/image-hero-mobile.png"
-          alt="Image of a person holding laptop"
+          alt="Person holding a laptop"
         />
       </div>
-      <!-- Main heading and texts begins here -->
+
+      <!-- Section with heading, text, and client logos -->
       <div
         class="lowerPart flex flex-col items-center gap-10 m-3 w-fit border border-black"
       >
+        <!-- Main text content -->
         <div
           class="text-container text-center flex flex-col gap-4 items-center w-full my-4"
         >
@@ -64,77 +71,118 @@
             Get your team in sync, no matter your location. Streamline
             processes, create team rituals, and watch productivity soar.
           </p>
+          <!-- Button to learn more about the features -->
           <button
             class="bg-neutral-almost-black w-fit p-4 px-6 text-neutral-almost-white rounded-2xl font-700"
           >
             Learn more
           </button>
         </div>
+
+        <!-- Logos of featured clients -->
         <div
           class="clients flex w-full items-center justify-between gap-2 border border-black"
         >
           <img
             class="w-1/5"
             src="./dist/assets/client-databiz.svg"
-            alt="client-databiz"
+            alt="Databiz client logo"
           />
           <img
             class="w-1/5"
             src="./dist/assets/client-audiophile.svg"
-            alt="client-audiophile"
+            alt="Audiophile client logo"
           />
           <img
             class="w-1/5"
             src="./dist/assets/client-meet.svg"
-            alt="client-meet"
+            alt="Meet client logo"
           />
           <img
             class="w-1/5"
             src="./dist/assets/client-maker.svg"
-            alt="client-maker"
+            alt="Maker client logo"
           />
         </div>
       </div>
+
+      <!-- Side menu for mobile view -->
       <div
         id="sideMenu"
         class="u w-[60%] bg-neutral-almost-white absolute flex-col h-full p-4 gap-8 text-neutral-medium-gray right-0 hidden"
       >
+        <!-- Close button for the side menu -->
         <div class="crossMenu flex w-full justify-end">
-          <a id="closeMenu"
-            ><img src="./dist/assets/icon-close-menu.svg" alt=""
-          /></a>
+          <a id="closeMenu">
+            <img
+              src="./dist/assets/icon-close-menu.svg"
+              alt="Close Menu Icon"
+            />
+          </a>
         </div>
+
+        <!-- Menu items and submenus -->
         <div class="menuList">
           <ul class="flex flex-col gap-4">
-            <li class="">
-              <a id="features" class="flex items-center gap-2"
-                >Features
+            <li>
+              <a id="features" class="flex items-center gap-2">
+                Features
                 <img
+                  id="featureDownArrow"
                   src="./dist/assets/icon-arrow-down.svg"
-                  alt="icon-arrow-down"
-              /></a>
+                  alt="Arrow Down Icon"
+                />
+                <img
+                  id="featureUpArrow"
+                  class="hidden"
+                  src="./dist/assets/icon-arrow-up.svg"
+                  alt="Arrow Up Icon"
+                />
+              </a>
+              <!-- Submenu for "Features" -->
               <ul id="featuresSubMenu" class="flex-col px-6 gap-2 pt-4 hidden">
                 <li class="flex gap-3 items-center">
-                  <img src="./dist/assets/icon-todo.svg" alt="" />Todo List
+                  <img
+                    src="./dist/assets/icon-todo.svg"
+                    alt="Todo List Icon"
+                  />Todo List
                 </li>
                 <li class="flex gap-3 items-center">
-                  <img src="./dist/assets/icon-calendar.svg" alt="" />Calender
+                  <img
+                    src="./dist/assets/icon-calendar.svg"
+                    alt="Calendar Icon"
+                  />Calendar
                 </li>
                 <li class="flex gap-3 items-center">
-                  <img src="./dist/assets/icon-reminders.svg" alt="" />Reminders
+                  <img
+                    src="./dist/assets/icon-reminders.svg"
+                    alt="Reminders Icon"
+                  />Reminders
                 </li>
                 <li class="flex gap-3 items-center">
-                  <img src="./dist/assets/icon-planning.svg" alt="" />Planning
+                  <img
+                    src="./dist/assets/icon-planning.svg"
+                    alt="Planning Icon"
+                  />Planning
                 </li>
               </ul>
             </li>
-            <li class="">
-              <a id="company" class="flex items-center gap-2"
-                >Company<img
+            <li>
+              <a id="company" class="flex items-center gap-2">
+                Company
+                <img
+                  id="companyDownArrow"
                   src="./dist/assets/icon-arrow-down.svg"
-                  alt="icon-arrow-down"
+                  alt="Arrow Down Icon"
+                />
+                <img
+                  class="hidden"
+                  id="companyUpArrow"
+                  src="./dist/assets/icon-arrow-up.svg"
+                  alt="Arrow up Icon"
                 />
               </a>
+              <!-- Submenu for "Company" -->
               <ul id="companySubMenu" class="flex-col px-6 pt-4 gap-4 hidden">
                 <li>History</li>
                 <li>Our Team</li>
@@ -145,6 +193,8 @@
             <li><a href="">About</a></li>
           </ul>
         </div>
+
+        <!-- Account actions: Login and Register -->
         <div class="accounts flex flex-col gap-2">
           <button class="p-2">Login</button>
           <button class="border-2 border-neutral-medium-gray p-2 rounded-xl">
@@ -153,6 +203,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Dark background overlay for the side menu -->
     <div
       id="darkBackground"
       class="absolute w-[40%] h-full bg-black/70 hidden"
