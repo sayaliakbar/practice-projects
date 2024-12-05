@@ -1125,6 +1125,10 @@ video {
     width: 65%;
   }
 
+  .lg\:w-\[75\%\] {
+    width: 75%;
+  }
+
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
@@ -1199,5 +1203,19 @@ video {
   .lg\:drop-shadow-lg {
     --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-\[40\%\] {
+    width: 40%;
+  }
+
+  .xl\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .xl\:w-\[60\%\] {
+    width: 60%;
   }
 }
