@@ -1,83 +1,198 @@
-let tips = document.querySelectorAll(".tip");
-let isFirstSelection = true;
-let selectedTip;
-let tip = 0;
+// Constants for class names used to manipulate styles dynamically
+const SELECTED_CLASS = "bg-primary-cyan"; // Highlight selected tip option
+const TEXT_BLACK_CLASS = "text-black"; // Change text color to black for selected tip
+const ERROR_CLASS = "border-red-600"; // Style for error indication
+const HIDDEN_CLASS = "hidden"; // Class to hide error messages
 
-tips.forEach((tip) => {
-  tip.addEventListener("click", select);
+// DOM Elements
+const billInput = document.getElementById("bill"); // Input field for the bill amount
+const peopleInput = document.getElementById("people"); // Input field for the number of people
+const errorDisplay = document.getElementById("error"); // Error message display
+const tipAmountDisplay = document.getElementById("tipAmount"); // Tip amount display
+const totalAmountDisplay = document.getElementById("totalAmount"); // Total amount display
+const tips = document.querySelectorAll(".tip"); // Tip percentage buttons
+const customTipInput = document.getElementById("customTip"); // Input field for custom tip percentage
+const resetButton = document.getElementById("reset"); // Reset button
+
+// State Variables
+let isFirstSelection = true; // Tracks if it's the first tip selection
+let selectedTip = null; // Stores the currently selected tip button
+let tipPercentage = 0; // Stores the selected tip percentage as a decimal
+
+// Add event listeners to tip percentage buttons
+tips.forEach((tipElement) => {
+  tipElement.addEventListener("click", handleTipSelection);
 });
 
-function select(event) {
+// Add event listeners for custom tip input
+customTipInput.addEventListener("input", validateCustomTipInput);
+customTipInput.addEventListener("input", handleCustomTipSelection);
+
+// Add event listeners for bill and people inputs to validate and update outputs
+billInput.addEventListener("input", validateBillAndPeople);
+peopleInput.addEventListener("input", validateBillAndPeople);
+
+/**
+ * Handles predefined tip button selection.
+ * Updates the selected tip style and calculates the tip percentage.
+ */
+function handleTipSelection(event) {
   if (!isFirstSelection) {
-    // Reset styles for previously selected rating
-    selectedTip.classList.remove("bg-primary-cyan", "text-black");
+    // Remove styles from the previously selected tip button
+    selectedTip?.classList.remove(SELECTED_CLASS, TEXT_BLACK_CLASS);
   }
 
-  // Update selected rating and apply styles
   selectedTip = event.target;
-  if (event.target.nodeName != "INPUT") {
-    selectedTip.classList.add("bg-primary-cyan", "text-black");
 
-    let number = selectedTip.textContent.match(/\d+/)[0];
-    tip = number / 100;
-    tip *= bill.value;
+  // Clear custom tip input when a predefined tip is selected
+  if (selectedTip.nodeName !== "INPUT") {
+    customTipInput.value = ""; // Reset custom tip input
+    selectedTip.classList.add(SELECTED_CLASS, TEXT_BLACK_CLASS);
+
+    // Extract the numeric percentage value from the button text
+    const percentageText = selectedTip.textContent.match(/\d+/)?.[0];
+    tipPercentage = percentageText ? parseInt(percentageText, 10) / 100 : 0; // Convert to decimal
+    updateOutput();
   }
 
-  // Mark as no longer the first selection
   isFirstSelection = false;
 }
 
-const bill = document.getElementById("bill");
-const people = document.getElementById("people");
-const error = document.getElementById("error");
-const tipAmount = document.getElementById("tipAmount");
-const totalAmount = document.getElementById("totalAmount");
+/**
+ * Handles custom tip input.
+ * Clears any selected tip button styles and updates the tip percentage.
+ */
+function handleCustomTipSelection() {
+  if (!isFirstSelection) {
+    // Deselect previously selected tip button
+    selectedTip?.classList.remove(SELECTED_CLASS, TEXT_BLACK_CLASS);
+  }
 
-bill.addEventListener("input", output);
-people.addEventListener("input", output);
+  selectedTip = null; // Reset selected tip button
+  const customValue = parseFloat(customTipInput.value);
+  tipPercentage = customValue > 0 ? customValue / 100 : 0; // Convert to decimal
+  updateOutput();
 
-function reset() {
-  bill.value = "";
-  people.value = "";
-  tipAmount.innerText = "$0.00";
-  totalAmount.innerText = "$0.00";
-  select();
+  isFirstSelection = false;
 }
 
-function output() {
-  if (people.value == 0) {
-    error.classList.remove("hidden");
-    people.classList.add("border-red-600");
-  }
-  if (people.value === "") {
-    error.classList.add("hidden");
-    people.classList.remove("border-red-600");
-    tipAmount.innerText = "$0.00";
-    totalAmount.innerText = "$0.00";
+/**
+ * Validates the bill and people input values to ensure they are non-negative.
+ * Updates the output if the inputs are valid.
+ */
+function validateBillAndPeople(event) {
+  const input = event.target;
+  const value = parseFloat(input.value);
+
+  if (value < 0 || isNaN(value)) {
+    input.value = ""; // Reset invalid input
   }
 
-  // When both values are empty
-  if (bill.value === "" && people.value === "") {
-    tipAmount.innerText = "$0.00";
-    totalAmount.innerText = "$0.00";
+  updateOutput();
+}
+
+/**
+ * Validates custom tip input to ensure it is within the range of 0 to 100.
+ * Clears input if the value is invalid.
+ */
+function validateCustomTipInput() {
+  const value = parseFloat(customTipInput.value);
+
+  if (isNaN(value) || value < 0 || value > 100) {
+    customTipInput.value = ""; // Reset invalid input
+    tipPercentage = 0; // Reset tip percentage
+    updateOutput();
   }
-  // When both values are 0
-  if (bill.value == 0 && people.value == 0) {
-    tipAmount.innerText = "$0.00";
-    totalAmount.innerText = "$0.00";
+}
+
+/**
+ * Resets the form to its initial state, clearing all inputs and outputs.
+ * Resets styles for buttons and disables the reset button.
+ */
+function resetForm() {
+  billInput.value = "";
+  peopleInput.value = "";
+  customTipInput.value = "";
+  tipPercentage = 0;
+  isFirstSelection = true;
+
+  // Reset output displays
+  tipAmountDisplay.innerText = "$0.00";
+  totalAmountDisplay.innerText = "$0.00";
+  errorDisplay.classList.add(HIDDEN_CLASS);
+  peopleInput.classList.remove(ERROR_CLASS);
+
+  // Reset selected tip button styles
+  selectedTip?.classList.remove(SELECTED_CLASS, TEXT_BLACK_CLASS);
+  selectedTip = null;
+
+  // Disable reset button
+  resetButton.classList.remove(
+    "bg-primary-cyan",
+    "text-neutral-very-dark-cyan",
+    "hover:bg-neutral-very-light-grayish-cyan"
+  );
+  resetButton.classList.add(
+    "bg-neutral-dark-grayish-cyan/50",
+    "text-neutral-dark-grayish-cyan"
+  );
+}
+
+/**
+ * Updates the tip amount and total amount per person based on inputs.
+ * Shows error message if the number of people is zero.
+ */
+function updateOutput() {
+  const billValue = parseFloat(billInput.value) || 0;
+  const peopleValue = parseInt(peopleInput.value, 10) || 0;
+
+  if (peopleValue === 0) {
+    showError("Can't be zero"); // Display error for invalid input
+    return;
   }
-  // When both values are greater then 1
-  if (bill.value > 0 && people.value > 0) {
-    let totalBill = parseInt(bill.value, 10) + tip;
-    let tipam = tip / people.value;
-    let billam = totalBill / people.value;
-    tipAmount.innerText = tipam.toFixed(2);
-    totalAmount.innerText = billam.toFixed(2);
-    console.log(tip);
+
+  hideError();
+
+  if (billValue > 0 && peopleValue > 0) {
+    // Enable reset button
+    resetButton.classList.add(
+      "bg-primary-cyan",
+      "text-neutral-very-dark-cyan",
+      "hover:bg-neutral-very-light-grayish-cyan"
+    );
+    resetButton.classList.remove(
+      "bg-neutral-dark-grayish-cyan/50",
+      "text-neutral-dark-grayish-cyan"
+    );
+
+    // Calculate tip and total amounts per person
+    const tipAmount = (billValue * tipPercentage) / peopleValue;
+    const totalAmount = (billValue * (1 + tipPercentage)) / peopleValue;
+
+    // Update displays
+    tipAmountDisplay.innerText = `$${tipAmount.toFixed(2)}`;
+    totalAmountDisplay.innerText = `$${totalAmount.toFixed(2)}`;
+  } else {
+    // Reset output displays if inputs are invalid
+    tipAmountDisplay.innerText = "$0.00";
+    totalAmountDisplay.innerText = "$0.00";
   }
-  //When bill value is empty or 0
-  if (bill.value === "" || bill.value == 0) {
-    tipAmount.innerText = "$0.00";
-    totalAmount.innerText = "$0.00";
-  }
+}
+
+/**
+ * Displays an error message and applies error styles to the people input field.
+ */
+function showError(message) {
+  errorDisplay.innerText = message; // Set error message
+  errorDisplay.classList.remove(HIDDEN_CLASS); // Show error
+  peopleInput.classList.add(ERROR_CLASS); // Apply error style
+}
+
+/**
+ * Hides the error message and removes error styles from the people input field.
+ */
+function hideError() {
+  errorDisplay.innerText = ""; // Clear error message
+  errorDisplay.classList.add(HIDDEN_CLASS); // Hide error
+  peopleInput.classList.remove(ERROR_CLASS); // Remove error style
 }
