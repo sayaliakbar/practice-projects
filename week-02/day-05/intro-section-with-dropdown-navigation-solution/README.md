@@ -34,11 +34,11 @@ The goal was to create a responsive landing page where users can:
 
 #### Desktop View
 
-![intro-section-with-dropdown-navigation-desktop](https://github.com/user-attachments/assets/72a9a9d8-f185-40c6-bf9f-3c0718a975ba)
+![intro-section-with-dropdown-navigation-desktop](https://github.com/user-attachments/assets/4b1d7ec3-c5af-446e-a038-f2eae74d29cc)
 
 #### Active States
 
-![intro-section-with-dropdown-navigation-desktop-active-states](https://github.com/user-attachments/assets/66c87071-b4aa-41ec-aa2d-7f7a16b79661)
+![intro-section-with-dropdown-navigation-desktop-active-states](https://github.com/user-attachments/assets/581cc9b4-2fb2-4a85-acdf-2a7a8b517fb3)
 
 #### Tablet View
 
