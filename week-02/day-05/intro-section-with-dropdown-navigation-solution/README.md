@@ -68,7 +68,9 @@ The goal was to create a responsive landing page where users can:
 - **Vanilla JavaScript**: For toggling dropdown menus and managing interactivity.
 - **Mobile-First Workflow**: Ensured smooth responsiveness.
 
-### Key Learnings (Detailed)
+---
+
+### Key Learnings
 
 This project offered several valuable opportunities to refine and expand skills in modern web development. Below are some of the key takeaways:
 
