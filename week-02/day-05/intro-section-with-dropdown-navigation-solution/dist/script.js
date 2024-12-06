@@ -1,56 +1,86 @@
+// // Select DOM elements
 const openSideMenu = document.getElementById("openMenu");
 const closeSideMenu = document.getElementById("closeMenu");
-const sideMenu = document.getElementById("sideMenu");
-const darkBackground = document.getElementById("darkBackground");
-const features = document.getElementById("features");
-const company = document.getElementById("company");
-const featuresSubMenu = document.getElementById("featuresSubMenu");
-const companySubMenu = document.getElementById("companySubMenu");
-const featureDownArrow = document.getElementById("featureDownArrow");
-const featureUpArrow = document.getElementById("featureUpArrow");
-const companyDownArrow = document.getElementById("companyDownArrow");
-const companyUpArrow = document.getElementById("companyUpArrow");
 
-openSideMenu.addEventListener("click", open);
-let opened = false;
-features.addEventListener("click", () => {
-  if (!opened) {
-    featuresSubMenu.classList.add("flex");
-    featuresSubMenu.classList.remove("hidden");
-    featureDownArrow.classList.add("hidden");
-    featureUpArrow.classList.remove("hidden");
-    opened = true;
-  } else {
-    featuresSubMenu.classList.add("hidden");
-    featureDownArrow.classList.remove("hidden");
-    featureUpArrow.classList.add("hidden");
-    opened = false;
-  }
-});
-
-company.addEventListener("click", () => {
-  if (!opened) {
-    companySubMenu.classList.add("flex");
-    companySubMenu.classList.remove("hidden");
-    companyDownArrow.classList.add("hidden");
-    companyUpArrow.classList.remove("hidden");
-
-    opened = true;
-  } else {
-    companySubMenu.classList.add("hidden");
-    companyDownArrow.classList.remove("hidden");
-    companyUpArrow.classList.add("hidden");
-    opened = false;
-  }
-});
-
-function open() {
+// Open side menu
+function openMenu() {
   sideMenu.classList.remove("hidden");
   sideMenu.classList.add("flex");
   darkBackground.classList.remove("hidden");
 }
 
-closeSideMenu.addEventListener("click", () => {
+// Close side menu
+function closeMenu() {
   sideMenu.classList.add("hidden");
   darkBackground.classList.add("hidden");
+}
+
+// Add event listeners
+openSideMenu.addEventListener("click", openMenu);
+closeSideMenu.addEventListener("click", closeMenu);
+
+// Toggle submenus based on the context (Navbar or Sidebar)
+function toggleSubMenu(context, state, subMenu, downArrow, upArrow) {
+  if (!state) {
+    subMenu.classList.add("flex");
+    subMenu.classList.remove("hidden");
+    downArrow.classList.add("hidden");
+    upArrow.classList.remove("hidden");
+  } else {
+    subMenu.classList.add("hidden");
+    subMenu.classList.remove("flex");
+    downArrow.classList.remove("hidden");
+    upArrow.classList.add("hidden");
+  }
+  return !state; // Return updated state
+}
+
+// Navbar states
+let openedFeaturesNavbar = false;
+let openedCompanyNavbar = false;
+
+// Sidebar states
+let openedFeaturesSidebar = false;
+let openedCompanySidebar = false;
+
+// Navbar event listeners
+document.getElementById("featuresNavbar").addEventListener("click", () => {
+  openedFeaturesNavbar = toggleSubMenu(
+    "navbar",
+    openedFeaturesNavbar,
+    document.getElementById("featuresSubMenuNavbar"),
+    document.getElementById("featureDownArrowNavbar"),
+    document.getElementById("featureUpArrowNavbar")
+  );
+});
+
+document.getElementById("companyNavbar").addEventListener("click", () => {
+  openedCompanyNavbar = toggleSubMenu(
+    "navbar",
+    openedCompanyNavbar,
+    document.getElementById("companySubMenuNavbar"),
+    document.getElementById("companyDownArrowNavbar"),
+    document.getElementById("companyUpArrowNavbar")
+  );
+});
+
+// Sidebar event listeners
+document.getElementById("featuresSidebar").addEventListener("click", () => {
+  openedFeaturesSidebar = toggleSubMenu(
+    "sidebar",
+    openedFeaturesSidebar,
+    document.getElementById("featuresSubMenuSidebar"),
+    document.getElementById("featureDownArrowSidebar"),
+    document.getElementById("featureUpArrowSidebar")
+  );
+});
+
+document.getElementById("companySidebar").addEventListener("click", () => {
+  openedCompanySidebar = toggleSubMenu(
+    "sidebar",
+    openedCompanySidebar,
+    document.getElementById("companySubMenuSidebar"),
+    document.getElementById("companyDownArrowSidebar"),
+    document.getElementById("companyUpArrowSidebar")
+  );
 });

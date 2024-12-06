@@ -31,85 +31,201 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between relative"
+    class="m-0 p-0 min-h-screen min-w-screen font-epilogue text-paragraph flex justify-between lg:justify-start relative"
   >
-    <div
-      class="flex flex-col w-full items-center border-2 border-black relative"
-    >
+    <div class="flex flex-col w-full h-full items-center relative lg:gap-10">
       <!-- Navbar containing logo and menu button -->
-      <div class="navbar flex justify-between w-full p-4 border-2 border-black">
+      <div
+        class="navbar flex justify-between items-center w-full p-4 lg:text-neutral-medium-gray lg:font-500"
+      >
+        <div class="lg:flex lg:gap-16">
+          <img class="w-fit" src="./dist/assets/logo.svg" alt="Company Logo" />
+
+          <div class="menuList hidden lg:block">
+            <ul class="flex flex-row gap-10">
+              <li>
+                <a
+                  id="featuresNavbar"
+                  class="flex items-center gap-2 hover:text-neutral-almost-black"
+                >
+                  Features
+                  <img
+                    id="featureDownArrowNavbar"
+                    src="./dist/assets/icon-arrow-down.svg"
+                    alt="Arrow Down Icon"
+                  />
+                  <img
+                    id="featureUpArrowNavbar"
+                    class="hidden"
+                    src="./dist/assets/icon-arrow-up.svg"
+                    alt="Arrow Up Icon"
+                  />
+                </a>
+                <!-- Submenu for "Features" -->
+                <ul
+                  id="featuresSubMenuNavbar"
+                  class="flex-col gap-2 hidden shadow-2xl rounded-xl p-4 px-6 absolute bg-white left-24"
+                >
+                  <li
+                    class="flex gap-3 items-center hover:text-neutral-almost-black"
+                  >
+                    <img
+                      src="./dist/assets/icon-todo.svg"
+                      alt="Todo List Icon"
+                    />Todo List
+                  </li>
+                  <li
+                    class="flex gap-3 items-center hover:text-neutral-almost-black"
+                  >
+                    <img
+                      src="./dist/assets/icon-calendar.svg"
+                      alt="Calendar Icon"
+                    />Calendar
+                  </li>
+                  <li
+                    class="flex gap-3 items-center hover:text-neutral-almost-black"
+                  >
+                    <img
+                      src="./dist/assets/icon-reminders.svg"
+                      alt="Reminders Icon"
+                    />Reminders
+                  </li>
+                  <li
+                    class="flex gap-3 items-center hover:text-neutral-almost-black"
+                  >
+                    <img
+                      src="./dist/assets/icon-planning.svg"
+                      alt="Planning Icon"
+                    />Planning
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  id="companyNavbar"
+                  class="flex items-center gap-2 hover:text-neutral-almost-black"
+                >
+                  Company
+                  <img
+                    id="companyDownArrowNavbar"
+                    src="./dist/assets/icon-arrow-down.svg"
+                    alt="Arrow Down Icon"
+                  />
+                  <img
+                    id="companyUpArrowNavbar"
+                    class="hidden"
+                    src="./dist/assets/icon-arrow-up.svg"
+                    alt="Arrow up Icon"
+                  />
+                </a>
+                <!-- Submenu for "Company" -->
+                <ul
+                  id="companySubMenuNavbar"
+                  class="flex-col px-6 pt-4 gap-4 hidden lg:absolute lg:bg-white lg:shadow-2xl lg:rounded-xl lg:p-4 lg:px-6"
+                >
+                  <li class="hover:text-neutral-almost-black">History</li>
+                  <li class="hover:text-neutral-almost-black">Our Team</li>
+                  <li class="hover:text-neutral-almost-black">Blog</li>
+                </ul>
+              </li>
+              <li class="hover:text-neutral-almost-black"><a>Careers</a></li>
+              <li class="hover:text-neutral-almost-black"><a>About</a></li>
+            </ul>
+          </div>
+        </div>
         <!-- Logo image -->
-        <img class="w-fit" src="./dist/assets/logo.svg" alt="Company Logo" />
 
         <!-- Button to open the side menu -->
-        <a id="openMenu" type="button">
+        <a class="lg:hidden" id="openMenu" type="button">
           <img
             src="./dist/assets/icon-menu.svg"
             alt="Menu Icon to open a pop-up menu"
           />
         </a>
-      </div>
-
-      <!-- Hero section displaying the main dashboard image -->
-      <div class="image">
-        <img
-          src="./dist/assets/image-hero-mobile.png"
-          alt="Person holding a laptop"
-        />
-      </div>
-
-      <!-- Section with heading, text, and client logos -->
-      <div
-        class="lowerPart flex flex-col items-center gap-10 m-3 w-fit border border-black"
-      >
-        <!-- Main text content -->
-        <div
-          class="text-container text-center flex flex-col gap-4 items-center w-full my-4"
-        >
-          <h1 class="font-700 text-4xl">Make remote work</h1>
-          <p class="text-neutral-medium-gray font-500">
-            Get your team in sync, no matter your location. Streamline
-            processes, create team rituals, and watch productivity soar.
-          </p>
-          <!-- Button to learn more about the features -->
+        <div class="accounts gap-2 hidden lg:flex">
+          <button class="p-2 hover:text-neutral-almost-black">Login</button>
           <button
-            class="bg-neutral-almost-black w-fit p-4 px-6 text-neutral-almost-white rounded-2xl font-700 border border-neutral-almost-white hover:border hover:border-black hover:text-neutral-almost-black hover:bg-neutral-almost-white"
+            class="border-2 border-neutral-medium-gray p-2 rounded-xl hover:text-neutral-almost-black hover:border-neutral-almost-black"
           >
-            Learn more
+            Register
           </button>
         </div>
-
-        <!-- Logos of featured clients -->
+      </div>
+      <div
+        class="lg:flex lg:flex-row-reverse lg:max-w-screen-md xl:max-w-screen-lg"
+      >
+        <!-- Hero section displaying the main dashboard image -->
         <div
-          class="clients flex w-full items-center justify-between gap-2 border border-black"
+          class="image flex items-center justify-center w-full lg:justify-end h-full"
         >
           <img
-            class="w-1/5"
-            src="./dist/assets/client-databiz.svg"
-            alt="Databiz client logo"
+            class="block lg:hidden"
+            src="./dist/assets/image-hero-mobile.png"
+            alt="Person holding a laptop"
           />
           <img
-            class="w-1/5"
-            src="./dist/assets/client-audiophile.svg"
-            alt="Audiophile client logo"
-          />
-          <img
-            class="w-1/5"
-            src="./dist/assets/client-meet.svg"
-            alt="Meet client logo"
-          />
-          <img
-            class="w-1/5"
-            src="./dist/assets/client-maker.svg"
-            alt="Maker client logo"
+            class="hidden lg:block w-9/12 h-auto object-contain xl:w-8/12"
+            src="./dist/assets/image-hero-desktop.png"
+            alt="Person holding a laptop"
           />
         </div>
-      </div>
 
-      <!-- Side menu for mobile view -->
+        <!-- Section with heading, text, and client logos -->
+        <div
+          class="lowerPart flex flex-col items-center gap-10 m-3 lg:m-0 w-fit lg:w-full lg:justify-between min-h-full"
+        >
+          <!-- Main text content -->
+          <div
+            class="text-container text-center lg:items-start lg:h-full lg:text-start flex flex-col gap-4 items-center w-full my-4 lg:m-0 lg:gap-8 lg:pt-8"
+          >
+            <h1 class="font-700 text-4xl lg:text-[58px] xl:text-7xl">
+              Make
+              <div class="hidden lg:block mt-4 xl:mt-0">remote work</div>
+            </h1>
+            <p
+              class="text-neutral-medium-gray font-500 lg:text-sm lg:pr-9 xl:text-paragraph xl:pr-24"
+            >
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <!-- Button to learn more about the features -->
+            <button
+              class="bg-neutral-almost-black w-fit p-4 px-6 text-neutral-almost-white rounded-2xl font-700 border border-neutral-almost-white hover:border hover:border-black hover:text-neutral-almost-black hover:bg-neutral-almost-white lg:text-sm lg:p-4"
+            >
+              Learn more
+            </button>
+          </div>
+
+          <!-- Logos of featured clients -->
+          <div class="clients flex w-full items-center justify-between gap-2">
+            <img
+              class="w-1/5 lg:w-1/6"
+              src="./dist/assets/client-databiz.svg"
+              alt="Databiz client logo"
+            />
+            <img
+              class="w-1/5 lg:w-1/6"
+              src="./dist/assets/client-audiophile.svg"
+              alt="Audiophile client logo"
+            />
+            <img
+              class="w-1/5 lg:w-1/6"
+              src="./dist/assets/client-meet.svg"
+              alt="Meet client logo"
+            />
+            <img
+              class="w-1/5 lg:w-1/6"
+              src="./dist/assets/client-maker.svg"
+              alt="Maker client logo"
+            />
+          </div>
+        </div>
+
+        <!-- Side menu for mobile view -->
+      </div>
       <div
         id="sideMenu"
-        class="u w-[60%] bg-neutral-almost-white absolute flex-col h-full p-4 gap-8 text-neutral-medium-gray right-0 hidden"
+        class="w-[60%] md:w-[40%] bg-neutral-almost-white absolute flex-col h-full lg:h-max p-4 gap-8 text-neutral-medium-gray right-0 hidden lg:hidden font-500"
       >
         <!-- Close button for the side menu -->
         <div class="crossMenu flex w-full justify-end">
@@ -125,41 +241,55 @@
         <div class="menuList">
           <ul class="flex flex-col gap-4">
             <li>
-              <a id="features" class="flex items-center gap-2">
+              <a
+                id="featuresSidebar"
+                class="flex items-center gap-2 hover:text-neutral-almost-black"
+              >
                 Features
                 <img
-                  id="featureDownArrow"
+                  id="featureDownArrowSidebar"
                   src="./dist/assets/icon-arrow-down.svg"
                   alt="Arrow Down Icon"
                 />
                 <img
-                  id="featureUpArrow"
+                  id="featureUpArrowSidebar"
                   class="hidden"
                   src="./dist/assets/icon-arrow-up.svg"
                   alt="Arrow Up Icon"
                 />
               </a>
               <!-- Submenu for "Features" -->
-              <ul id="featuresSubMenu" class="flex-col px-6 gap-2 pt-4 hidden">
-                <li class="flex gap-3 items-center">
+              <ul
+                id="featuresSubMenuSidebar"
+                class="flex-col px-6 gap-2 pt-4 hidden"
+              >
+                <li
+                  class="flex gap-3 items-center hover:text-neutral-almost-black"
+                >
                   <img
                     src="./dist/assets/icon-todo.svg"
                     alt="Todo List Icon"
                   />Todo List
                 </li>
-                <li class="flex gap-3 items-center">
+                <li
+                  class="flex gap-3 items-center hover:text-neutral-almost-black"
+                >
                   <img
                     src="./dist/assets/icon-calendar.svg"
                     alt="Calendar Icon"
                   />Calendar
                 </li>
-                <li class="flex gap-3 items-center">
+                <li
+                  class="flex gap-3 items-center hover:text-neutral-almost-black"
+                >
                   <img
                     src="./dist/assets/icon-reminders.svg"
                     alt="Reminders Icon"
                   />Reminders
                 </li>
-                <li class="flex gap-3 items-center">
+                <li
+                  class="flex gap-3 items-center hover:text-neutral-almost-black"
+                >
                   <img
                     src="./dist/assets/icon-planning.svg"
                     alt="Planning Icon"
@@ -168,46 +298,54 @@
               </ul>
             </li>
             <li>
-              <a id="company" class="flex items-center gap-2">
+              <a
+                id="companySidebar"
+                class="flex items-center gap-2 hover:text-neutral-almost-black"
+              >
                 Company
                 <img
-                  id="companyDownArrow"
+                  id="companyDownArrowSidebar"
                   src="./dist/assets/icon-arrow-down.svg"
                   alt="Arrow Down Icon"
                 />
                 <img
                   class="hidden"
-                  id="companyUpArrow"
+                  id="companyUpArrowSidebar"
                   src="./dist/assets/icon-arrow-up.svg"
                   alt="Arrow up Icon"
                 />
               </a>
               <!-- Submenu for "Company" -->
-              <ul id="companySubMenu" class="flex-col px-6 pt-4 gap-4 hidden">
-                <li>History</li>
-                <li>Our Team</li>
-                <li>Blog</li>
+              <ul
+                id="companySubMenuSidebar"
+                class="flex-col px-6 pt-4 gap-4 hidden"
+              >
+                <li class="hover:text-neutral-almost-black">History</li>
+                <li class="hover:text-neutral-almost-black">Our Team</li>
+                <li class="hover:text-neutral-almost-black">Blog</li>
               </ul>
             </li>
-            <li><a href="">Careers</a></li>
-            <li><a href="">About</a></li>
+            <li class="hover:text-neutral-almost-black"><a>Careers</a></li>
+            <li class="hover:text-neutral-almost-black"><a>About</a></li>
           </ul>
         </div>
 
         <!-- Account actions: Login and Register -->
         <div class="accounts flex flex-col gap-2">
-          <button class="p-2">Login</button>
-          <button class="border-2 border-neutral-medium-gray p-2 rounded-xl">
+          <button class="p-2 hover:text-neutral-almost-black">Login</button>
+          <button
+            class="border-2 border-neutral-medium-gray p-2 rounded-xl hover:text-neutral-almost-black hover:border-neutral-almost-black"
+          >
             Register
           </button>
         </div>
       </div>
-    </div>
 
-    <!-- Dark background overlay for the side menu -->
+      <!-- Dark background overlay for the side menu -->
+    </div>
     <div
       id="darkBackground"
-      class="absolute w-[40%] h-full bg-black/70 hidden"
+      class="absolute w-[40%] md:w-[60%] h-full bg-black/70 hidden lg:hidden"
     ></div>
   </body>
 </html>
