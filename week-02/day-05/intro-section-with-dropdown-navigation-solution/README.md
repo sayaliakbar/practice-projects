@@ -218,4 +218,4 @@ This project bridges foundational web development concepts with real-world chall
 
 ## Acknowledgments
 
-Thanks to the [Frontend Mentor community](https://www.frontendmentor.io/) for their helpful resources and encouragement. Special shoutout to anyone who reviewed or provided feedback on this project.
+Thanks to the [Frontend Mentor community](https://www.frontendmentor.io/) for their helpful resources and encouragement.
