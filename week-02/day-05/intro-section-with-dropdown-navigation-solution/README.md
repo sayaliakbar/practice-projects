@@ -1,7 +1,3 @@
-Here's your updated and polished README for the **Frontend Mentor - Intro Section with Dropdown Navigation** challenge:
-
----
-
 # Frontend Mentor - Intro Section with Dropdown Navigation Solution
 
 This is my solution to the [Intro Section with Dropdown Navigation Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). It was a great opportunity to apply responsive design principles and practice interactive navigation using **HTML**, **Tailwind CSS**, and **JavaScript**.
@@ -36,9 +32,25 @@ The goal was to create a responsive landing page where users can:
 
 ### Screenshot
 
-![Solution Screenshot](./screenshot.jpg)
+#### Desktop View
 
-_Use the screenshot above or replace it with your own._
+![intro-section-with-dropdown-navigation-desktop](https://github.com/user-attachments/assets/72a9a9d8-f185-40c6-bf9f-3c0718a975ba)
+
+#### Active States
+
+![intro-section-with-dropdown-navigation-desktop-active-states](https://github.com/user-attachments/assets/66c87071-b4aa-41ec-aa2d-7f7a16b79661)
+
+#### Tablet View
+
+![intro-section-with-dropdown-navigation-tablet](https://github.com/user-attachments/assets/fb02a45a-5330-4cec-b8a2-c8037508b98b)
+
+#### Mobile View
+
+![intro-section-with-dropdown-navigation-mobile-collapsed](https://github.com/user-attachments/assets/7dfb3f72-e19b-4822-98e1-92f4ce23cdae)
+
+#### Mobile View (Expanded)
+
+![intro-section-with-dropdown-navigation-mobile-expanded](https://github.com/user-attachments/assets/25a2b33a-8058-45ca-a83c-cd3fc1cf554a)
 
 ### Links
 
