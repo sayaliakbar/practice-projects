@@ -46,10 +46,6 @@ Here are common time complexities with real-life analogies and examples:
 
 ---
 
-Here's how you can describe the process of finding the time complexities of the code examples step by step in README.md format:
-
----
-
 # Understanding Time Complexity
 
 ## Step-by-step Process to Find Time Complexity
