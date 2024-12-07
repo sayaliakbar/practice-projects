@@ -565,3 +565,7 @@ video {
 .p-0 {
   padding: 0px;
 }
+
+.font-spacemono {
+  font-family: Space Mono, monospace;
+}
