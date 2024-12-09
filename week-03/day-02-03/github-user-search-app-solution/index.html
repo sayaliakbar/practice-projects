@@ -30,7 +30,99 @@
       rel="stylesheet"
     />
   </head>
-  <body class="m-0 p-0 min-h-screen min-w-screen font-spacemono">
-    Hello World
+  <body
+    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center"
+  >
+    <!-- The container of the whole card begins here -->
+    <div class="border border-black w-1/2 flex flex-col items-center gap-4">
+      <!-- The top most devfinder div begins here -->
+      <div
+        class="header border border-black w-full flex justify-between items-center"
+      >
+        <h1 class="websiteName font-700 text-xl">devfinder</h1>
+        <div class="darkMode flex items-center gap-3">
+          <p class="uppercase text-xs text-font-2 font-700">dark</p>
+          <img
+            src="./dist/assets/icon-moon.svg"
+            alt="Moon logo for dark mode"
+          />
+        </div>
+      </div>
+
+      <!-- Search Input begins here -->
+      <div
+        class="searchInput border border-black w-full flex justify-between items-center gap-4 p-4 rounded-xl"
+      >
+        <img
+          src="./dist/assets/icon-search.svg"
+          alt="magnifying glass logo for search"
+        />
+        <input
+          class="searchInput w-full"
+          type="text"
+          placeholder="Search Github username..."
+        />
+        <button class="text-white bg-blue">Search</button>
+      </div>
+
+      <!-- Main Card begins head -->
+      <div class="cardContainer border border-black w-full flex items-center">
+        <!-- User Profile Image-->
+        <img
+          class="w-28"
+          src="./dist/assets/octocatProfile.png"
+          alt="The Octocate Image for Demo"
+        />
+
+        <!-- User Details begins here -->
+        <div class="userDetails">
+          <!-- Username segment -->
+          <div class="userName">
+            <h1>The Octocat</h1>
+            <a>@octocat</a>
+          </div>
+          <p>Joined 25 January 2011</p>
+
+          <!-- Not Available segment -->
+          <p>Not Available</p>
+
+          <!-- Followers segment -->
+          <div class="followers">
+            <div class="repoDetails">
+              <p>Repos</p>
+              <h1>8</h1>
+            </div>
+            <div class="followers">
+              <p>Folowers</p>
+              <h1>6097</h1>
+            </div>
+            <div class="following">
+              <p>Following</p>
+              <h1>9</h1>
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="contact">
+            <div class="location">
+              <img src="./dist/assets/icon-location.svg" alt="Location Icon " />
+              <p>San Francisco</p>
+            </div>
+            <div class="twitter">
+              <img src="./dist/assets/icon-twitter.svg" alt="twitter Icon " />
+              <p>Not Available</p>
+            </div>
+            <div class="website">
+              <img src="./dist/assets/icon-website.svg" alt="website Icon " />
+              <p>https://github.blog</p>
+            </div>
+            <div class="company">
+              <img src="./dist/assets/icon-company.svg" alt="Company Icon " />
+              <p>@github</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
