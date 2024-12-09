@@ -103,7 +103,7 @@
       >
         <!-- User Profile Image-->
         <img
-          class="userProfile w-28 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
+          class="userProfile w-24 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
@@ -111,9 +111,9 @@
         <!-- User Details begins here -->
         <div class="userDetails w-full flex flex-col gap-6">
           <!-- Username segment -->
-          <div class="userName relative flex">
+          <div class="userName relative flex items-center">
             <img
-              class="w-24 rounded-xl mr-4 md:hidden"
+              class="userProfile w-24 h-fit object-cover p-1 overflow-hidden border-black border rounded-full mr-4 md:hidden"
               src="./dist/assets/octocatProfile.png"
               alt="The Octocate Image for Demo"
             />
@@ -128,12 +128,10 @@
                 Joined 25 January 2011
               </p>
               <!-- Not Available segment -->
-              <p class="bio text-gray-400 md:hidden truncate">Not Available</p>
+              <p class="bio text-gray-400 md:hidden">Not Available</p>
             </div>
           </div>
-          <p class="bio text-gray-400 hidden md:block truncate break-words">
-            Not Available
-          </p>
+          <p class="bio text-gray-400 hidden md:block">Not Available</p>
 
           <!-- Followers segment -->
           <div
@@ -163,7 +161,7 @@
                 src="./dist/assets/icon-location.svg"
                 alt="Location Icon "
               />
-              <p class="location break-words truncate">San Francisco</p>
+              <p class="location">San Francisco</p>
             </div>
             <div class="flex items-center gap-4">
               <img
@@ -171,7 +169,7 @@
                 src="./dist/assets/icon-twitter.svg"
                 alt="twitter Icon "
               />
-              <p class="twitter break-words truncate">Not Available</p>
+              <p class="twitter">Not Available</p>
             </div>
             <div class="flex items-center gap-3">
               <img
