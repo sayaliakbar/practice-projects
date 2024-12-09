@@ -24,9 +24,10 @@ function searchUser() {
       const data = await response.json();
       userFullName.innerHTML = data.name;
       username.innerHTML = data.login;
-
+      console.log(data.avatar_url);
       for (const userProfile of userProfiles) {
-        userProfile.src = data.avatar_url;
+        // userProfile.src = data.avatar_url;
+        console.log(data.avatar_url);
       }
       joinedDate.innerHTML = `Joined ${formatDate(data.created_at)}`;
       for (const bio of bios) {
