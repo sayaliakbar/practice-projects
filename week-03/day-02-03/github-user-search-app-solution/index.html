@@ -11,7 +11,7 @@
 
     <!-- Link to external JavaScript file, loaded after DOM parsing -->
     <script src="./js/theme.js" defer></script>
-    <!-- <script src="./dist/script.js" defer></script> -->
+    <script src="./js/script.js" defer></script>
 
     <!-- Favicon to display a small icon in the browser tab -->
     <link
@@ -74,7 +74,7 @@
 
       <!-- Search Input begins here -->
       <div
-        class="searchInput w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between dark:bg-cardBackground"
+        class="w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between dark:bg-cardBackground"
       >
         <div class="flex relative flex-grow">
           <img
@@ -83,14 +83,15 @@
             alt="magnifying glass logo for search"
           />
           <input
-            class="searchInput w-full p-2 pl-12 dark:bg-cardBackground"
+            class="searchUser w-full p-2 pl-12 dark:bg-cardBackground"
             type="text"
             placeholder="Search GitHub username..."
           />
         </div>
 
         <button
-          class="text-white bg-blue-500 px-4 py-2 rounded-lg w-full sm:w-fit"
+          onclick="searchUser()"
+          class="searchBtn text-white bg-blue-500 px-4 py-2 rounded-lg w-full sm:w-fit"
         >
           Search
         </button>
@@ -102,7 +103,7 @@
       >
         <!-- User Profile Image-->
         <img
-          class="w-28 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
+          class="userProfile w-28 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
@@ -117,54 +118,76 @@
               alt="The Octocate Image for Demo"
             />
             <div class="">
-              <h1 class="font-700 text-2xl dark:text-softwhite">The Octocat</h1>
-              <a class="text-blue-500">@octocat</a>
-              <p class="sm:absolute sm:top-0 sm:right-0 text-gray-500">
+              <h1 class="userFullName font-700 text-2xl dark:text-softwhite">
+                The Octocat
+              </h1>
+              <h2 class="username text-blue-500">@octocat</h2>
+              <p
+                class="joinedDate sm:absolute sm:top-0 sm:right-0 text-gray-500"
+              >
                 Joined 25 January 2011
               </p>
               <!-- Not Available segment -->
-              <p class="text-gray-400 md:hidden">Not Available</p>
+              <p class="bio text-gray-400 md:hidden truncate">Not Available</p>
             </div>
           </div>
-          <p class="text-gray-400 hidden md:block">Not Available</p>
+          <p class="bio text-gray-400 hidden md:block truncate break-words">
+            Not Available
+          </p>
 
           <!-- Followers segment -->
           <div
-            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl bg-gray-200 dark:bg-black/35 dark:text-softwhite"
+            class="flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl bg-gray-200 dark:bg-black/35 dark:text-softwhite"
           >
-            <div class="repoDetails">
+            <div>
               <p class="">Repos</p>
-              <h1 class="font-700">8</h1>
+              <h1 class="repos font-700">8</h1>
             </div>
-            <div class="followers">
+            <div>
               <p class="">Folowers</p>
-              <h1 class="font-700">6097</h1>
+              <h1 class="followers font-700">6097</h1>
             </div>
-            <div class="following">
+            <div>
               <p class="">Following</p>
-              <h1 class="font-700">9</h1>
+              <h1 class="following font-700">9</h1>
             </div>
           </div>
 
           <!-- Contact Details -->
           <div
-            class="contact grid sm:grid-cols-2 gap-4 text-blue-950 dark:text-softwhite"
+            class="contact grid sm:grid-cols-2 w-full gap-4 text-blue-950 dark:text-softwhite"
           >
-            <div class="location flex items-center gap-4">
-              <img src="./dist/assets/icon-location.svg" alt="Location Icon " />
-              <p>San Francisco</p>
+            <div class="flex items-center gap-4">
+              <img
+                class="w-5 h-5"
+                src="./dist/assets/icon-location.svg"
+                alt="Location Icon "
+              />
+              <p class="location break-words truncate">San Francisco</p>
             </div>
-            <div class="twitter flex items-center gap-4">
-              <img src="./dist/assets/icon-twitter.svg" alt="twitter Icon " />
-              <p>Not Available</p>
+            <div class="flex items-center gap-4">
+              <img
+                class="w-5 h-5"
+                src="./dist/assets/icon-twitter.svg"
+                alt="twitter Icon "
+              />
+              <p class="twitter break-words truncate">Not Available</p>
             </div>
-            <div class="website flex items-center gap-4">
-              <img src="./dist/assets/icon-website.svg" alt="website Icon " />
-              <p>https://github.blog</p>
+            <div class="flex items-center gap-3">
+              <img
+                class="w-5 h-5"
+                src="./dist/assets/icon-website.svg"
+                alt="website Icon "
+              />
+              <a class="website">https://github.blog</a>
             </div>
-            <div class="company flex items-center gap-4">
-              <img src="./dist/assets/icon-company.svg" alt="Company Icon " />
-              <p>@github</p>
+            <div class="flex items-center gap-4">
+              <img
+                class="w-5 h-5"
+                src="./dist/assets/icon-company.svg"
+                alt="Company Icon "
+              />
+              <p class="company">@github</p>
             </div>
           </div>
         </div>
