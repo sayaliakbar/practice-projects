@@ -31,7 +31,7 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-gray-50"
+    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-gray-50 dark:bg-background"
   >
     <!-- The container of the whole card begins here -->
     <div
@@ -39,19 +39,25 @@
     >
       <!-- The top most devfinder div begins here -->
       <div class="header w-full flex justify-between items-center">
-        <h1 class="websiteName font-700 text-xl">devfinder</h1>
-        <div class="darkMode flex items-center gap-3">
+        <h1 class="websiteName font-700 text-xl dark:text-softwhite">
+          devfinder
+        </h1>
+        <div class="darkMode dark:hidden flex items-center gap-3">
           <p class="uppercase text-xs text-gray-500 font-700">dark</p>
           <img
             src="./dist/assets/icon-moon.svg"
             alt="Moon logo for dark mode"
           />
         </div>
+        <div class="darkMode flex items-center gap-3">
+          <p class="uppercase text-xs dark:text-softwhite font-700">light</p>
+          <img src="./dist/assets/icon-sun.svg" alt="Moon logo for dark mode" />
+        </div>
       </div>
 
       <!-- Search Input begins here -->
       <div
-        class="searchInput w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between"
+        class="searchInput w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between dark:bg-cardBackground"
       >
         <div class="flex relative flex-grow">
           <img
@@ -60,7 +66,7 @@
             alt="magnifying glass logo for search"
           />
           <input
-            class="searchInput w-full p-2 pl-12"
+            class="searchInput w-full p-2 pl-12 dark:bg-cardBackground"
             type="text"
             placeholder="Search GitHub username..."
           />
@@ -75,11 +81,11 @@
 
       <!-- Main Card begins head -->
       <div
-        class="cardContainer w-full flex items-start bg-white shadow-2xl rounded-xl p-8"
+        class="cardContainer w-full flex items-start bg-white shadow-2xl rounded-xl p-8 dark:bg-cardBackground/75"
       >
         <!-- User Profile Image-->
         <img
-          class="w-28 rounded-xl overflow-hidden mr-8 hidden md:block"
+          class="w-28 overflow-hidden mr-8 hidden md:block rounded-full dark:border-white dark:p-1 dark:border"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
@@ -94,7 +100,7 @@
               alt="The Octocate Image for Demo"
             />
             <div class="">
-              <h1 class="font-700 text-2xl">The Octocat</h1>
+              <h1 class="font-700 text-2xl dark:text-softwhite">The Octocat</h1>
               <a class="text-blue-500">@octocat</a>
               <p class="sm:absolute sm:top-0 sm:right-0 text-gray-500">
                 Joined 25 January 2011
@@ -107,24 +113,26 @@
 
           <!-- Followers segment -->
           <div
-            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl"
+            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl dark:bg-black/35 dark:text-softwhite"
           >
             <div class="repoDetails">
-              <p class="text-blue-950">Repos</p>
+              <p class="">Repos</p>
               <h1 class="font-700">8</h1>
             </div>
             <div class="followers">
-              <p class="text-blue-950">Folowers</p>
+              <p class="">Folowers</p>
               <h1 class="font-700">6097</h1>
             </div>
             <div class="following">
-              <p class="text-blue-950">Following</p>
+              <p class="">Following</p>
               <h1 class="font-700">9</h1>
             </div>
           </div>
 
           <!-- Contact Details -->
-          <div class="contact grid sm:grid-cols-2 gap-4 text-blue-950">
+          <div
+            class="contact grid sm:grid-cols-2 gap-4 text-blue-950 dark:text-softwhite"
+          >
             <div class="location flex items-center gap-4">
               <img src="./dist/assets/icon-location.svg" alt="Location Icon " />
               <p>San Francisco</p>

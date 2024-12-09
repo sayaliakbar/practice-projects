@@ -6,6 +6,11 @@ module.exports = {
     extend: {
       fontFamily: { spacemono: ["Space Mono", "monospace"] },
       fontWeight: { 300: "300", 400: "400", 500: "500", 700: "700" },
+      colors: {
+        background: "rgba(var(--background))",
+        cardBackground: "rgba(var(--cardbackground))",
+        softwhite: "rgba(var(--softwhite))",
+      },
     },
 
     plugins: [
