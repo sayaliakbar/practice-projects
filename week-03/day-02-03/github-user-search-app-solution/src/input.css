@@ -7,3 +7,7 @@
   --cardbackground: 36, 36, 56;
   --softwhite: 237, 237, 237;
 }
+
+* {
+  @apply transition-colors duration-200;
+}

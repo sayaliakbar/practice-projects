@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <!-- Sets character encoding and ensures proper rendering on different devices -->
     <meta charset="UTF-8" />
@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./dist/styles/style.css" />
 
     <!-- Link to external JavaScript file, loaded after DOM parsing -->
-    <script src="./dist/script.js" defer></script>
+    <script src="./js/theme.js" defer></script>
+    <!-- <script src="./dist/script.js" defer></script> -->
 
     <!-- Favicon to display a small icon in the browser tab -->
     <link
@@ -42,17 +43,33 @@
         <h1 class="websiteName font-700 text-xl dark:text-softwhite">
           devfinder
         </h1>
-        <div class="darkMode dark:hidden flex items-center gap-3">
-          <p class="uppercase text-xs text-gray-500 font-700">dark</p>
+
+        <button
+          id="toggler"
+          class="flex items-center gap-3"
+          onclick="toggleTheme()"
+        >
+          <span class="dark:hidden uppercase text-xs text-gray-500 font-700"
+            >dark</span
+          >
           <img
+            class="dark:hidden"
             src="./dist/assets/icon-moon.svg"
             alt="Moon logo for dark mode"
           />
-        </div>
-        <div class="darkMode flex items-center gap-3">
-          <p class="uppercase text-xs dark:text-softwhite font-700">light</p>
-          <img src="./dist/assets/icon-sun.svg" alt="Moon logo for dark mode" />
-        </div>
+          <p
+            id="lightText"
+            class="hidden uppercase text-xs dark:text-softwhite font-700"
+          >
+            light
+          </p>
+          <img
+            id="lightImage"
+            class="hidden"
+            src="./dist/assets/icon-sun.svg"
+            alt="Moon logo for dark mode"
+          />
+        </button>
       </div>
 
       <!-- Search Input begins here -->
@@ -85,7 +102,7 @@
       >
         <!-- User Profile Image-->
         <img
-          class="w-28 overflow-hidden mr-8 hidden md:block rounded-full dark:border-white dark:p-1 dark:border"
+          class="w-28 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
@@ -113,7 +130,7 @@
 
           <!-- Followers segment -->
           <div
-            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl dark:bg-black/35 dark:text-softwhite"
+            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl bg-gray-200 dark:bg-black/35 dark:text-softwhite"
           >
             <div class="repoDetails">
               <p class="">Repos</p>
