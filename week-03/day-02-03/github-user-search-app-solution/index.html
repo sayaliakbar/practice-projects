@@ -31,7 +31,7 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center"
+    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-bg-1"
   >
     <!-- The container of the whole card begins here -->
     <div class="border border-black w-1/2 flex flex-col items-center gap-4">
@@ -51,72 +51,83 @@
 
       <!-- Search Input begins here -->
       <div
-        class="searchInput border border-black w-full flex justify-between items-center gap-4 p-4 rounded-xl"
+        class="searchInput border border-black w-full flex justify-between items-center gap-4 p-2 rounded-xl bg-dark-font-1"
       >
         <img
+          class="pl-4"
           src="./dist/assets/icon-search.svg"
           alt="magnifying glass logo for search"
         />
         <input
-          class="searchInput w-full"
+          class="searchInput w-full p-2"
           type="text"
-          placeholder="Search Github username..."
+          placeholder="Search GitHub username..."
         />
-        <button class="text-white bg-blue">Search</button>
+        <button
+          class="text-white bg-font-2 px-4 py-2 rounded-xl text-dark-font-1"
+        >
+          Search
+        </button>
       </div>
 
       <!-- Main Card begins head -->
-      <div class="cardContainer border border-black w-full flex items-center">
+      <div
+        class="cardContainer border border-black w-full flex items-start bg-bg-2 rounded-xl p-8"
+      >
         <!-- User Profile Image-->
         <img
-          class="w-28"
+          class="w-28 rounded-xl overflow-hidden mr-8"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
 
         <!-- User Details begins here -->
-        <div class="userDetails">
+        <div class="userDetails relative w-full flex flex-col gap-6">
+          <p class="absolute right-0 text-dark-hover-toggle">
+            Joined 25 January 2011
+          </p>
           <!-- Username segment -->
           <div class="userName">
-            <h1>The Octocat</h1>
+            <h1 class="font-700 text-2xl">The Octocat</h1>
             <a>@octocat</a>
           </div>
-          <p>Joined 25 January 2011</p>
 
           <!-- Not Available segment -->
-          <p>Not Available</p>
+          <p class="text-dark-hover-toggle">Not Available</p>
 
           <!-- Followers segment -->
-          <div class="followers">
+          <div
+            class="followers flex justify-between bg-font-3 py-4 px-8 rounded-xl"
+          >
             <div class="repoDetails">
               <p>Repos</p>
-              <h1>8</h1>
+              <h1 class="font-700">8</h1>
             </div>
             <div class="followers">
               <p>Folowers</p>
-              <h1>6097</h1>
+              <h1 class="font-700">6097</h1>
             </div>
             <div class="following">
               <p>Following</p>
-              <h1>9</h1>
+              <h1 class="font-700">9</h1>
             </div>
           </div>
 
           <!-- Contact Details -->
-          <div class="contact">
-            <div class="location">
+          <div class="contact grid grid-cols-2 gap-4">
+            <div class="location flex items-center gap-4">
               <img src="./dist/assets/icon-location.svg" alt="Location Icon " />
               <p>San Francisco</p>
             </div>
-            <div class="twitter">
+            <div class="twitter flex items-center gap-4">
               <img src="./dist/assets/icon-twitter.svg" alt="twitter Icon " />
               <p>Not Available</p>
             </div>
-            <div class="website">
+            <div class="website flex items-center gap-4">
               <img src="./dist/assets/icon-website.svg" alt="website Icon " />
               <p>https://github.blog</p>
             </div>
-            <div class="company">
+            <div class="company flex items-center gap-4">
               <img src="./dist/assets/icon-company.svg" alt="Company Icon " />
               <p>@github</p>
             </div>
