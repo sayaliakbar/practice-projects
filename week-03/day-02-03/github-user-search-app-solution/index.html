@@ -31,17 +31,17 @@
     />
   </head>
   <body
-    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-bg-1"
+    class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-gray-50"
   >
     <!-- The container of the whole card begins here -->
-    <div class="border border-black w-1/2 flex flex-col items-center gap-4">
+    <div
+      class="flex flex-col items-center gap-4 w-11/12 md:w-5/6 lg:w-2/3 xl:w-1/2"
+    >
       <!-- The top most devfinder div begins here -->
-      <div
-        class="header border border-black w-full flex justify-between items-center"
-      >
+      <div class="header w-full flex justify-between items-center">
         <h1 class="websiteName font-700 text-xl">devfinder</h1>
         <div class="darkMode flex items-center gap-3">
-          <p class="uppercase text-xs text-font-2 font-700">dark</p>
+          <p class="uppercase text-xs text-gray-500 font-700">dark</p>
           <img
             src="./dist/assets/icon-moon.svg"
             alt="Moon logo for dark mode"
@@ -51,20 +51,23 @@
 
       <!-- Search Input begins here -->
       <div
-        class="searchInput border border-black w-full flex justify-between items-center gap-4 p-2 rounded-xl bg-dark-font-1"
+        class="searchInput w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between"
       >
-        <img
-          class="pl-4"
-          src="./dist/assets/icon-search.svg"
-          alt="magnifying glass logo for search"
-        />
-        <input
-          class="searchInput w-full p-2"
-          type="text"
-          placeholder="Search GitHub username..."
-        />
+        <div class="flex relative flex-grow">
+          <img
+            class="pl-2 absolute top-2"
+            src="./dist/assets/icon-search.svg"
+            alt="magnifying glass logo for search"
+          />
+          <input
+            class="searchInput w-full p-2 pl-12"
+            type="text"
+            placeholder="Search GitHub username..."
+          />
+        </div>
+
         <button
-          class="text-white bg-font-2 px-4 py-2 rounded-xl text-dark-font-1"
+          class="text-white bg-blue-500 px-4 py-2 rounded-lg w-full sm:w-fit"
         >
           Search
         </button>
@@ -72,49 +75,56 @@
 
       <!-- Main Card begins head -->
       <div
-        class="cardContainer border border-black w-full flex items-start bg-bg-2 rounded-xl p-8"
+        class="cardContainer w-full flex items-start bg-white shadow-2xl rounded-xl p-8"
       >
         <!-- User Profile Image-->
         <img
-          class="w-28 rounded-xl overflow-hidden mr-8"
+          class="w-28 rounded-xl overflow-hidden mr-8 hidden md:block"
           src="./dist/assets/octocatProfile.png"
           alt="The Octocate Image for Demo"
         />
 
         <!-- User Details begins here -->
-        <div class="userDetails relative w-full flex flex-col gap-6">
-          <p class="absolute right-0 text-dark-hover-toggle">
-            Joined 25 January 2011
-          </p>
+        <div class="userDetails w-full flex flex-col gap-6">
           <!-- Username segment -->
-          <div class="userName">
-            <h1 class="font-700 text-2xl">The Octocat</h1>
-            <a>@octocat</a>
+          <div class="userName relative flex">
+            <img
+              class="w-24 rounded-xl mr-4 md:hidden"
+              src="./dist/assets/octocatProfile.png"
+              alt="The Octocate Image for Demo"
+            />
+            <div class="">
+              <h1 class="font-700 text-2xl">The Octocat</h1>
+              <a class="text-blue-500">@octocat</a>
+              <p class="sm:absolute sm:top-0 sm:right-0 text-gray-500">
+                Joined 25 January 2011
+              </p>
+              <!-- Not Available segment -->
+              <p class="text-gray-400 md:hidden">Not Available</p>
+            </div>
           </div>
-
-          <!-- Not Available segment -->
-          <p class="text-dark-hover-toggle">Not Available</p>
+          <p class="text-gray-400 hidden md:block">Not Available</p>
 
           <!-- Followers segment -->
           <div
-            class="followers flex justify-between bg-font-3 py-4 px-8 rounded-xl"
+            class="followers flex justify-between bg-font-3 py-4 sm:px-8 rounded-xl"
           >
             <div class="repoDetails">
-              <p>Repos</p>
+              <p class="text-blue-950">Repos</p>
               <h1 class="font-700">8</h1>
             </div>
             <div class="followers">
-              <p>Folowers</p>
+              <p class="text-blue-950">Folowers</p>
               <h1 class="font-700">6097</h1>
             </div>
             <div class="following">
-              <p>Following</p>
+              <p class="text-blue-950">Following</p>
               <h1 class="font-700">9</h1>
             </div>
           </div>
 
           <!-- Contact Details -->
-          <div class="contact grid grid-cols-2 gap-4">
+          <div class="contact grid sm:grid-cols-2 gap-4 text-blue-950">
             <div class="location flex items-center gap-4">
               <img src="./dist/assets/icon-location.svg" alt="Location Icon " />
               <p>San Francisco</p>
