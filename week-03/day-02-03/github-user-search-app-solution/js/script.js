@@ -35,20 +35,38 @@ function searchUser() {
       }
       joinedDate.innerHTML = `Joined ${formatDate(data.created_at)}`;
       for (const bio of bios) {
-        bio.innerHTML = data.bio;
+        if (data.bio) {
+          bio.innerHTML = data.bio;
+        } else {
+          bio.innerHTML = "Not Available";
+        }
       }
       repos.innerHTML = data.public_repos;
       followers.innerHTML = data.followers;
       following.innerHTML = data.following;
-      location.innerHTML = data.location;
-      twitter.innerHTML = data.twitter_username;
-      if (data.name) {
-        console.log(data.company);
-        console.log("company present");
+
+      if (data.location) {
+        location.innerHTML = data.location;
+      } else {
+        location.innerHTML = "Not Available";
       }
-      //   company.innerHTML = data.company;
-      website.innerHTML = data.html_url;
-      website.href = data.html_url;
+
+      if (data.twitter_username) {
+        twitter.innerHTML = data.twitter_username;
+      } else {
+        twitter.innerHTML = "Not Available";
+      }
+      if (data.company) {
+        company.innerHTML = data.company;
+      } else {
+        company.innerHTML = "Not Available";
+      }
+      if (data.html_url) {
+        website.innerHTML = data.html_url;
+        website.href = data.html_url;
+      } else {
+        website.innerHTML = "Not Available";
+      }
     } catch (error) {
       console.log(`Error:`, error);
     }

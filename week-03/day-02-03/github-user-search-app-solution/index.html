@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
   <head>
-    <!-- Sets character encoding and ensures proper rendering on different devices -->
+    <!-- Specifies the character encoding for the document -->
     <meta charset="UTF-8" />
+    <!-- Ensures the website is responsive and adapts to different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro Section</title>
 
-    <!-- Link to the external stylesheet for applying custom styles -->
+    <!-- Links an external CSS file for styling -->
     <link rel="stylesheet" href="./dist/styles/style.css" />
 
-    <!-- Link to external JavaScript file, loaded after DOM parsing -->
+    <!-- Adds JavaScript functionality for theme and search; 'defer' ensures scripts run after the DOM is fully loaded -->
     <script src="./js/theme.js" defer></script>
     <script src="./js/script.js" defer></script>
 
-    <!-- Favicon to display a small icon in the browser tab -->
+    <!-- Sets a favicon for the browser tab -->
     <link
       rel="icon"
       href="./dist/assets/favicon-32x32.png"
@@ -21,11 +22,11 @@
       type="image/png"
     />
 
-    <!-- Preconnect to Google's font servers for faster font loading -->
+    <!-- Preconnects to Google Fonts servers to improve font loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Import the Google Font "Epilogue" -->
+    <!-- Imports the "Space Mono" font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
@@ -34,30 +35,34 @@
   <body
     class="m-0 p-0 min-h-screen min-w-screen font-spacemono flex items-center justify-center bg-gray-50 dark:bg-background"
   >
-    <!-- The container of the whole card begins here -->
+    <!-- Container for the entire card -->
     <div
       class="flex flex-col items-center gap-4 w-11/12 md:w-5/6 lg:w-2/3 xl:w-1/2"
     >
-      <!-- The top most devfinder div begins here -->
+      <!-- Header section with website title and theme toggle button -->
       <div class="header w-full flex justify-between items-center">
+        <!-- Website title -->
         <h1 class="websiteName font-700 text-xl dark:text-softwhite">
           devfinder
         </h1>
 
+        <!-- Button to toggle between light and dark themes -->
         <button
           id="toggler"
           class="flex items-center gap-3"
           onclick="toggleTheme()"
         >
-          <span class="dark:hidden uppercase text-xs text-gray-500 font-700"
-            >dark</span
-          >
+          <!-- Visible in light mode -->
+          <span class="dark:hidden uppercase text-xs text-gray-500 font-700">
+            dark
+          </span>
           <img
             class="dark:hidden"
             src="./dist/assets/icon-moon.svg"
             alt="Moon logo for dark mode"
             loading="lazy"
           />
+          <!-- Visible in dark mode -->
           <p
             id="lightText"
             class="hidden uppercase text-xs dark:text-softwhite font-700"
@@ -68,21 +73,22 @@
             id="lightImage"
             class="hidden"
             src="./dist/assets/icon-sun.svg"
-            alt="Moon logo for dark mode"
+            alt="Sun logo for light mode"
             loading="lazy"
           />
         </button>
       </div>
 
-      <!-- Search Input begins here -->
+      <!-- Search bar for GitHub usernames -->
       <div
         class="w-full flex flex-col sm:flex-row gap-4 p-2 rounded-xl bg-dark-font-1 bg-white shadow-2xl sm:justify-between dark:bg-cardBackground items-center"
       >
+        <!-- Search input field -->
         <div class="flex relative flex-grow w-full">
           <img
             class="pl-2 absolute top-2"
             src="./dist/assets/icon-search.svg"
-            alt="magnifying glass logo for search"
+            alt="Magnifying glass logo for search"
             loading="lazy"
           />
 
@@ -91,12 +97,14 @@
             type="text"
             placeholder="Search GitHub username..."
           />
+          <!-- Error message displayed when username is not found -->
           <span
             class="notFound text-red-600 text-xs sm:text-base w-fit absolute right-0 top-2 hidden"
             >Not Found!</span
           >
         </div>
 
+        <!-- Search button -->
         <button
           onclick="searchUser()"
           class="searchBtn text-white bg-blue-500 px-4 py-2 rounded-lg w-full sm:w-fit"
@@ -105,29 +113,29 @@
         </button>
       </div>
 
-      <!-- Main Card begins head -->
+      <!-- Main card containing user information -->
       <div
         class="cardContainer w-full flex items-start bg-white shadow-2xl rounded-xl p-8 dark:bg-cardBackground/75"
       >
-        <!-- User Profile Image-->
+        <!-- User profile image -->
         <img
           class="userProfile w-24 overflow-hidden mr-8 hidden p-1 border-black border md:block rounded-full dark:border-white dark:border"
           src="./dist/assets/octocatProfile.png"
-          alt="The Octocate Image for Demo"
+          alt="Octocat profile image for demo"
           loading="lazy"
         />
 
-        <!-- User Details begins here -->
+        <!-- User details section -->
         <div class="userDetails w-full flex flex-col gap-6">
-          <!-- Username segment -->
+          <!-- Username, full name, and join date -->
           <div class="userName relative flex items-center">
             <img
-              class="userProfile w-24 h-fit object-cover p-1 overflow-hidden border-black border rounded-full mr-4 md:hidden"
+              class="userProfile w-24 h-fit object-cover p-1 border-black border rounded-full mr-4 md:hidden"
               src="./dist/assets/octocatProfile.png"
-              alt="The Octocate Image for Demo"
+              alt="Octocat profile image for demo"
               loading="lazy"
             />
-            <div class="">
+            <div>
               <h1 class="userFullName font-700 text-2xl dark:text-softwhite">
                 The Octocat
               </h1>
@@ -137,13 +145,13 @@
               >
                 Joined 25 January 2011
               </p>
-              <!-- Not Available segment -->
+              <!-- Short bio -->
               <p class="bio text-gray-400 md:hidden">Not Available</p>
             </div>
           </div>
           <p class="bio text-gray-400 hidden md:block">Not Available</p>
 
-          <!-- Followers segment -->
+          <!-- User stats (repositories, followers, following) -->
           <div
             class="flex justify-between bg-font-3 py-4 px-4 sm:px-8 rounded-xl bg-gray-200 dark:bg-black/35 dark:text-softwhite"
           >
@@ -152,7 +160,7 @@
               <h1 class="repos font-700">8</h1>
             </div>
             <div>
-              <p class="">Folowers</p>
+              <p class="">Followers</p>
               <h1 class="followers font-700">6097</h1>
             </div>
             <div>
@@ -161,7 +169,7 @@
             </div>
           </div>
 
-          <!-- Contact Details -->
+          <!-- User contact details -->
           <div
             class="contact grid sm:grid-cols-2 gap-4 text-blue-950 dark:text-softwhite overflow-hidden"
           >
@@ -169,7 +177,7 @@
               <img
                 class="w-5 h-5"
                 src="./dist/assets/icon-location.svg"
-                alt="Location Icon "
+                alt="Location icon"
                 loading="lazy"
               />
               <p class="location truncate">San Francisco</p>
@@ -178,7 +186,7 @@
               <img
                 class="w-5 h-5"
                 src="./dist/assets/icon-twitter.svg"
-                alt="twitter Icon "
+                alt="Twitter icon"
                 loading="lazy"
               />
               <p class="twitter truncate">Not Available</p>
@@ -187,7 +195,7 @@
               <img
                 class="w-5 h-5"
                 src="./dist/assets/icon-website.svg"
-                alt="website Icon "
+                alt="Website icon"
                 loading="lazy"
               />
               <a
@@ -200,7 +208,7 @@
               <img
                 class="w-5 h-5"
                 src="./dist/assets/icon-company.svg"
-                alt="Company Icon "
+                alt="Company icon"
                 loading="lazy"
               />
               <p class="company truncate">@github</p>
