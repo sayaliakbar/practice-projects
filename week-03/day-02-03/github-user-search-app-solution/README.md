@@ -43,18 +43,30 @@ This project is a web application that allows users to search for GitHub profile
 
 #### Desktop View
 
+![github-user-search-app-desktop](https://github.com/user-attachments/assets/433ae913-bb33-4d8b-ac62-28405a8be058)
+
+#### Desktop View (Dark Mode)
+
+![github-user-search-app-desktop-darkMode](https://github.com/user-attachments/assets/6ec0b9aa-714a-4973-a1c5-e8cf2bc680e4)
+
 #### Active States
+
+![github-user-search-app-desktop-activeStates](https://github.com/user-attachments/assets/0a446848-b7be-491d-94bd-0f4d12851ae1)
 
 #### Tablet View
 
+![github-user-search-app-tablet](https://github.com/user-attachments/assets/2cf8e641-a499-4cf9-9729-24b099336745)
+
 #### Mobile View
+
+![github-user-search-app-mobile](https://github.com/user-attachments/assets/491c25c5-7c45-467d-ae05-9497d999ee89)
 
 ---
 
 ### Links
 
-- **Solution URL**: [View the solution here](https://github.com/sayakbarali/netixsol-internship/blob/main/week-02/day-05-06/intro-section-with-dropdown-navigation-solution/index.html)
-- **Live Site URL**: [Visit the live demo](https://solid-engine.surge.sh/)
+- **Solution URL**: [View the solution here](https://github.com/sayakbarali/netixsol-internship/blob/main/week-03/day-02-03/github-user-search-app-solution/index.html)
+- **Live Site URL**: [Visit the live demo](https://perfect-bun.surge.sh/)
 
 ---
 
