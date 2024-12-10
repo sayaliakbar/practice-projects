@@ -1,6 +1,6 @@
 function searchUser() {
   const searchUser = document.querySelector(".searchUser").value;
-  console.log(searchUser);
+
   const userFullName = document.querySelector(".userFullName");
   const userProfiles = document.querySelectorAll(".userProfile");
   const username = document.querySelector(".username");
@@ -13,14 +13,19 @@ function searchUser() {
   const location = document.querySelector(".location");
   const company = document.querySelector(".company");
   const website = document.querySelector(".website");
+  const notFound = document.querySelector(".notFound");
 
   const url = `https://api.github.com/users/${searchUser}`;
   async function getUrl() {
     try {
       const response = await fetch(url);
       if (!response.ok) {
+        if (response.status === 404) {
+          notFound.classList.remove("hidden");
+        }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+      notFound.classList.add("hidden");
       const data = await response.json();
       userFullName.innerHTML = data.name;
       username.innerHTML = data.login;
@@ -37,11 +42,13 @@ function searchUser() {
       following.innerHTML = data.following;
       location.innerHTML = data.location;
       twitter.innerHTML = data.twitter_username;
-      company.innerHTML = data.company;
+      if (data.name) {
+        console.log(data.company);
+        console.log("company present");
+      }
+      //   company.innerHTML = data.company;
       website.innerHTML = data.html_url;
-
-      console.log(data);
-      console.log(data.html_url);
+      website.href = data.html_url;
     } catch (error) {
       console.log(`Error:`, error);
     }
