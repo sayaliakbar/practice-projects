@@ -1011,6 +1011,14 @@ video {
     top: 0px;
   }
 
+  .sm\:top-2 {
+    top: 0.5rem;
+  }
+
+  .sm\:top-3 {
+    top: 0.75rem;
+  }
+
   .sm\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
