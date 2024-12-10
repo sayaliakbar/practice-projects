@@ -2,7 +2,7 @@ function searchUser() {
   const searchUser = document.querySelector(".searchUser").value;
   console.log(searchUser);
   const userFullName = document.querySelector(".userFullName");
-  const userProfiles = document.querySelector(".userProfile");
+  const userProfiles = document.querySelectorAll(".userProfile");
   const username = document.querySelector(".username");
   const joinedDate = document.querySelector(".joinedDate");
   const bios = document.querySelectorAll(".bio");
@@ -24,10 +24,9 @@ function searchUser() {
       const data = await response.json();
       userFullName.innerHTML = data.name;
       username.innerHTML = data.login;
-      console.log(data.avatar_url);
-      for (const userProfile of userProfiles) {
-        // userProfile.src = data.avatar_url;
-        console.log(data.avatar_url);
+
+      for (let userProfile of userProfiles) {
+        userProfile.src = data.avatar_url;
       }
       joinedDate.innerHTML = `Joined ${formatDate(data.created_at)}`;
       for (const bio of bios) {
