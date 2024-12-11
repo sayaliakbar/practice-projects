@@ -1,5 +1,11 @@
+import Count from "./Count";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Count></Count>
+    </>
+  );
 }
 
 export default App;
