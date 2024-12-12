@@ -1,9 +1,9 @@
-import Count from "./Count";
+import TodoList from "./TodoList";
 
 function App() {
   return (
     <>
-      <Count></Count>
+      <TodoList></TodoList>
     </>
   );
 }
