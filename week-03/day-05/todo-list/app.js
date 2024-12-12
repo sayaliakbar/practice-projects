@@ -18,7 +18,10 @@ let newTask = [];
 // Handle POST requests to the root URL
 // Adds a new task to the task list and redirects to the home page
 app.post("/", (req, res) => {
-  newTask.push(req.body.newTask); // Extract the task from the request body and add it to the array
+  if (req.body.newTask) {
+    newTask.push(req.body.newTask);
+  }
+  // Extract the task from the request body and add it to the array
   res.redirect("/"); // Redirect back to the home page to display the updated list
 });
 
