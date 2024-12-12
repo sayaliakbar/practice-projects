@@ -1,105 +1,110 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-// This is the main functional component for the TodoList app.
+const LOCAL_STORAGE_KEY = "todoApp.todos"; // Key for storing todos in localStorage.
+
+/**
+ * Main functional component for the TodoList app.
+ * Handles state, logic, and rendering of the app.
+ */
 export default function TodoList() {
-  // State variable `todos` holds the list of tasks, and `setTodos` is used to update it.
+  // State to manage the list of todos.
   let [todos, setTodos] = useState([]);
 
-  // State variable `task` holds the current value of the input field (new task to add).
-  // `addTask` is the setter function to update the `task`.
+  // State to manage the value of the input field for adding a new task.
   let [task, addTask] = useState("");
 
   /**
-   * Function to add the current `task` to the `todos` list.
-   * - Checks if `task` is empty. If empty, it exits early.
-   * - Creates a new todo object with:
-   *   - `task`: The input value from the user.
-   *   - `id`: A unique identifier generated using `uuidv4`.
-   *   - `completed`: A boolean indicating whether the task is completed (default is `false`).
-   * - Updates the `todos` state with the new list.
-   * - Clears the input field by resetting `task` to an empty string.
+   * Loads todos from localStorage when the component is first rendered.
+   * Runs only once because of the empty dependency array `[]`.
+   */
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedTodos) setTodos(storedTodos); // Update state with stored todos if they exist.
+  }, []);
+
+  /**
+   * Saves the current state of todos to localStorage whenever `todos` changes.
+   */
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
+
+  /**
+   * Adds a new task to the todos list.
+   * - Prevents adding empty tasks.
+   * - Generates a unique ID for the task.
+   * - Marks the task as not completed initially.
+   * - Clears the input field after adding the task.
    */
   let addTodos = () => {
-    if (!task) {
-      return null; // Prevent adding an empty task.
-    }
-
+    if (!task) return; // Do nothing if the task input is empty.
     setTodos([...todos, { task, id: uuidv4(), completed: false }]);
-    addTask(""); // Clears the input field.
+    addTask(""); // Resets the input field.
   };
 
   /**
-   * Function to handle updates to the `task` state as the user types in the input field.
-   * - Uses the `event` object to get the value of the input field.
-   * - Updates the `task` state with the new input value.
+   * Updates the `task` state with the value entered in the input field.
+   * Triggered whenever the user types in the input field.
    */
   let updateTask = (event) => {
-    addTask(() => event.target.value); // Update the task value dynamically.
+    addTask(event.target.value); // Dynamically update the `task` state.
   };
 
   /**
-   * Function to delete a specific task from the `todos` list based on its unique `id`.
-   * - Filters out the task with the matching `id` and updates the state.
+   * Deletes a specific task from the todos list based on its ID.
+   * - Filters out the task with the matching ID.
    */
   let deleteTask = (id) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id != id));
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   /**
-   * Function to delete all tasks from the `todos` list.
-   * - Resets the `todos` state to an empty array.
+   * Clears all tasks from the todos list.
    */
   let deleteAll = () => {
-    setTodos([]);
+    setTodos([]); // Reset todos to an empty array.
   };
 
   /**
-   * Function to mark a task as completed.
-   * - Finds the task with the matching `id` and updates its `completed` status to `true`.
-   * - Creates a new list with updated task statuses and sets it as the new state.
+   * Marks a specific task as completed based on its ID.
+   * - Updates the `completed` status to `true` for the matching task.
    */
   let markDone = (id) => {
     setTodos((prevTodos) =>
-      prevTodos.map((todo) => {
-        if (todo.id == id) {
-          return { ...todo, completed: true }; // Update the task to completed.
-        } else {
-          return todo; // Leave other tasks unchanged.
-        }
-      })
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: true } : todo
+      )
     );
   };
 
   /**
-   * Function to delete all tasks that have been marked as completed.
-   * - Filters out tasks where `completed` is `true` and updates the state.
+   * Deletes all tasks that have been marked as completed.
    */
   let deleteDone = () => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.completed != true));
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
   };
 
-  // The UI structure of the TodoList app.
+  // Render the UI for the TodoList app.
   return (
     <div>
       <h1>TodoList App</h1>
-      {/* Input field for typing a new task */}
+      {/* Input field for entering new tasks */}
       <input
-        value={task} // Binds the input field to the `task` state.
+        value={task} // Controlled input tied to the `task` state.
         type="text"
-        placeholder="Write your todos..." // Placeholder text displayed when input is empty.
-        onChange={updateTask} // Calls `updateTask` on input change to update the `task` state.
+        placeholder="Write your todos..." // Placeholder text.
+        onChange={updateTask} // Handle input changes.
       />
-      {/* Button to add the current task to the todos list */}
+      {/* Button to add a new task */}
       <button onClick={addTodos}>Add Task</button>
 
-      {/* Unordered list displaying all tasks in the `todos` array */}
+      {/* List of tasks */}
       <ul>
         {todos.map((todo) => (
-          // Renders each todo as a list item. Adding `key` helps React identify unique items.
           <li
             key={todo.id} // Unique key for each task.
-            style={todo.completed ? { textDecoration: "line-through" } : {}} // Strikes through the text if the task is completed.
+            style={todo.completed ? { textDecoration: "line-through" } : {}} // Apply strikethrough style for completed tasks.
           >
             {todo.task}
             {/* Button to delete a specific task */}
