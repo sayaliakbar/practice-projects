@@ -9,32 +9,23 @@ function App() {
     <>
       <div className="w-full flex items-center justify-center relative ">
         {/* Desktop Light Mode */}
-        <img
-          className="hidden sm:block dark:hidden w-full"
-          src={bgDesktopLight}
-          alt="Desktop Light"
-        />
+        <picture className="w-full dark:hidden">
+          <source
+            className="w-full"
+            media="(min-width: 425px)"
+            srcSet={bgDesktopLight}
+          />
+          <img className="w-full" src={bgMobileLight} alt="Mobile Light" />
+        </picture>
 
-        {/* Desktop Dark Mode */}
-        <img
-          className="hidden dark:block w-full"
-          src={bgDesktopDark}
-          alt="Desktop Dark"
-        />
-
-        {/* Mobile Light Mode */}
-        <img
-          className="sm:hidden w-full"
-          src={bgMobileLight}
-          alt="Mobile Light"
-        />
-
-        {/* Mobile Dark Mode */}
-        {/* <img
-          className="sm:hidden dark:block w-full"
-          src={bgMobileDark}
-          alt="Mobile Dark"
-        /> */}
+        <picture className="w-full hidden dark:block">
+          <source
+            className="w-full"
+            media="(min-width: 425px)"
+            srcSet={bgDesktopDark}
+          />
+          <img className="w-full" src={bgMobileDark} alt="Mobile Light" />
+        </picture>
 
         {/* Todo Container */}
         <TodoContainer className="absolute top-0"></TodoContainer>

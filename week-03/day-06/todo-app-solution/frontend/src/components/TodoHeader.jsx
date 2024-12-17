@@ -5,7 +5,7 @@ export default function TodoHeader() {
   const [theme, setTheme] = useState(null);
   useEffect(() => {
     if (window.matchMedia("(prefers-color-schema: dark").matches) {
-      setTheme("dard");
+      setTheme("dark");
     } else {
       setTheme("light");
     }
@@ -28,7 +28,7 @@ export default function TodoHeader() {
       </h1>
       <button onClick={handleThemeSwitch}>
         <img
-          className="w-4 h-4 sm:w-6 sm:h-6 hidden dark:block"
+          className="w-4 h-4 sm:w-6 sm:h-6 hidden dark:block animate-spin"
           src={sunIcon}
           alt="sunIcon"
         />
