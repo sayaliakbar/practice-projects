@@ -4,7 +4,7 @@ import TodoList from "./TodoList";
 import ShowTodoTask from "./ShowTodoTask";
 export default function TodoContainer() {
   return (
-    <div className="w-10/12 sm:w-8/12 lg:w-1/2 xl:w-5/12 absolute sm:top-14 top-10 flex flex-col gap-4 items-center justify-center ">
+    <div className="w-10/12 sm:w-8/12 md:w-7/12 lg:w-1/2 xl:w-5/12 absolute sm:top-14 top-10 flex flex-col gap-4 items-center justify-center ">
       <TodoHeader></TodoHeader>
       <CreateTodo></CreateTodo>
       <TodoList></TodoList>
