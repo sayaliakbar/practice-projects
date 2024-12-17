@@ -6,7 +6,7 @@ export default function CreateTodo() {
         type="text"
         placeholder="Create a new todo..."
       />
-      <div className="p-2 sm:p-3 rounded-full border border-black/25 absolute top-3 sm:top-4 left-4 sm:left-5 dark:border-white/25"></div>
+      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border border-black/25 absolute top-3 sm:top-4 left-4 sm:left-5 dark:border-white/25"></div>
     </div>
   );
 }
