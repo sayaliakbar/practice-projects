@@ -1,6 +1,6 @@
 export default function CreateTodo() {
   return (
-    <div className="w-full relative mt-4 sm:mt-0 ">
+    <div className="w-full relative mt-4 sm:mt-0 xs:drop-shadow-lg">
       <input
         className="leading-none w-full py-4 sm:py-5 px-11 sm:px-16 rounded-lg text-xs sm:text-body dark:bg-gray-800 dark:hover:bg-gray-900 hover:bg-gray-200 cursor-pointer"
         type="text"
