@@ -2,10 +2,10 @@ import crossIcon from "../assets/images/icon-cross.svg";
 import TodoListTaskCheckIcon from "./TodoListTaskCheckIcon";
 export default function TodoListTask() {
   return (
-    <li className="border-b-2 py-3 sm:py-4 pl-11 sm:pl-16 pr-10 relative group hover:bg-gray-100 cursor-pointer break-words">
+    <li className="border-b dark:border-white/50 border-black/25 py-3 sm:py-4 pl-11 sm:pl-16 pr-10 relative group hover:bg-gray-200 dark:hover:bg-gray-900 cursor-pointer break-words">
       <input
         id="checkbox1"
-        className="  absolute p-2 left-4 top-4 sm:top-4 sm:left-5 appearance-none rounded-full border border-black/25 sm:p-3 cursor-pointer peer hover:border-t-cyan-400 hover:border-l-cyan-400 hover:border-r-purple-400 hover:border-b-purple-400 "
+        className="  absolute p-2 left-4 top-4 sm:top-4 sm:left-5 appearance-none rounded-full border border-black/25 sm:p-3 cursor-pointer peer hover:border-t-cyan-400 hover:border-l-cyan-400 hover:border-r-purple-400 hover:border-b-purple-400 dark:border-white/25"
         type="checkbox"
       />
       <label

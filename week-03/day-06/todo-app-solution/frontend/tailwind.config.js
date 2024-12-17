@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.html", "./src/**/*.{js,jsx,ts,tsx}"], // Ensure all relevant file types are included
+  content: ["./*.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     screens: {
       xs: "376px",
