@@ -1,9 +1,10 @@
-import Button from "@mui/material/Button";
+import SearchBox from "./SearchBox";
+import "./App.css";
 function App() {
   return (
-    <>
-      <Button variant="contained">Contained</Button>
-    </>
+    <div className="weatherForm">
+      <SearchBox></SearchBox>
+    </div>
   );
 }
 
