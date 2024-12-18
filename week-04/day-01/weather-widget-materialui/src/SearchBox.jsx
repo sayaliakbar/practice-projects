@@ -40,8 +40,7 @@ export default function SearchBox() {
     setCity(e.target.value);
   };
   return (
-    <div>
-      <h3>Search for the weather</h3>
+    <div style={{ marginBottom: "20px" }}>
       <form action="/" onSubmit={handleSubmit}>
         <TextField
           id="outlined-basic"

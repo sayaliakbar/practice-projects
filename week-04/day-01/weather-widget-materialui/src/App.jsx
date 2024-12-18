@@ -1,9 +1,9 @@
-import SearchBox from "./SearchBox";
-import "./App.css";
+import WeatherApp from "./WeatherApp";
+
 function App() {
   return (
-    <div className="weatherForm">
-      <SearchBox></SearchBox>
+    <div>
+      <WeatherApp></WeatherApp>
     </div>
   );
 }
