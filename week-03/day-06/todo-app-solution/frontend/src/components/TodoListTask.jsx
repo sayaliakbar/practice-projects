@@ -1,6 +1,11 @@
 import crossIcon from "../assets/images/icon-cross.svg";
+import PropTypes from "prop-types";
 
 export default function TodoListTask({ text, id }) {
+  TodoListTask.propTypes = {
+    text: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  };
   return (
     <li className="border-b dark:border-white/50 border-black/25 py-3 sm:py-4 pl-11 sm:pl-16 pr-10 relative group hover:bg-gray-200 dark:hover:bg-gray-900 cursor-pointer break-words">
       <input
@@ -24,6 +29,7 @@ export default function TodoListTask({ text, id }) {
     </li>
   );
 }
+
 {
   /* <input
         id="checkbox1"
