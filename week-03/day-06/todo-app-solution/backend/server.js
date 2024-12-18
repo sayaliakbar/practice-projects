@@ -15,7 +15,13 @@ app.use((req, res, next) => {
 });
 
 app.get("/api", (req, res) => {
-  res.json({ users: ["userOne", "userTwo", "userThree"] });
+  res.json({
+    todoList: [
+      { task: "dance", id: 1 },
+      { task: "play", id: 2 },
+      { task: "care", id: 3 },
+    ],
+  });
 });
 
 app.listen(8080, () => {
