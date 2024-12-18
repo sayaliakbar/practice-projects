@@ -24,6 +24,10 @@ app.get("/api", (req, res) => {
   });
 });
 
+app.post("/api/create", (req, res) => {
+  console.log("recieved");
+});
+
 app.listen(8080, () => {
   console.log("Server started on port 5000");
 });
