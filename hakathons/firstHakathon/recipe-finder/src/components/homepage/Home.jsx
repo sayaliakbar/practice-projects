@@ -7,7 +7,6 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 8;
@@ -72,7 +71,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar showFavourites={showFavourites}></Navbar>
       <div className="p-4">
         <header className="mb-4">
           <div className="flex justify-center mb-4">
@@ -155,7 +154,7 @@ const Home = () => {
           ))}
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage === totalPages || totalPages === 0}
             className="px-4 py-2 mx-1 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50"
           >
             Next
