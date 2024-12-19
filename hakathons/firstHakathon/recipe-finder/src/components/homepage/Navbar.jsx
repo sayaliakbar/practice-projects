@@ -1,3 +1,9 @@
+import PropTypes from "prop-types";
+Navbar.propTypes = {
+  showFavourites: PropTypes.func.isRequired,
+  onHomeClick: PropTypes.func.isRequired,
+};
+
 export default function Navbar({ showFavourites, onHomeClick }) {
   return (
     <div className="flex justify-between items-center bg-slate-900 text-white py-2 px-4">

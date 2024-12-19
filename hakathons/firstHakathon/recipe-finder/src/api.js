@@ -1,14 +1,14 @@
 import axios from "axios";
 
-// Create an Axios instance with a predefined configuration
+// Created an Axios instance with a predefined configuration
 const apiClient = axios.create({
-  baseURL: "https://api.spoonacular.com/", // Base URL for all API requests
+  baseURL: "https://api.spoonacular.com/",
   headers: {
-    "Content-Type": "application/json", // Set content type for JSON payloads
+    "Content-Type": "application/json",
   },
 });
 
-export default apiClient; // Export the Axios instance for reuse
+export default apiClient;
 
 // Function to fetch a random list of recipes
 export const fetchRecipes = async () => {
@@ -21,7 +21,7 @@ export const fetchRecipes = async () => {
       },
     });
     // Return the array of recipes from the API response
-    return response.data.recipes; // Adjusted to match expected response structure
+    return response.data.recipes;
   } catch (error) {
     // Log and rethrow the error for error handling in the caller function
     console.error("Error fetching recipes:", error);

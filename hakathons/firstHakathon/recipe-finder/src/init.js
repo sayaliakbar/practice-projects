@@ -1,7 +1,8 @@
 export const initRecipes = [
   {
     id: 1,
-    imageURL: "https://source.unsplash.com/800x600/?pasta",
+    image:
+      "https://images.unsplash.com/photo-1601315379734-425a469078de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVjaXBlfGVufDB8fDB8fHww",
     title: "Spaghetti Carbonara",
     readyInMinutes: 25,
     healthScore: 70,
@@ -19,7 +20,8 @@ export const initRecipes = [
   },
   {
     id: 2,
-    imageURL: "https://source.unsplash.com/800x600/?salad",
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Caesar Salad",
     readyInMinutes: 20,
     healthScore: 85,
@@ -40,7 +42,8 @@ export const initRecipes = [
   },
   {
     id: 3,
-    imageURL: "https://source.unsplash.com/800x600/?burger",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Classic Beef Burger",
     readyInMinutes: 30,
     healthScore: 60,
@@ -60,7 +63,8 @@ export const initRecipes = [
   },
   {
     id: 4,
-    imageURL: "https://source.unsplash.com/800x600/?sushi",
+    image:
+      "https://images.unsplash.com/photo-1593967858208-67ddb5b4c406?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Sushi Rolls",
     readyInMinutes: 50,
     healthScore: 75,
@@ -79,7 +83,8 @@ export const initRecipes = [
   },
   {
     id: 5,
-    imageURL: "https://source.unsplash.com/800x600/?pancakes",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Fluffy Pancakes",
     readyInMinutes: 20,
     healthScore: 65,
@@ -99,7 +104,8 @@ export const initRecipes = [
   },
   {
     id: 6,
-    imageURL: "https://source.unsplash.com/800x600/?pizza",
+    image:
+      "https://images.unsplash.com/photo-1730043033919-46bd6332f302?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Margherita Pizza",
     readyInMinutes: 30,
     healthScore: 72,
@@ -117,7 +123,8 @@ export const initRecipes = [
   },
   {
     id: 7,
-    imageURL: "https://source.unsplash.com/800x600/?tacos",
+    image:
+      "https://images.unsplash.com/photo-1596189181426-7f63a1737f0d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Chicken Tacos",
     readyInMinutes: 25,
     healthScore: 80,
@@ -135,7 +142,8 @@ export const initRecipes = [
   },
   {
     id: 8,
-    imageURL: "https://source.unsplash.com/800x600/?pasta",
+    image:
+      "https://plus.unsplash.com/premium_photo-1722686432977-c3aebea51b32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Spaghetti Carbonara",
     readyInMinutes: 25,
     healthScore: 70,
@@ -153,7 +161,8 @@ export const initRecipes = [
   },
   {
     id: 9,
-    imageURL: "https://source.unsplash.com/800x600/?salad",
+    image:
+      "https://images.unsplash.com/photo-1730043033919-46bd6332f302?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Caesar Salad",
     readyInMinutes: 20,
     healthScore: 85,
@@ -174,7 +183,8 @@ export const initRecipes = [
   },
   {
     id: 10,
-    imageURL: "https://source.unsplash.com/800x600/?burger",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Classic Beef Burger",
     readyInMinutes: 30,
     healthScore: 60,
@@ -194,7 +204,8 @@ export const initRecipes = [
   },
   {
     id: 11,
-    imageURL: "https://source.unsplash.com/800x600/?sushi",
+    image:
+      "https://images.unsplash.com/photo-1593967858208-67ddb5b4c406?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Sushi Rolls",
     readyInMinutes: 50,
     healthScore: 75,
@@ -213,7 +224,8 @@ export const initRecipes = [
   },
   {
     id: 12,
-    imageURL: "https://source.unsplash.com/800x600/?pancakes",
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Fluffy Pancakes",
     readyInMinutes: 20,
     healthScore: 65,
@@ -233,7 +245,8 @@ export const initRecipes = [
   },
   {
     id: 13,
-    imageURL: "https://source.unsplash.com/800x600/?pizza",
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Margherita Pizza",
     readyInMinutes: 30,
     healthScore: 72,
@@ -251,7 +264,8 @@ export const initRecipes = [
   },
   {
     id: 14,
-    imageURL: "https://source.unsplash.com/800x600/?tacos",
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Chicken Tacos",
     readyInMinutes: 25,
     healthScore: 80,
