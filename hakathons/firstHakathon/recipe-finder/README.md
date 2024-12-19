@@ -63,8 +63,8 @@ The backend functionality is powered by a pre-provided API: [Spoonacular API](ht
 1. **Clone the Repository**:
 
    ```bash
-   git clone <https://github.com/sayakbarali/netixsol-internship/tree/main/hakathons/firstHakathon>
-   cd <recipe-finder>
+   git clone https://github.com/sayakbarali/netixsol-internship/tree/main/hakathons/firstHakathon
+   cd recipe-finder
    ```
 
 2. **Install Dependencies**:
