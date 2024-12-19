@@ -1,22 +1,43 @@
 import { useEffect, useState } from "react";
-import { fetchRecipes } from "../../api";
+// import { fetchRecipes } from "../../api";
 import { useNavigate } from "react-router-dom";
+import { initRecipes } from "../../init";
 
 import Navbar from "./Navbar";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 8;
   const navigate = useNavigate();
 
+  let favourite = [];
+  const updateFavourite = (id) => {
+    if (!favourite.includes(id)) {
+      favourite.push(id);
+      console.log(favourite);
+    }
+  };
+
+  const showFavourites = () => {
+    if (favourite) {
+      const filteredRecipes = recipes.filter((recipe) =>
+        favourite.includes(recipe.id)
+      );
+      setRecipes(filteredRecipes);
+      console.log(filteredRecipes);
+    }
+  };
+
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const data = await fetchRecipes();
-        console.log(data);
-        setRecipes(data);
+        console.log(initRecipes);
+        // const data = await fetchRecipes();
+        // console.log(data);
+        setRecipes(initRecipes);
       } catch (error) {
         console.error("Failed to fetch recipes:", error);
       }
@@ -57,7 +78,7 @@ const Home = () => {
           <div className="flex justify-center mb-4">
             <input
               type="text"
-              placeholder="Search recipes..."
+              placeholder="Search recipies..."
               className="w-1/2 p-2 border rounded-lg shadow-sm"
               value={searchQuery}
               onChange={handleSearch}
@@ -70,21 +91,38 @@ const Home = () => {
             currentRecipes.map((recipe) => (
               <div
                 key={recipe.id}
-                onClick={() => navigate(`/recipe/${recipe.id}`)} // Navigate to recipe detail page
-                className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow cursor-pointer"
+                // Navigate to recipe detail page
+                className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow cursor-pointer flex flex-col gap-4 justify-between"
               >
-                <img
-                  src={recipe.image}
-                  alt={recipe.title}
-                  className="w-full h-40 object-cover rounded-t-lg"
-                />
-                <h2 className="text-lg font-bold mt-2">{recipe.title}</h2>
-                <p className="text-sm text-gray-600">
-                  Cooking Time: {recipe.readyInMinutes} mins
-                </p>
-                <p className="text-sm text-gray-600">
-                  Difficulty: {recipe.difficulty || "Unknown"}
-                </p>
+                <div>
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    className="w-full h-40 object-cover rounded-t-lg"
+                  />
+                  <h2 className="text-lg font-bold mt-2">{recipe.title}</h2>
+                  <p className="text-sm text-gray-600">
+                    Cooking Time: {recipe.readyInMinutes} mins
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    Health Score: {recipe.healthScore || "Unknown"}
+                  </p>
+                </div>
+
+                <div className="flex justify-between">
+                  <button
+                    className="bg-slate-900 py-1 px-2 rounded-lg text-white"
+                    onClick={() => navigate(`/recipe/${recipe.id}`)}
+                  >
+                    View
+                  </button>
+                  <button
+                    className="bg-blue-500 py-1 px-2 rounded-lg text-white"
+                    onClick={() => updateFavourite(recipe.id)}
+                  >
+                    Favourite
+                  </button>
+                </div>
               </div>
             ))
           ) : (
@@ -124,6 +162,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <button onClick={showFavourites}> Show</button>
     </div>
   );
 };

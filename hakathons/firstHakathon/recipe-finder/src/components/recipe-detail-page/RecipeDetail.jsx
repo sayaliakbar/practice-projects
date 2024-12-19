@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import apiClient from "../../api";
+import Navbar from "../homepage/Navbar";
 
 const RecipeDetail = () => {
   const { id } = useParams();
@@ -26,27 +27,30 @@ const RecipeDetail = () => {
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold">{recipe.title}</h1>
-      <img
-        src={recipe.image}
-        alt={recipe.title}
-        className="w-full h-64 object-cover my-4"
-      />
-      <p>
-        <strong>Cooking Time:</strong> {recipe.readyInMinutes} mins
-      </p>
-      <p>
-        <strong>Difficulty:</strong> {recipe.difficulty || "Unknown"}
-      </p>
-      <h2 className="text-2xl mt-4">Ingredients</h2>
-      <ul>
-        {recipe.extendedIngredients.map((ingredient) => (
-          <li key={ingredient.id}>{ingredient.original}</li>
-        ))}
-      </ul>
-      <h2 className="text-2xl mt-4">Instructions</h2>
-      <p>{recipe.instructions}</p>
+    <div>
+      <Navbar></Navbar>
+      <div className="p-4">
+        <h1 className="text-3xl font-bold">{recipe.title}</h1>
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          className="w-fit   h-64  my-4"
+        />
+        <p>
+          <strong>Cooking Time:</strong> {recipe.readyInMinutes} mins
+        </p>
+        <p>
+          <strong>Difficulty:</strong> {recipe.difficulty || "Unknown"}
+        </p>
+        <h2 className="text-2xl mt-4">Ingredients</h2>
+        <ul className="list-disc list-inside">
+          {recipe.extendedIngredients.map((ingredient) => (
+            <li key={ingredient.id}>{ingredient.original}</li>
+          ))}
+        </ul>
+        <h2 className="text-2xl mt-4">Instructions</h2>
+        <p>{recipe.instructions}</p>
+      </div>
     </div>
   );
 };

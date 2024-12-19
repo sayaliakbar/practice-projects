@@ -4,7 +4,7 @@ export default function Navbar() {
       <h1>recipeFinder</h1>
       <div className="flex gap-4">
         <a href="">Home</a>
-        <a href="">Favourites</a>
+        <a>Favourites</a>
       </div>
     </div>
   );
