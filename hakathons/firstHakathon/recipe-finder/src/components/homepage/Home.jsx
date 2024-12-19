@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { initRecipes } from "../../init";
+import { fetchRecipes } from "../../api";
 
 import Navbar from "./Navbar";
 
@@ -20,12 +21,11 @@ const Home = () => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        setRecipes(initRecipes); // Load initial recipes from a static source
+        fetchRecipes().then((recipes) => setRecipes(recipes)); // Load initial recipes from the API
       } catch (error) {
         console.error("Failed to fetch recipes:", error); // Log error if fetching fails
       }
     };
-
     getRecipes();
   }, []);
 
@@ -50,7 +50,7 @@ const Home = () => {
       );
     } else {
       // Reset to all recipes
-      setRecipes(initRecipes);
+      setRecipes(recipes);
     }
   };
 
@@ -105,7 +105,7 @@ const Home = () => {
         </header>
 
         {/* Recipe grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {currentRecipes.length > 0 ? (
             currentRecipes.map((recipe) => (
               <div

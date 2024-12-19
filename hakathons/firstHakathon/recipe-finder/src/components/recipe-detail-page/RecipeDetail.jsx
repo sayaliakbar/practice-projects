@@ -11,7 +11,7 @@ const RecipeDetail = () => {
     const fetchRecipeDetails = async () => {
       try {
         const response = await apiClient.get(`recipes/${id}/information/`, {
-          params: { apiKey: "c6b036fda8a64e37b20cd90048647c43" },
+          params: { apiKey: "23cc1a1f1d8c47d2903dbea35ed7a9cb" },
         });
         setRecipe(response.data);
       } catch (error) {

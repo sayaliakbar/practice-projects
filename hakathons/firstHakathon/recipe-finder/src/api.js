@@ -17,7 +17,7 @@ export const fetchRecipes = async () => {
     const response = await apiClient.get("/recipes/random/", {
       params: {
         number: "20", // Number of random recipes to fetch
-        apiKey: "c6b036fda8a64e37b20cd90048647c43", // API key for authentication
+        apiKey: "23cc1a1f1d8c47d2903dbea35ed7a9cb", // API key for authentication
       },
     });
     // Return the array of recipes from the API response
