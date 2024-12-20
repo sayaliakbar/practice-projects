@@ -11,10 +11,8 @@ import {
 import { Header } from "./components";
 function App() {
   return (
-    <div className="App box-border p-0 m-0 scroll-smooth">
-      <div className="gradient__bg ">
-        <Header />
-      </div>
+    <div className="App box-border p-0 m-0 scroll-smooth text-white">
+      <Header></Header>
     </div>
   );
 }
