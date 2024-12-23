@@ -1,8 +1,8 @@
 export default function LeftColumn() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 z-50">
       <div className="flex flex-col gap-4">
-        <h6 className="heading-bold-h6">Welcome to Yorfy</h6>
+        <h6 className="heading-bold-h6 text-primary-blue">Welcome to Yorfy</h6>
         <h1 className="heading-bold-h1">
           Now Available, Meet Yorfy NFT Collection ⭐️
         </h1>

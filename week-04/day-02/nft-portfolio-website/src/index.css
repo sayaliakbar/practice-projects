@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: navy;
+  background-color: rgba(5, 17, 57, 1);
   font-family: "Poppins", serif;
 }
 
@@ -230,4 +230,31 @@ body {
   padding: 4px 24px 4px 24px;
   gap: 8px;
   border-radius: 8px;
+}
+
+.button-secondary-large {
+  top: 80px;
+  left: 16px;
+  padding: 8px 40px 8px 40px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+}
+
+.button-secondary-medium {
+  top: 80px;
+  left: 158px;
+  padding: 8px 32px 8px 32px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+}
+
+.button-secondary-small {
+  top: 80px;
+  left: 297px;
+  padding: 4px 24px 4px 24px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
 }
