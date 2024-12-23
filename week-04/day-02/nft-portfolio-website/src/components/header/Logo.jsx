@@ -1,4 +1,4 @@
-import LogoIcon from "../../assets/Logo.png";
+import LogoIcon from "../../assets/logo.png";
 export default function Logo() {
   return (
     <div className="header-logo flex items-center gap-2">

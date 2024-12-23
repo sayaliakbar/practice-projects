@@ -15,7 +15,7 @@ export default {
         base: { white: "rgba(255,255,255,1)", black: "rgba(0,0,0,1)" },
         accent: {
           purple: "rgba(170,0,255,1)",
-          cyan: "#rgba(86,153,255,1)",
+          cyan: "rgba(86,153,255,1)",
         },
         text: {
           title: "rgba(51,51,51,1)",
