@@ -52,6 +52,7 @@ body {
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  -webkit-text-fill-stroke: black;
 }
 
 .heading-bold-h5 {
@@ -257,4 +258,9 @@ body {
   gap: 8px;
   border-radius: 8px;
   border: 1px solid #ffffff;
+}
+
+.text-stroke {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
 }

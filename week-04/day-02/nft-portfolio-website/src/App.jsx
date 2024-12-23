@@ -6,14 +6,14 @@ import {
   Footer,
   Home,
   Newsletter,
-  Sale,
 } from "./containers";
-import { Header, Hero } from "./components";
+import { Header, Hero, Sale } from "./components";
 function App() {
   return (
     <div className="App box-border p-0 m-0 scroll-smooth text-white min-h-screen overflow-hidden">
       <Header></Header>
       <Hero></Hero>
+      <Sale></Sale>
     </div>
   );
 }
