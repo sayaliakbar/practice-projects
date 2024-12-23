@@ -1,3 +1,3 @@
 export default function Collections() {
-  return <div>Collections</div>;
+  return <div className="mt-10">Collections</div>;
 }
