@@ -4,7 +4,7 @@ import Logo3 from "../../assets/logoipsum-3.png";
 import Logo4 from "../../assets/logoipsum-4.png";
 export default function Partners() {
   return (
-    <div className="mx-[4.5rem] flex flex-col gap-10 mb-24">
+    <div className="mx-[4.5rem] flex flex-col gap-10 ">
       <div className="text-center flex flex-col items-center justify-center gap-4">
         <h6 className="heading-bold-h6 text-primary-blue">Collaboration</h6>
         <h2 className="heading-bold-h2">Our Partners</h2>
