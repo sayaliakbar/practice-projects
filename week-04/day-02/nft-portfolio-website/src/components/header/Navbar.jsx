@@ -1,24 +1,24 @@
 import ArrowDropDown from "../../assets/arrow_drop_down.png";
 export default function Navbar() {
   return (
-    <div className="header_navbar flex gap-6 text-sm leading-6 h-6">
-      <a href="#" className="header_navbar_home flex font-700">
+    <div className="flex gap-6 paragraph-caption text-text-disabled">
+      <a href="#" className=" flex link-button-bold-medium">
         Home
         <img src={ArrowDropDown} alt="" />
       </a>
-      <a href="#" className="header_navbar_nft">
+      <a href="#" className="hea">
         NFT
       </a>
-      <a href="#" className="header_navbar_roadmap">
+      <a href="#" className="">
         Roadmap
       </a>
-      <a href="#" className="header_navbar_about">
+      <a href="#" className="">
         About Us
       </a>{" "}
-      <a href="#" className="header_navbar_contact">
+      <a href="#" className="">
         Contact Us
       </a>
-      <a href="#" className="header_navbar_pages flex">
+      <a href="#" className=" flex">
         Pages
         <img src={ArrowDropDown} alt="" />
       </a>

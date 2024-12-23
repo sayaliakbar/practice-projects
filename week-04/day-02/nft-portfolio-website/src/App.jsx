@@ -8,11 +8,12 @@ import {
   Newsletter,
   Sale,
 } from "./containers";
-import { Header } from "./components";
+import { Header, Hero } from "./components";
 function App() {
   return (
-    <div className="App box-border p-0 m-0 scroll-smooth text-white">
+    <div className="App box-border p-0 m-0 scroll-smooth text-white relative">
       <Header></Header>
+      <Hero></Hero>
     </div>
   );
 }
