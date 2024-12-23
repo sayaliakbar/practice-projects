@@ -6,12 +6,15 @@ import Sixface3 from "../../assets/six-faces-image-collections-3.png";
 export default function Collections() {
   return (
     <div className="mx-[4.5rem] my-24 flex text-center flex-col items-center gap-10">
-      <Heading
-        heading="Collections"
-        title="Yorfy NFT Collections"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      ></Heading>
-      <div className=" flex gap-4">
+      <div className="mx-48">
+        <Heading
+          heading="Collections"
+          title="Yorfy NFT Collections"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        ></Heading>
+      </div>
+
+      <div className=" flex justify-between gap-4 w-full">
         <CollectionCard
           image={Sixface1}
           title={"YorNoose #432"}
