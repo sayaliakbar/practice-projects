@@ -1,5 +1,7 @@
 export default function Joinbutton() {
   return (
-    <button className="py-2 px-8 bg-primary-blue rounded-lg">Join Us</button>
+    <button className=" bg-primary-blue button-primary-medium link-button-semibold-medium">
+      Join Us
+    </button>
   );
 }

@@ -4,9 +4,9 @@ export default function Navbar() {
     <div className="flex gap-6 paragraph-caption text-text-disabled">
       <a href="#" className=" flex link-button-bold-medium">
         Home
-        <img src={ArrowDropDown} alt="" />
+        <img src={ArrowDropDown} alt="Drop down arrow" />
       </a>
-      <a href="#" className="hea">
+      <a href="#" className="">
         NFT
       </a>
       <a href="#" className="">
@@ -14,13 +14,13 @@ export default function Navbar() {
       </a>
       <a href="#" className="">
         About Us
-      </a>{" "}
+      </a>
       <a href="#" className="">
         Contact Us
       </a>
-      <a href="#" className=" flex">
+      <a href="#" className="flex">
         Pages
-        <img src={ArrowDropDown} alt="" />
+        <img src={ArrowDropDown} alt=" Drop down arrow" />
       </a>
     </div>
   );
