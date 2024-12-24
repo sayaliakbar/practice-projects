@@ -1,11 +1,14 @@
 export default function LeftColumn() {
   return (
-    <div className="flex flex-col gap-10 z-50">
+    <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
         <h6 className="heading-bold-h6 text-primary-blue">Welcome to Yorfy</h6>
-        <h1 className="heading-bold-h1">
+        <h1 className="heading-bold-h1 hidden md:block">
           Now Available, Meet Yorfy NFT Collection ⭐️
         </h1>
+        <h3 className="heading-bold-h3 md:hidden">
+          Now Available, Meet Yorfy NFT Collection ⭐️
+        </h3>
         <p className="paragraph-body text-text-disabled">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
