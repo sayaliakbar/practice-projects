@@ -2,7 +2,7 @@ import LeftColumn from "./LeftColumn";
 import RightColumn from "./RightColumn";
 export default function Hero() {
   return (
-    <div className="flex justify-between gap-10 w-full mt-10  px-mobile-x md:px-tablet-x lg:px-laptop-x relative">
+    <div className="flex justify-between gap-24 w-full mt-10  px-mobile-x md:px-tablet-x lg:px-laptop-x relative">
       <LeftColumn></LeftColumn>
       <RightColumn></RightColumn>
       <div

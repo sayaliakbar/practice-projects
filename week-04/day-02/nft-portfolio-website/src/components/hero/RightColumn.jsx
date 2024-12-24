@@ -2,15 +2,15 @@ import SixFaces from "../../assets/six-faces-image.png";
 export default function RightColumn() {
   return (
     <div className="flex items-center flex-col relative">
-      <div className=" w-[25rem] relative">
+      <div className=" lg:w-[25rem] md:w-[15.75rem]  relative">
         <img
-          className="w-[25rem] absolute"
+          className="md-[15.75rem] md:h-[19.5rem] absolute"
           src={SixFaces}
           alt="Six Faces Image"
         />
       </div>
       {/* Image in front */}
-      <div className="h-[18rem]"> </div>
+      <div className="lg:h-[18rem] md:h-[12rem]"> </div>
       {/* Blurred background container */}
       <div
         className="pt-[7.5rem] pb-10 px-10 flex -z-10 gap-4 rounded-lg border-2 border-primary-blue "
