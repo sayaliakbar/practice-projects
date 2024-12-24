@@ -1,7 +1,7 @@
 import ArrowDropDown from "../../assets/arrow_drop_down.png";
 export default function Navbar() {
   return (
-    <div className="flex gap-6 paragraph-caption text-text-disabled">
+    <div className=" gap-6 paragraph-caption text-text-disabled hidden lg:flex">
       <a href="#" className=" flex link-button-bold-medium">
         Home
         <img src={ArrowDropDown} alt="Drop down arrow" />

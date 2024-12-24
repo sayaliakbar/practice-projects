@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      spacing: {
+        "laptop-x": "4.5rem", // Horizontal padding
+        "laptop-y": "1.5rem", // Vertical padding
+        "tablet-x": "2.5rem", // Horizontal padding
+        "tablet-y": "1.5rem", // Vertical padding
+        "mobile-x": "1rem", // Horizontal padding
+        "mobile-y": "1rem", // Vertical padding
+      },
       colors: {
         primary: {
           blue: "rgba(30,80,255,1)",
@@ -38,5 +47,19 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".laptop-padding": {
+          padding: "1.5rem 4.5rem",
+        },
+        ".tablet-padding": {
+          padding: "1.5rem 2.5rem",
+        },
+        ".mobile-padding": {
+          padding: "1rem 1rem",
+        },
+      });
+    }),
+  ],
 };
