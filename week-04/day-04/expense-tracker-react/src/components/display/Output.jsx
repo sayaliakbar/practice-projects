@@ -1,8 +1,8 @@
-export default function Output() {
+export default function Output({ title, price }) {
   return (
-    <div>
-      <h5>INCOME</h5>
-      <p>$500.00</p>
+    <div className="text-center">
+      <h5>{title}</h5>
+      <p>${price}</p>
     </div>
   );
 }

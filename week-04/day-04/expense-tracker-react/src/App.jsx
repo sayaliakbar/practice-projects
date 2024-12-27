@@ -1,12 +1,19 @@
-import "./App.css";
 import { Balance, Display, Header, History, Transaction } from "./components";
+import { GlobalProvider } from "./context/GlobalState.jsx";
+
+import "./App.css";
+
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <Balance />
-      <Display />
-    </div>
+    <GlobalProvider>
+      <div className="container flex flex-col gap-2">
+        <Header />
+        <Balance />
+        <Display />
+        <History />
+        <Transaction />
+      </div>
+    </GlobalProvider>
   );
 }
 
