@@ -1,5 +1,6 @@
 export default function Card({ description, amount }) {
   const sign = amount < 0 ? "-" : "+";
+
   return (
     <div className="card relative group" style={{ marginTop: "1rem" }}>
       <button className="w-5 absolute top-2 -left-6 hidden group-hover:block  bg-red-500 ">

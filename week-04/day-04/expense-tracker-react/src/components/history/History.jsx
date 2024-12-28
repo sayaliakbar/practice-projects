@@ -2,7 +2,7 @@ import Card from "./Card";
 import { GlobalContext } from "../../context/GlobalState";
 import { useContext } from "react";
 
-export default function History({ history }) {
+export default function History() {
   const { transactions } = useContext(GlobalContext);
   return (
     <div>
