@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Card({ description, amount }) {
   const sign = amount < 0 ? "-" : "+";
 
@@ -11,6 +12,7 @@ export default function Card({ description, amount }) {
         style={{ borderRightColor: amount < 0 ? "red" : "green" }}
       >
         <p>{description}</p>
+
         <p>
           {" "}
           {sign}${Math.abs(amount)}
