@@ -12,6 +12,7 @@ export default function History() {
         {transactions.map((transaction) => (
           <Card
             key={transaction.id}
+            id={transaction.id}
             description={transaction.text}
             amount={transaction.amount}
           />
