@@ -5,7 +5,7 @@ import "./styles/App.css";
 
 function App() {
   return (
-    <div className="app-container flex flex-col items-center">
+    <div className="app-container flex flex-col gap-16 items-center w-full">
       {/* Header section */}
       <Header />
 

@@ -5,7 +5,7 @@ import useJobStore from "../store";
 export default function Card({ job }) {
   const { addFilter } = useJobStore();
   return (
-    <div className="bg-white rounded-sm sm:border-l-2 border-l-4 drop-shadow-lg border-primary-cyan flex  justify-between py-4 px-5 mb-10 sm:mb-4 sm:flex-row flex-col relatve gap-4">
+    <div className="bg-white rounded-sm sm:border-l-2 border-l-4 drop-shadow-lg border-primary-cyan flex  justify-between py-4 px-5 mb-10 sm:mb-4 md:flex-row flex-col relatve gap-4">
       <div className="flex items-center flex-1 ">
         <img
           className="w-14 h-14 mr-4 absolute -top-7 left-5 sm:static"

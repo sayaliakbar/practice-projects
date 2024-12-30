@@ -9,7 +9,7 @@ export default function Joblist() {
     )
   );
   return (
-    <div className="lg:m-16 m-32 w-4/5">
+    <div className="w-5/6">
       {filteredJobs.map((job) => (
         <Card key={job.id} job={job} />
       ))}
