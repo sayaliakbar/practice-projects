@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 
+import useJobStore from "../store";
+
 export default function Card({ job }) {
-  console.log(job.logo);
+  const { addFilter } = useJobStore();
   return (
     <div className="bg-white rounded-sm sm:border-l-2 border-l-4 drop-shadow-lg border-primary-cyan flex  justify-between py-4 px-5 mb-10 sm:mb-4 sm:flex-row flex-col relatve gap-4">
       <div className="flex items-center flex-1 ">
@@ -25,7 +27,9 @@ export default function Card({ job }) {
             ) : null}
           </div>
 
-          <h1 className="font-bold">{job.position}</h1>
+          <h1 className="font-bold hover:text-primary-cyan cursor-pointer">
+            {job.position}
+          </h1>
           <div className="flex gap-4 items-center justify-between text-neutral-dark text-xs">
             <span>{job.postedAt}</span>
             <span>.</span>
@@ -39,16 +43,29 @@ export default function Card({ job }) {
       <div className="border border-l-neutral-dark sm:hidden"></div>
 
       <div className="flex gap-4 items-center flex-wrap">
-        <button className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0">
+        <button
+          onClick={() => {
+            addFilter(job.role);
+          }}
+          className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0"
+        >
           {" "}
           {job.role}
         </button>
-        <button className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0">
+        <button
+          onClick={() => {
+            addFilter(job.level);
+          }}
+          className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0"
+        >
           {" "}
           {job.level}
         </button>
         {job.languages.map((language) => (
           <button
+            onClick={() => {
+              addFilter(language);
+            }}
             key={language}
             className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0"
           >
@@ -57,6 +74,9 @@ export default function Card({ job }) {
         ))}
         {job.tools.map((tool) => (
           <button
+            onClick={() => {
+              addFilter(tool);
+            }}
             key={tool}
             className="bg-primary-cyan/25 rounded-sm text-primary-cyan font-bold  px-2 leading-0"
           >
