@@ -1,7 +1,3 @@
-Here’s a more polished version of your README.md tailored specifically for your project. It incorporates the provided template while making it specific and professional.
-
----
-
 # Frontend Mentor - Job Listings with Filtering Solution
 
 This is a solution to the [Job Listings with Filtering Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). The project showcases dynamic filtering of job listings and is designed to be responsive and user-friendly.
@@ -34,15 +30,23 @@ The main objective of this project was to build a responsive job listings page w
 
 #### Desktop View
 
-![Desktop View](./screenshots/desktop.png)
+![jobListingsSolutionDesktop](https://github.com/user-attachments/assets/f2dc9b77-ca9b-46e3-94d9-d864d2ecfcb5)
+
+#### Desktop View (Active States)
+
+![jobListingsSolutionDesktopActiveStates](https://github.com/user-attachments/assets/0a607849-b3c1-4028-a3ac-9bf2a3a99b1a)
 
 #### Mobile View
 
-![Mobile View](./screenshots/mobile.png)
+![jobListingsSolutionMobile](https://github.com/user-attachments/assets/c9ce467f-ca95-415a-ad4f-398750196b83)
+
+#### Mobile View (Active States)
+
+![jobListingsSolutionMobileActiveStates](https://github.com/user-attachments/assets/e6794306-3401-4375-bc6d-26223282e15c)
 
 ### Live Demo
 
-- Live Site URL: [Your live demo link here](https://your-live-site-url.com)
+- Live Site URL: [https://shimmering-duckanoo-55f8bb.netlify.app/](https://shimmering-duckanoo-55f8bb.netlify.app/)
 
 ---
 
@@ -91,7 +95,7 @@ Here’s an example of the reusable `Card` component for job listings:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/job-listings-filter.git
+   git clone https://github.com/sayakbarali/netixsol-internship/tree/main/week-04/day-05/static-job-listings-solution
    cd job-listings-filter
    ```
 
@@ -125,16 +129,11 @@ Here’s an example of the reusable `Card` component for job listings:
 
 ## Author
 
-- Frontend Mentor: [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/your-linkedin)
+- GitHub: [@sayakbarali](https://github.com/sayakbarali)
+- LinkedIn: [@sayakbarali](https://linkedin.com/in/sayaliakbar)
 
 ---
 
 ## Acknowledgments
 
 A special thanks to the Frontend Mentor community for providing inspiration and resources for this project. The challenge helped me refine my React and Tailwind CSS skills!
-
----
-
-Let me know if you'd like adjustments or further refinements!
