@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <GlobalProvider>
-      <div className="container flex flex-col gap-2">
+      <div className="container flex flex-col justify-center gap-2">
         <Header />
         <Balance />
         <Display />
