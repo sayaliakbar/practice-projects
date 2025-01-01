@@ -10,6 +10,8 @@ const app = express();
 function middleware1(req, res, next) {
   console.log("I'm middleware 1");
 
+  console.log(req.customProperty);
+
   next();
 }
 
@@ -23,6 +25,8 @@ app.use(middleware1);
 
 function middleware2(req, res, next) {
   console.log("I'm middleware 2");
+  req.customProperty = "Hello from middleware 2";
+  console.log(req.customProperty);
   next();
 }
 
@@ -34,11 +38,14 @@ function middleware2(req, res, next) {
 
 function middleware3(req, res, next) {
   console.log("I'm middleware 3");
+  req.customProperty = "Hello from middleware 3";
+  console.log(req.customProperty);
   next();
 }
 
 app.get("/", middleware3, (req, res, next) => {
   console.log("I'm a standard express callback");
+  console.log(req.customProperty);
   res.send("This is home!");
   next();
 });
@@ -47,6 +54,7 @@ app.use(middleware4);
 
 function middleware4(req, res, next) {
   console.log("I'm middleware 4");
+  console.log(req.customProperty);
   next();
 }
 
