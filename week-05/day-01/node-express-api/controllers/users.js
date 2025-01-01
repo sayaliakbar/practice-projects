@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import { query, validationResult } from "express-validator";
+
 let users = [];
 
 export const getUsers = (req, res) => {
@@ -6,11 +8,14 @@ export const getUsers = (req, res) => {
 };
 
 export const createUser = (req, res) => {
-  const user = req.body;
+  const result = validationResult(req);
+  if (result.isEmpty()) {
+    const user = req.body;
+    users.push({ id: uuidv4(), ...user });
+    return res.send(`User with the name ${user.name} added to the database!`);
+  }
 
-  users.push({ id: uuidv4(), ...user });
-
-  res.send(`User with the name ${user.name} added to the database!`);
+  res.send({ errors: result.array() });
 };
 
 export const getUserById = (req, res) => {
@@ -22,12 +27,12 @@ export const getUserById = (req, res) => {
 export const deleteUser = (req, res) => {
   const { id } = req.params;
   users = users.filter((user) => user.id != id);
-  console.log(users);
   res.send(`User with the id ${id} deleted from the database.`);
 };
 
 export const updateUser = (req, res) => {
   const { id } = req.params;
+
   const user = users.find((user) => user.id == id);
   const { name, age } = req.body;
 
