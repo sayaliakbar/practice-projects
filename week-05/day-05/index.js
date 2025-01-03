@@ -74,9 +74,13 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
   }
 });
 
-app.delete("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/login");
+app.delete("/logout", (req, res, next) => {
+  req.logOut((err) => {
+    if (err) {
+      return next(err); // Pass the error to the next middleware (e.g., error handler)
+    }
+    res.redirect("/login"); // Redirect to login on successful logout
+  });
 });
 
 function checkAuthenticated(req, res, next) {
