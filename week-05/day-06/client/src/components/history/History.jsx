@@ -9,13 +9,7 @@ export default function History() {
     <div>
       <h4>History</h4>
       <div style={{ border: "1px solid black" }}></div>
-      <ul
-        className=""
-        style={{
-          maxHeight: "200px",
-          overflowY: "auto",
-        }}
-      >
+      <ul className=" ">
         {transactions.map((transaction) => (
           <Card
             key={transaction.id}

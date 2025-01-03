@@ -5,17 +5,9 @@ export default function Card({ description, amount, id }) {
   const sign = amount < 0 ? "-" : "+";
 
   return (
-    <div className="card relative group" style={{ marginTop: "1rem" }}>
-      <button
-        onClick={() => {
-          deleteTransaction(id);
-        }}
-        className="w-5 absolute top-2 -left-5 hidden group-hover:block  bg-red-500 "
-      >
-        X
-      </button>
+    <div className="card group" style={{ marginTop: "1rem" }}>
       <div
-        className="peer flex justify-between bg-white p-2 border-r-4 border-r-green-500 border-b-2 border-l-2 "
+        className="peer relative flex justify-between bg-white p-2 border-r-4 border-r-green-500 border-b-2 border-l-2 "
         style={{ borderRightColor: amount < 0 ? "red" : "green" }}
       >
         <p>{description}</p>
@@ -24,6 +16,14 @@ export default function Card({ description, amount, id }) {
           {" "}
           {sign}${Math.abs(amount)}
         </p>
+        <button
+          onClick={() => {
+            deleteTransaction(id);
+          }}
+          className="w-5 hidden absolute -left-5 text-white group-hover:block bg-red-500"
+        >
+          X
+        </button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import Output from "./Output";
 import { GlobalContext } from "../../context/GlobalState";
 import { useContext } from "react";
 
-export default function Display({}) {
+export default function Display() {
   const { transactions } = useContext(GlobalContext);
   const amounts = transactions.map((transaction) => transaction.amount);
   const income = amounts
