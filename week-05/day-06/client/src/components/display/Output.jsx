@@ -8,7 +8,6 @@ export default function Output({ title, price, name }) {
       >
         ${price}
       </p>
-      {console.log(name)}
     </div>
   );
 }

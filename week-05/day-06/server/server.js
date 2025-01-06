@@ -13,6 +13,8 @@ const colors = require("colors");
 //It is a middleware that logs the HTTP requests to the console.
 const morgan = require("morgan");
 
+const cors = require("cors");
+
 //mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
 const connectDB = require("./config/database");
 
@@ -27,7 +29,12 @@ const transactions = require("./routes/transaction");
 
 //Create an instance of express
 const app = express();
+// app.use(cors());
 app.use(express.json());
+
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 //Body parser middleware
 app.use("/api/v1/transactions", transactions);

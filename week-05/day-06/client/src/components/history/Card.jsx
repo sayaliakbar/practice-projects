@@ -1,5 +1,6 @@
 import { GlobalContext } from "../../context/GlobalState";
 import { useContext } from "react";
+//eslint-disable-next-line
 export default function Card({ description, amount, id }) {
   const { deleteTransaction } = useContext(GlobalContext);
   const sign = amount < 0 ? "-" : "+";
