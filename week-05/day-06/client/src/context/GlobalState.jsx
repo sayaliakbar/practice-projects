@@ -51,8 +51,13 @@ export const GlobalProvider = ({ children }) => {
   }
 
   async function addTransaction(transaction) {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
     try {
-      const res = await axios.post("/api/v1/transactions", transaction);
+      const res = await axios.post("/api/v1/transactions", transaction, config);
       dispatch({
         type: "ADD_TRANSACTION",
         payload: res.data.data,

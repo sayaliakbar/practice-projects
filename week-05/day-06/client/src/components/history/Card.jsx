@@ -1,5 +1,6 @@
 import { GlobalContext } from "../../context/GlobalState";
 import { useContext } from "react";
+import { numberWithCommas } from "../../utils/numberWithCommas";
 //eslint-disable-next-line
 export default function Card({ description, amount, id }) {
   const { deleteTransaction } = useContext(GlobalContext);
@@ -15,7 +16,7 @@ export default function Card({ description, amount, id }) {
 
         <p>
           {" "}
-          {sign}${Math.abs(amount)}
+          {sign}${numberWithCommas(Math.abs(amount))}
         </p>
         <button
           onClick={() => {
