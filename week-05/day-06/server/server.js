@@ -1,3 +1,4 @@
+const path = require("path");
 // Definition: Server file for the transaction tracker app.
 
 //Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
@@ -38,6 +39,14 @@ if (process.env.NODE_ENV === "development") {
 
 //Body parser middleware
 app.use("/api/v1/transactions", transactions);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/dist"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "../client", "dist", "index.html"))
+  );
+}
 
 // PORT is equal to the port number in the environment variable or 5000
 const PORT = process.env.PORT || 5000;
