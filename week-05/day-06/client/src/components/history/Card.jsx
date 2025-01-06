@@ -7,9 +7,9 @@ export default function Card({ description, amount, id }) {
   const sign = amount < 0 ? "-" : "+";
 
   return (
-    <div className="card group" style={{ marginTop: "1rem" }}>
+    <div className="card group mt-4">
       <div
-        className="peer relative flex justify-between bg-white p-2 border-r-4 border-r-green-500 border-b-2 border-l-2 "
+        className="peer relative flex justify-between bg-white p-2 border-r-4 border-r-green-500 border-b-2 border-l-2"
         style={{ borderRightColor: amount < 0 ? "red" : "green" }}
       >
         <p>{description}</p>
@@ -22,7 +22,7 @@ export default function Card({ description, amount, id }) {
           onClick={() => {
             deleteTransaction(id);
           }}
-          className="w-5 hidden absolute -left-5 text-white group-hover:block bg-red-500"
+          className="w-5 hidden absolute -left-5 z-50 text-white group-hover:block bg-red-500"
         >
           X
         </button>

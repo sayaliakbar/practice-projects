@@ -9,10 +9,10 @@ export default function History() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
+    <div className="">
       <h4>History</h4>
-      <div style={{ border: "1px solid black" }}></div>
-      <ul className=" ">
+      <div className="border border-solid border-black"></div>
+      <ul className="transaction-list ">
         {transactions.map((transaction) => (
           <Card
             key={transaction._id}
