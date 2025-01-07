@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "title": "How to integrate GraphQL with Apollo Server?",
+    "tags": ["GraphQL", "Apollo", "Backend"],
+    "answers": 4,
+    "timestamp": "5 minutes ago"
+  },
+  {
+    "id": 2,
+    "title": "What are the advantages of using Redis for caching?",
+    "tags": ["Redis", "Caching", "Performance"],
+    "answers": 7,
+    "timestamp": "3 hours ago"
+  },
+  {
+    "id": 3,
+    "title": "How to optimize images for faster loading?",
+    "tags": ["Web Performance", "Optimization", "Images"],
+    "answers": 5,
+    "timestamp": "1 day ago"
+  },
+  {
+    "id": 4,
+    "title": "Best practices for deploying to AWS Lambda?",
+    "tags": ["AWS", "Lambda", "Serverless"],
+    "answers": 6,
+    "timestamp": "10 minutes ago"
+  },
+  {
+    "id": 5,
+    "title": "How to implement pagination in a React app?",
+    "tags": ["React", "Pagination", "Frontend"],
+    "answers": 8,
+    "timestamp": "2 hours ago"
+  },
+  {
+    "id": 6,
+    "title": "What is the best way to monitor Node.js applications?",
+    "tags": ["Node.js", "Monitoring", "Performance"],
+    "answers": 4,
+    "timestamp": "1 day ago"
+  },
+  {
+    "id": 7,
+    "title": "How to handle concurrent requests in Express?",
+    "tags": ["Express", "Concurrency", "Backend"],
+    "answers": 9,
+    "timestamp": "20 minutes ago"
+  },
+  {
+    "id": 8,
+    "title": "How to set up continuous integration with GitHub Actions?",
+    "tags": ["CI/CD", "GitHub Actions", "DevOps"],
+    "answers": 5,
+    "timestamp": "4 hours ago"
+  },
+  {
+    "id": 9,
+    "title": "What is the difference between SQL and NoSQL databases?",
+    "tags": ["Databases", "SQL", "NoSQL"],
+    "answers": 6,
+    "timestamp": "2 days ago"
+  },
+  {
+    "id": 10,
+    "title": "How to create responsive layouts with CSS Grid?",
+    "tags": ["CSS", "Grid", "Web Design"],
+    "answers": 7,
+    "timestamp": "1 hour ago"
+  },
+  {
+    "id": 11,
+    "title": "What is the best practice for error handling in JavaScript?",
+    "tags": ["JavaScript", "Error Handling", "Best Practices"],
+    "answers": 8,
+    "timestamp": "5 hours ago"
+  },
+  {
+    "id": 12,
+    "title": "How to secure your React app from XSS attacks?",
+    "tags": ["React", "Security", "XSS"],
+    "answers": 6,
+    "timestamp": "2 days ago"
+  },
+  {
+    "id": 13,
+    "title": "How to set up a MongoDB Atlas cluster?",
+    "tags": ["MongoDB", "Atlas", "Database"],
+    "answers": 3,
+    "timestamp": "30 minutes ago"
+  },
+  {
+    "id": 14,
+    "title": "What are the best libraries for form validation in React?",
+    "tags": ["React", "Forms", "Validation"],
+    "answers": 9,
+    "timestamp": "6 hours ago"
+  },
+  {
+    "id": 15,
+    "title": "How to implement JWT authentication in a Node.js API?",
+    "tags": ["Node.js", "JWT", "Authentication"],
+    "answers": 4,
+    "timestamp": "1 hour ago"
+  },
+  {
+    "id": 16,
+    "title": "What are some tips for optimizing web fonts?",
+    "tags": ["Web Performance", "Fonts", "Optimization"],
+    "answers": 5,
+    "timestamp": "3 hours ago"
+  },
+  {
+    "id": 17,
+    "title": "How to build a chat application with Socket.io?",
+    "tags": ["Socket.io", "Chat", "Real-time"],
+    "answers": 8,
+    "timestamp": "1 day ago"
+  },
+  {
+    "id": 18,
+    "title": "What is the best way to handle state in Vue.js?",
+    "tags": ["Vue.js", "State Management", "Frontend"],
+    "answers": 7,
+    "timestamp": "2 days ago"
+  },
+  {
+    "id": 19,
+    "title": "How to improve the performance of React applications?",
+    "tags": ["React", "Performance", "Optimization"],
+    "answers": 10,
+    "timestamp": "15 minutes ago"
+  },
+  {
+    "id": 20,
+    "title": "How to implement SEO for single-page applications?",
+    "tags": ["SEO", "SPA", "Web Development"],
+    "answers": 6,
+    "timestamp": "4 hours ago"
+  },
+  {
+    "id": 21,
+    "title": "What are the best practices for code splitting in Webpack?",
+    "tags": ["Webpack", "Code Splitting", "Performance"],
+    "answers": 4,
+    "timestamp": "2 hours ago"
+  }
+]
