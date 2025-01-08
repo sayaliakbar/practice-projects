@@ -12,7 +12,7 @@ const createTag = async (req, res) => {
       return res.status(400).json({ message: "Tag already exists" });
 
     const tag = await Tag.create({ name });
-    console.log(tag);
+
     res.status(201).json(tag);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -29,4 +29,15 @@ const getAllTags = async (req, res) => {
   }
 };
 
-module.exports = { createTag, getAllTags };
+const deleteTag = async (req, res) => {
+  try {
+    const tag = await Tag.findByIdAndDelete(req.params.id);
+    if (!tag) return res.status(404).json({ message: "Tag not found" });
+
+    res.json({ message: "Tag deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { createTag, getAllTags, deleteTag };

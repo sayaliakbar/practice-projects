@@ -6,7 +6,7 @@ const QuestionSchema = new mongoose.Schema(
     description: { type: String },
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
     answers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Answer" }],
-    author: { type: String, required: true },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true }
 );

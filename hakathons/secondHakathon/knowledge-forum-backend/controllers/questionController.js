@@ -1,13 +1,13 @@
 const Question = require("../models/Question");
 
 const createQuestion = async (req, res) => {
-  const { title, description, tags, author } = req.body;
+  const { title, description, tags } = req.body;
   try {
     const question = await Question.create({
       title,
       description,
       tags,
-      author,
+      author: req.user._id,
     });
     res.status(201).json(question);
   } catch (error) {

@@ -1,5 +1,7 @@
 const express = require("express");
 
+const { validateQuestion } = require("../middleware/validationMiddleware");
+
 const {
   getQuestions,
   getQuestionById,
@@ -10,7 +12,7 @@ const { protect } = require("../middleware/authmiddleware");
 
 const router = express.Router();
 
-router.post("/", protect, createQuestion); // Only authenticated users can post a question
+router.post("/", protect, validateQuestion, createQuestion); // Only authenticated users can post a question
 router.get("/", getQuestions);
 router.get("/:id", getQuestionById);
 router.delete("/:id", protect, deleteQuestionById); // Only authenticated users can delete a question
