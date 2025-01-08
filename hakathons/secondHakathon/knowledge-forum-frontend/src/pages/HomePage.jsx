@@ -10,7 +10,7 @@ function Homepage() {
   const [filteredQuestions, setFilteredQuestions] = useState([]);
 
   const [page, setPage] = useState(1);
-  const [questionsPerPage, setQuestionsPerPage] = useState(5);
+  const questionsPerPage = 5;
 
   const lastIndex = page * questionsPerPage;
   const firstIndex = lastIndex - questionsPerPage;
