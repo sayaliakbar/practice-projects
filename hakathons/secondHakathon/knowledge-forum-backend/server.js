@@ -12,10 +12,7 @@ app.use(express.json());
 app.use("/api/questions", require("./routes/questionRoutes"));
 app.use("/api/answers", require("./routes/answerRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
-
-// app.get("/", (req, res) => {
-//   res.send("Hello World");
-// });
+app.use("/api/tags", require("./routes/tagRoutes"));
 
 PORT = process.env.PORT || 5000;
 

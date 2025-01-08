@@ -17,7 +17,7 @@ const createQuestion = async (req, res) => {
 
 const getQuestions = async (req, res) => {
   try {
-    const questions = await Question.find().populate("answers");
+    const questions = await Question.find().populate("answers", "tags");
     res.json(questions);
   } catch (error) {
     res.status(500).json({ message: error.message });
