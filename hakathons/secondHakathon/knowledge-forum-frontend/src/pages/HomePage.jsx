@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Pagination from "../components/Pagination";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const [questions, setQuestions] = useState([]);
@@ -8,8 +9,11 @@ function Homepage() {
 
   const [filteredQuestions, setFilteredQuestions] = useState([]);
 
-  const page = 0;
-  let limit = 5;
+  const [page, setPage] = useState(1);
+  const [questionsPerPage, setQuestionsPerPage] = useState(5);
+
+  const lastIndex = page * questionsPerPage;
+  const firstIndex = lastIndex - questionsPerPage;
 
   useEffect(() => {
     fetchQuestions().then((data) => {
@@ -45,7 +49,6 @@ function Homepage() {
       console.log(error);
     }
   };
-  let count = 1;
 
   return (
     <>
@@ -53,24 +56,34 @@ function Homepage() {
       <div className="container mx-auto p-4">
         {loading && <p>Loading questions....</p>}
 
-        {filteredQuestions.map((filteredQuestion) => (
-          <div key={filteredQuestion.id}>
-            <h2 className="font-bold">
-              {count++}. {filteredQuestion.title}
-            </h2>
-            <p>
-              Tags: &nbsp;
-              {filteredQuestion.tags.map((tag) => (
-                <span key={tag}>{tag} &nbsp;</span>
-              ))}
-            </p>
-            <p>Number of answers:{filteredQuestion.answers}</p>
-            <p>{filteredQuestion.timestamp}</p>
-          </div>
-        ))}
+        {filteredQuestions.length === 0 && <p>No questions found</p>}
+        {filteredQuestions
+          .slice(firstIndex, lastIndex)
+          .map((filteredQuestion, index) => (
+            <div key={filteredQuestion.id}>
+              <h2 className="text-xl font-semibold text-indigo-700">
+                <Link to={`/question/${filteredQuestion.id}`}>
+                  {firstIndex + index + 1}. {filteredQuestion.title}
+                </Link>
+              </h2>
+              <p>
+                Tags: &nbsp;
+                {filteredQuestion.tags.map((tag) => (
+                  <span key={tag}>{tag} &nbsp;</span>
+                ))}
+              </p>
+              <p>Number of answers:{filteredQuestion.answers}</p>
+              <p>{filteredQuestion.timestamp}</p>
+            </div>
+          ))}
       </div>
 
-      <Pagination postsPerPage={limit} length={filteredQuestions.length} />
+      <Pagination
+        postsPerPage={questionsPerPage}
+        length={filteredQuestions.length}
+        setPage={setPage}
+        currentPage={page}
+      />
     </>
   );
 }
