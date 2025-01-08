@@ -1,15 +1,19 @@
 const Reply = require("../models/Reply");
 const Answer = require("../models/Answer");
 
+const { CustomError } = require("../middleware/errorMiddleware");
+
 // Add a reply to an answer
-const addReply = async (req, res) => {
+const addReply = async (req, res, next) => {
   const { answerId } = req.params;
   const { content } = req.body;
 
   try {
     const answer = await Answer.findById(answerId);
 
-    if (!answer) return res.status(404).json({ message: "Answer not found" });
+    if (!answer) {
+      throw new CustomError(`Answer with id ${answerId} not found`, 404);
+    }
 
     // Create a new reply
     const reply = await Reply.create({
@@ -23,7 +27,7 @@ const addReply = async (req, res) => {
 
     res.status(201).json(reply);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 

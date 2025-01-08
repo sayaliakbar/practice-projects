@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
+const { CustomError } = require("./errorMiddleware");
+
 const protect = async (req, res, next) => {
   let token;
 
@@ -14,10 +16,10 @@ const protect = async (req, res, next) => {
       req.user = await User.findById(decoded.id).select("-password");
       next();
     } catch (error) {
-      res.status(401).json({ message: "Not authorized, token failed" });
+      throw new CustomError("Not authorized, token failed", 401);
     }
   } else {
-    res.status(401).json({ message: "Not authorized, no token" });
+    throw new CustomError("Not authorized, no token", 401);
   }
 };
 

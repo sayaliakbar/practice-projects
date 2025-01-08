@@ -1,6 +1,7 @@
 const Question = require("../models/Question");
+const { CustomError } = require("../middleware/errorMiddleware");
 
-const createQuestion = async (req, res) => {
+const createQuestion = async (req, res, next) => {
   const { title, description, tags } = req.body;
   try {
     const question = await Question.create({
@@ -11,38 +12,37 @@ const createQuestion = async (req, res) => {
     });
     res.status(201).json(question);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    next(error);
   }
 };
 
-const getQuestions = async (req, res) => {
+const getQuestions = async (req, res, next) => {
   try {
     const questions = await Question.find().populate("answers", "tags");
     res.json(questions);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-const getQuestionById = async (req, res) => {
+const getQuestionById = async (req, res, next) => {
   try {
     const question = await Question.findById(req.params.id).populate("answers");
-    if (!question)
-      return res.status(404).json({ message: "Question not found" });
+    if (!question) throw new CustomError(`Question not found`, 404);
     res.json(question);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-const deleteQuestionById = async (req, res) => {
+const deleteQuestionById = async (req, res, next) => {
   try {
     const question = await Question.findByIdAndDelete(req.params.id);
     if (!question)
-      return res.status(404).json({ message: "Question not found" });
+      throw new CustomError(`Question with id ${req.params.id} not found`, 404);
     res.json({ message: "Question deleted" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 

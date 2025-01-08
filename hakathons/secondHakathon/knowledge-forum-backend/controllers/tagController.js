@@ -1,7 +1,8 @@
 const Tag = require("../models/Tags");
+const { CustomError } = require("../middleware/errorMiddleware");
 
 // Create a new tag
-const createTag = async (req, res) => {
+const createTag = async (req, res, next) => {
   let { name } = req.body;
   name = name.toLowerCase();
 
@@ -9,34 +10,36 @@ const createTag = async (req, res) => {
     const existingTag = await Tag.findOne({ name });
 
     if (existingTag)
-      return res.status(400).json({ message: "Tag already exists" });
+      throw new CustomError("Tag with this name already exists", 400);
 
     const tag = await Tag.create({ name });
 
     res.status(201).json(tag);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
 // Get all tags
-const getAllTags = async (req, res) => {
+const getAllTags = async (req, res, next) => {
   try {
     const tags = await Tag.find();
     res.json(tags);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-const deleteTag = async (req, res) => {
+const deleteTag = async (req, res, next) => {
   try {
     const tag = await Tag.findByIdAndDelete(req.params.id);
-    if (!tag) return res.status(404).json({ message: "Tag not found" });
+    if (!tag) {
+      throw new CustomError(`Tag with id ${req.params.id} not found`, 404);
+    }
 
     res.json({ message: "Tag deleted" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
