@@ -1,8 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-const { CustomError } = require("./errorMiddleware");
-
 const protect = async (req, res, next) => {
   let token;
 

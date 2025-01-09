@@ -7,7 +7,7 @@ const {
   validateReplies,
 } = require("../middleware/validationMiddleware");
 
-const { protect } = require("../middleware/authmiddleware");
+const { protect } = require("../middleware/authMiddleware");
 
 router.post("/:questionId/", protect, validateAnswer, addAnswer); // Add an answer to a question
 router.post("/:answerId/replies", protect, validateReplies, addReply); // Add a reply to an answer

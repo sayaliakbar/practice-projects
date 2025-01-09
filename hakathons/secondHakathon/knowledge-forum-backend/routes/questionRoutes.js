@@ -8,7 +8,7 @@ const {
   createQuestion,
   deleteQuestionById,
 } = require("../controllers/questionController");
-const { protect } = require("../middleware/authmiddleware");
+const { protect } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
