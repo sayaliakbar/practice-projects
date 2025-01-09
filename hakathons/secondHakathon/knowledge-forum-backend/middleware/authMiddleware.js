@@ -16,10 +16,10 @@ const protect = async (req, res, next) => {
       req.user = await User.findById(decoded.id).select("-password");
       next();
     } catch (error) {
-      throw new CustomError("Not authorized, token failed", 401);
+      res.status(401).json({ message: "Not authorized, token failed" });
     }
   } else {
-    throw new CustomError("Not authorized, no token", 401);
+    res.status(401).json({ message: "Not authorized, no token" });
   }
 };
 
