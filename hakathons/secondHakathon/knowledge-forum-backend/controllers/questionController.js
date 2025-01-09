@@ -67,7 +67,9 @@ const getQuestions = async (req, res, next) => {
 
 const getQuestionById = async (req, res, next) => {
   try {
-    const question = await Question.findById(req.params.id).populate("answers");
+    const question = await Question.findById(req.params.id)
+      .populate("answers")
+      .populate("author", "name email"); // Populate author's name and email;
     if (!question) throw new CustomError(`Question not found`, 404);
     res.json(question);
   } catch (error) {

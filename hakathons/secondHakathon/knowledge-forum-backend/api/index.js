@@ -1,8 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const connectDB = require("./config/db");
-const { errorHandler } = require("./middleware/errorMiddleware");
+const connectDB = require("../config/db");
+const { errorHandler } = require("../middleware/errorMiddleware");
 
 dotenv.config();
 connectDB();
@@ -22,10 +22,10 @@ if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
 
 app.use(express.json());
 
-app.use("/api/questions", require("./routes/questionRoutes"));
-app.use("/api/answers", require("./routes/answerRoutes"));
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/tags", require("./routes/tagRoutes"));
+app.use("/api/questions", require("../routes/questionRoutes"));
+app.use("/api/answers", require("../routes/answerRoutes"));
+app.use("/api/auth", require("../routes/authRoutes"));
+app.use("/api/tags", require("../routes/tagRoutes"));
 
 app.get("/", (req, res) => {
   res.send("API is running...");
