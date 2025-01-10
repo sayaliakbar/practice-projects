@@ -3,6 +3,9 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const connectDB = require("../config/db");
 const { errorHandler } = require("../middleware/errorMiddleware");
+const cors = require("cors");
+
+// Allow requests from the frontend
 
 dotenv.config();
 connectDB();
@@ -26,6 +29,13 @@ app.use("/api/questions", require("../routes/questionRoutes"));
 app.use("/api/answers", require("../routes/answerRoutes"));
 app.use("/api/auth", require("../routes/authRoutes"));
 app.use("/api/tags", require("../routes/tagRoutes"));
+app.use(cors());
+
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow frontend during development
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
