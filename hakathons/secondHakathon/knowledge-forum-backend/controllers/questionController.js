@@ -48,8 +48,7 @@ const getQuestions = async (req, res, next) => {
 
   try {
     const questions = await Question.find(filter)
-      .populate("answers")
-      .populate("author", "name email") // Populate author's name and email
+      .populate("author", "name") // Populate author's name and email
       .populate("tags", "name")
       .skip(skip)
       .limit(limit)
@@ -69,10 +68,21 @@ const getQuestions = async (req, res, next) => {
 const getQuestionById = async (req, res, next) => {
   try {
     const question = await Question.findById(req.params.id)
-      .populate("answers")
-      .populate("tags", "name")
-      .populate("author", "name email"); // Populate author's name and email;
+      .lean()
+      .populate([
+        {
+          path: "answers",
+          populate: [
+            { path: "author", select: "name" },
+            { path: "replies", populate: { path: "author", select: "name" } },
+          ],
+        },
+        { path: "tags", select: "name" },
+        { path: "author", select: "name" },
+      ]);
+
     if (!question) throw new CustomError(`Question not found`, 404);
+
     res.json(question);
   } catch (error) {
     next(error);

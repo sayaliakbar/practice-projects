@@ -8,7 +8,7 @@ const AnswerSchema = new mongoose.Schema(
       ref: "Question",
       required: true,
     },
-    replies: [{ type: String, required: true }],
+    replies: { type: [mongoose.Schema.Types.ObjectId], ref: "Reply" },
     author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true }
