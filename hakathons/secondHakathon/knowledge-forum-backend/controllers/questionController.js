@@ -1,4 +1,5 @@
 const Question = require("../models/Question");
+const Answer = require("../models/Answer");
 const { CustomError } = require("../middleware/errorMiddleware");
 
 const createQuestion = async (req, res, next) => {
@@ -69,6 +70,7 @@ const getQuestionById = async (req, res, next) => {
   try {
     const question = await Question.findById(req.params.id)
       .populate("answers")
+      .populate("tags", "name")
       .populate("author", "name email"); // Populate author's name and email;
     if (!question) throw new CustomError(`Question not found`, 404);
     res.json(question);
@@ -79,9 +81,16 @@ const getQuestionById = async (req, res, next) => {
 
 const deleteQuestionById = async (req, res, next) => {
   try {
-    const question = await Question.findByIdAndDelete(req.params.id);
+    const question = await Question.findById(req.params.id);
     if (!question)
       throw new CustomError(`Question with id ${req.params.id} not found`, 404);
+
+    // Manually delete related answers before deleting the question
+    await Answer.deleteMany({ question: question._id });
+
+    // Now delete the question
+    await question.deleteOne();
+
     res.json({ message: "Question deleted" });
   } catch (error) {
     next(error);

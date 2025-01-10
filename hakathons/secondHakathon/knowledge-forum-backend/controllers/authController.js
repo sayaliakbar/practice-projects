@@ -1,5 +1,8 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const Question = require("../models/Question");
+const Answer = require("../models/Answer");
+const Reply = require("../models/Reply");
 
 const { CustomError } = require("../middleware/errorMiddleware");
 
@@ -52,7 +55,7 @@ const loginUser = async (req, res, next) => {
 
 const displayUsers = async (req, res, next) => {
   try {
-    const users = await User.find();
+    const users = await User.find().select("-password");
     res.status(200).json(users);
   } catch (error) {
     next(error);
@@ -65,7 +68,13 @@ const deleteUser = async (req, res, next) => {
     if (!user) {
       throw new CustomError(`User with id ${req.params.id} not found`, 404);
     }
-    res.status(200).json({ message: "User removed" });
+
+    // Delete all questions, answers, and replies of the user
+    await Question.deleteMany({ author: req.params.id });
+    await Answer.deleteMany({ author: req.params.id });
+    await Reply.deleteMany({ author: req.params.id });
+
+    res.status(200).json({ message: "User and associated content removed" });
   } catch (error) {
     next(error);
   }
