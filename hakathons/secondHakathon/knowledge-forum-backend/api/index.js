@@ -29,11 +29,12 @@ app.use("/api/questions", require("../routes/questionRoutes"));
 app.use("/api/answers", require("../routes/answerRoutes"));
 app.use("/api/auth", require("../routes/authRoutes"));
 app.use("/api/tags", require("../routes/tagRoutes"));
-app.use(cors());
 
+// Enable CORS for frontend access
 app.use(
   cors({
     origin: "http://localhost:5173", // Allow frontend during development
+    credentials: true, // Allow sending cookies and headers
   })
 );
 
