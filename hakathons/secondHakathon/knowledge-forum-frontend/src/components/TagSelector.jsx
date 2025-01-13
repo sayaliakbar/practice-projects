@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const TagSelector = ({ tags, selectedTags, onTagSelect }) => (
   <div className="mb-4">
     <p className="font-semibold">Select Tags:</p>

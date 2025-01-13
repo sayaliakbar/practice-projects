@@ -21,16 +21,19 @@ const useQuestionsStore = create((set, get) => ({
   setSearchQuery: (query) => set({ searchQuery: query }),
   setSortBy: (sortBy) => set({ sortBy }),
   setOrder: (order) => set({ order }),
-  setSelectedTags: (tags) => set({ selectedTags: tags }),
+  setSelectedTags: (tagId) =>
+    set((state) => ({
+      selectedTags: state.selectedTags.includes(tagId)
+        ? state.selectedTags.filter((id) => id !== tagId) // Remove tag if it exists
+        : [...state.selectedTags, tagId], // Add tag if it doesn't exist
+    })),
 
   fetchQuestions: async () => {
     const { currentPage, searchQuery, selectedTags, sortBy, order } = get();
     set({ loading: true });
     try {
       const response = await api.get(
-        `/questions/?search=${searchQuery}&tags=${selectedTags.join(
-          ","
-        )}&page=${currentPage}&limit=5&sortBy=${sortBy}&order=${order}`
+        `/questions/?search=${searchQuery}&page=${currentPage}&tags=${selectedTags}&limit=5&sortBy=${sortBy}&order=${order}`
       );
       set({
         questions: response.data.questions, // Verify key matches API response

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useQuestionsStore from "../state/questionStore";
 import QuestionCard from "../components/homepageComponents/QuestionCard";
 import Pagination from "../components/homepageComponents/Pagination";
-import TagFilter from "../components/homepageComponents/TagFilter";
+import TagFilter from "../components/TagSelector";
 
 const HomePage = () => {
   const {
@@ -37,16 +37,14 @@ const HomePage = () => {
   };
 
   const handleTagSelect = (tagId) => {
-    setSelectedTags((prev) =>
-      prev.includes(tagId)
-        ? prev.filter((id) => id !== tagId)
-        : [...prev, tagId]
-    );
+    setCurrentPage(1);
+    setSelectedTags(tagId);
   };
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-3xl font-bold mb-6">Knowledge Forum Questions</h1>
+
       <TagFilter
         tags={tags}
         selectedTags={selectedTags}
