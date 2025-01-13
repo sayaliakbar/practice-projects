@@ -8,13 +8,10 @@ import Navbar from "./components/Navbar";
 import CreateQuestionPage from "./pages/CreateQuestionPage";
 
 const App = () => {
-  const handleSearch = (query) => {
-    console.log(query);
-  };
   return (
     <ErrorBoundary>
       <Router>
-        <Navbar onSearch={handleSearch} />
+        <Navbar />
         <div className="p-4">
           <Routes>
             <Route path="/" element={<HomePage />} />

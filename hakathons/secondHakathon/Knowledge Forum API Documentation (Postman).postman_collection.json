@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "a7291640-4a74-44c5-a7b6-7b5a966bbbf4",
+		"name": "Knowledge Forum API Documentation (Postman)",
+		"description": "This document provides a comprehensive guide to using the Knowledge Forum API endpoints as defined in the provided Postman collection.\n\n## Base URL\n\nAll requests should be made to:\n\n``` javascript\n{{base_url}}\n\n ```\n\nEnsure you replace `{{base_url}}` with the actual API base URL for your environment.\n\n## Authentication\n\nMost API endpoints require Bearer Token authentication. Use the `auth_token` variable to pass the token in the headers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40547796"
+	},
+	"item": [
+		{
+			"name": "Question APIs",
+			"item": [
+				{
+					"name": "Get All Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/questions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "(string): Search term to filter questions.",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "",
+									"description": "(string): Tag ID to filter questions by.",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "(integer): Page number for pagination.",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "(integer): Number of questions per page.",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "",
+									"description": "(string): Field to sort by (e.g., createdAt)",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "(string): Sort order (asc or desc).",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieve all questions from the system, with optional query parameters for filtering and pagination."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Question By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/questions/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(string): The unique ID of the question."
+								}
+							]
+						},
+						"description": "Retrieve details of a specific question using its unique ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/questions/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(string): The unique ID of the question."
+								}
+							]
+						},
+						"description": "Delete a specific question from the system using its unique ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"How are you?\",\r\n    \"description\": \"description is defined\",\r\n    \"tags\": [\"677ecf677a2713b815fffe4a\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/questions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								""
+							]
+						},
+						"description": "Create a new question in the system by providing a title, description, and associated tags."
+					},
+					"response": []
+				}
+			],
+			"description": "The Question APIs folder provides endpoints for interacting with questions in the Knowledge Forum system. These APIs allow users to retrieve, create, and manage questions, including operations such as fetching all questions, retrieving questions with query parameters (e.g., search, tags, pagination), retrieving a specific question by ID, creating a new question, and deleting questions by ID."
+		},
+		{
+			"name": "Answer APIs",
+			"item": [
+				{
+					"name": "Create Answers on Question ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"This is the very first answer to this question. You can get more idea from doing GPT or google. Best of luck!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/answers/:questionId",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"answers",
+								":questionId"
+							],
+							"variable": [
+								{
+									"key": "questionId",
+									"value": "",
+									"description": "(string): The ID of the question to answer."
+								}
+							]
+						},
+						"description": "Submit an answer to a specific question by providing the content and author information."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reply By Answer ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"this is the reply\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/answers/:answerId/replies",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"answers",
+								":answerId",
+								"replies"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "",
+									"description": "(string): The ID of the answer to reply to."
+								}
+							]
+						},
+						"description": "Add a reply to an existing answer using its unique ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Answer By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/answers/:answerId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								":answerId"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "",
+									"description": "(string): The ID of the answer to delete"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The Answer APIs folder provides endpoints to interact with answers in the Knowledge Forum system. These APIs support creating answers for specific questions and adding replies to existing answers."
+		},
+		{
+			"name": "Auth APIs",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Ali Akbar\",\r\n   \"email\" :\"sayali@gmail.com\",\r\n   \"password\": \"ali123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						},
+						"description": "Register a new user by providing their name, email, and password."
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"auth_token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sayali@gmail.com\",\r\n    \"password\": \"ali123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/auth/login",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Authenticate a user by providing their email and password, and retrieve a Bearer Token for subsequent requests."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Users By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/users/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(string): The ID of the user to delete."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The Auth APIs folder provides endpoints for managing user authentication and registration. These APIs allow users to register a new account and log in to obtain an authentication token for secured requests."
+		},
+		{
+			"name": "Tag APIs",
+			"item": [
+				{
+					"name": "Get All Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/tags",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						},
+						"description": "Retrieve a list of all available tags in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"backend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tags",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						},
+						"description": "Create a new tag in the system by providing its name."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tags By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/tags/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(string): The ID of the tag to delete."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The Tag APIs folder provides endpoints for managing and retrieving tags in the Knowledge Forum system. These APIs allow users to fetch all available tags and create new tags for categorization and organization of content."
+		}
+	]
+}

@@ -1,28 +1,22 @@
-import { useEffect, useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../state/authStore";
-import useDebounce from "../hooks/useDebounce";
+import useQuestionsStore from "../state/questionStore";
 
-//eslint-disable-next-line
-const Navbar = ({ onSearch }) => {
+const Navbar = () => {
   const { isAuthenticated, logout } = useAuthStore();
-  const [searchQuery, setSearchQuery] = useState("");
-  const debouncedSearchQuery = useDebounce(searchQuery, 300);
+
+  const { searchQuery, setSearchQuery } = useQuestionsStore();
+
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    onSearch(debouncedSearchQuery);
-  }, [debouncedSearchQuery, onSearch]);
-
   const handleLogin = () => navigate("/login");
   const handleLogout = () => {
-    
     logout();
     navigate("/");
   };
 
-  const hanldeAskClick = () => {
+  const handleAskClick = () => {
     if (isAuthenticated) {
       navigate("/create-question");
     } else {
@@ -49,7 +43,7 @@ const Navbar = ({ onSearch }) => {
 
       <div className="space-x-4 flex items-center">
         <button
-          onClick={hanldeAskClick}
+          onClick={handleAskClick}
           className="px-4 py-2 bg-indigo-600 text-white rounded"
         >
           Ask
