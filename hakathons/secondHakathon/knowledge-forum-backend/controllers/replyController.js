@@ -34,5 +34,21 @@ const addReply = async (req, res, next) => {
     next(error);
   }
 };
+const deleteReply = async (req, res, next) => {
+  const { replyId } = req.params;
 
-module.exports = { addReply };
+  try {
+    const reply = await Reply.findById(replyId);
+
+    if (!reply)
+      throw new CustomError(`Reply with id ${replyId} not found`, 404);
+
+    await reply.deleteOne();
+
+    res.json({ message: "Reply deleted" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { addReply, deleteReply };
