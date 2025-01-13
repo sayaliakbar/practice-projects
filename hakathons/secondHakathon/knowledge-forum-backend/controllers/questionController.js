@@ -1,5 +1,6 @@
 const Question = require("../models/Question");
 const Answer = require("../models/Answer");
+const Reply = require("../models/Reply");
 const { CustomError } = require("../middleware/errorMiddleware");
 
 const createQuestion = async (req, res, next) => {
@@ -97,6 +98,7 @@ const deleteQuestionById = async (req, res, next) => {
 
     // Manually delete related answers before deleting the question
     await Answer.deleteMany({ question: question._id });
+    await Reply.deleteMany({ question: question._id });
 
     // Now delete the question
     await question.deleteOne();
