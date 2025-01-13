@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-const QuestionDetails = ({ question }) => {
+
+const QuestionDetails = ({ question, deleteQuestion }) => {
   return (
     <div className="bg-white p-6 shadow rounded">
       <h1 className="text-2xl font-bold">{question.title}</h1>
@@ -15,6 +16,14 @@ const QuestionDetails = ({ question }) => {
       <p className="text-sm text-gray-500">
         Tags: {question.tags?.map((tag) => tag.name).join(", ") || "No tags"}
       </p>
+      {question.author._id === localStorage.getItem("user_id") && (
+        <button
+          onClick={deleteQuestion}
+          className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded"
+        >
+          Delete
+        </button>
+      )}
     </div>
   );
 };

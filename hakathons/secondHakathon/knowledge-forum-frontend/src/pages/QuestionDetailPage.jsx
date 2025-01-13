@@ -36,13 +36,34 @@ const QuestionDetailPage = () => {
 
   const isAuthenticated = () => !!localStorage.getItem("auth_token");
 
+  const deleteQuestion = async () => {
+    if (!isAuthenticated()) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+      await api.delete(`/questions/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
+        },
+      });
+      navigate("/");
+    } catch (error) {
+      console.error("Error deleting question:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       {loading ? (
         <p>Loading question...</p>
       ) : question ? (
         <>
-          <QuestionDetails question={question} />
+          <QuestionDetails
+            question={question}
+            deleteQuestion={deleteQuestion}
+          />
           <AnswersList
             answers={answers}
             setAnswers={setAnswers}

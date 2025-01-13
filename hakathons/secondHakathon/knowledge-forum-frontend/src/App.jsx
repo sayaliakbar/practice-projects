@@ -4,20 +4,27 @@ import QuestionDetailPage from "./pages/QuestionDetailPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
+  const handleSearch = (query) => {
+    console.log(query);
+  };
   return (
     <ErrorBoundary>
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/questions/:id" element={<QuestionDetailPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
+        <Navbar onSearch={handleSearch} />
+        <div className="p-4">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/questions/:id" element={<QuestionDetailPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </div>
       </Router>
     </ErrorBoundary>
   );
-}
+};
 
 export default App;
