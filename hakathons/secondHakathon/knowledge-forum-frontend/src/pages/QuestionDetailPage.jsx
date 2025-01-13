@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../api/api";
 import QuestionDetails from "../components/questionDetailComponents/QuestionDetails";
-import AnswersList from "../components/questionDetailComponents//AnswerList";
+import AnswersList from "../components/questionDetailComponents/AnswerList";
 import AddAnswerForm from "../components/questionDetailComponents/AddAnswerForm";
 import useAuthStore from "../state/authStore";
 
 const QuestionDetailPage = () => {
-  const { isAuthenticated } = useAuthStore();
   const { id } = useParams();
+
+  const { isAuthenticated } = useAuthStore();
+
   const navigate = useNavigate();
 
   const [question, setQuestion] = useState(null);
@@ -16,38 +18,30 @@ const QuestionDetailPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    const fetchQuestionDetails = async () => {
+    const fetchQuestion = async () => {
       try {
-        const response = await api.get(`/questions/${id}`, {
-          signal: controller.signal,
-        });
+        const response = await api.get(`/questions/${id}`);
         setQuestion(response.data);
-        setAnswers(response.data.answers || []);
+        setAnswers(response.data.answers);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching question details:", error);
-      } finally {
+        console.error("Error fetching question:", error);
         setLoading(false);
       }
     };
 
-    fetchQuestionDetails();
-    return () => controller.abort();
+    fetchQuestion();
   }, [id]);
 
   const deleteQuestion = async () => {
-    if (!isAuthenticated()) {
+    if (!isAuthenticated) {
       navigate("/login");
       return;
     }
 
     try {
-      await api.delete(`/questions/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
-        },
-      });
+      await api.delete(`/questions/${id}`);
+
       navigate("/");
     } catch (error) {
       console.error("Error deleting question:", error);

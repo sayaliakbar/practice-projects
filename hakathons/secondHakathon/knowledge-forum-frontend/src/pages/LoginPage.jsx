@@ -17,9 +17,8 @@ const LoginPage = () => {
     try {
       // Send login request to the backend
       const response = await api.post("/auth/login", { email, password });
-      console.log(response.data);
+
       const { token, id, name } = response.data;
-      console.log(id);
 
       // Save the token and update Zustand store
       login(token, id, name);

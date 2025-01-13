@@ -11,30 +11,20 @@ const AddAnswerForm = ({
   navigate,
 }) => {
   const [newAnswer, setNewAnswer] = useState("");
-
   const handleAddAnswer = async (e) => {
     e.preventDefault();
 
-    if (!isAuthenticated()) {
+    if (!isAuthenticated) {
       navigate("/login");
       return;
     }
 
-    if (!newAnswer.trim()) return;
-
     try {
-      const response = await api.post(
-        `/answers/${questionId}`,
-        {
-          content: newAnswer,
-          author: localStorage.getItem("user_id"),
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
-          },
-        }
-      );
+      const response = await api.post(`/answers/${questionId}`, {
+        questionId,
+        content: newAnswer,
+      });
+      console.log(response.data);
 
       setAnswers([...answers, response.data]);
       setNewAnswer("");
