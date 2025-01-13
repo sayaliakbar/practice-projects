@@ -24,7 +24,6 @@ const AddAnswerForm = ({
         questionId,
         content: newAnswer,
       });
-      console.log(response.data);
 
       setAnswers([...answers, response.data]);
       setNewAnswer("");

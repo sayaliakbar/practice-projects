@@ -11,8 +11,8 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
       return;
     }
     try {
-      const response = await api.delete(`/answers/${answerId}`);
-      console.log(response);
+      await api.delete(`/answers/${answerId}`);
+
       setAnswers((prevAnswers) =>
         prevAnswers.filter((answer) => answer._id !== answerId)
       );
@@ -21,7 +21,7 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
     }
   };
 
-  const handleAddReply = async (e, answerId, newReply) => {
+  const handleAddReply = async (e, answerId, newReply, setNewReply) => {
     e.preventDefault();
 
     if (!isAuthenticated) {
@@ -30,7 +30,7 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
     }
 
     try {
-      const response = await api.post(`/answers/${answerId}/replies`, {
+      const response = await api.post(`/reply/${answerId}/replies`, {
         content: newReply,
       });
 
@@ -45,10 +45,34 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
           return answer;
         })
       );
+      setNewReply("");
     } catch (error) {
       console.error("Error adding reply:", error);
     }
   };
+
+  const handldeDeleteReply = async (e) => {
+    const replyId = e.target.value;
+
+    if (!isAuthenticated) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+      await api.delete(`/reply/${replyId}`);
+
+      setAnswers((prevAnswers) =>
+        prevAnswers.map((answer) => ({
+          ...answer,
+          replies: answer.replies.filter((reply) => reply._id !== replyId),
+        }))
+      );
+    } catch (error) {
+      console.error("Error deleting reply:", error);
+    }
+  };
+
   return (
     <div className="bg-white p-6 shadow rounded">
       <h2 className="text-xl font-semibold">Answers</h2>
@@ -67,7 +91,7 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
                   key={answer._id}
                   value={answer._id}
                 >
-                  Delete
+                  Delete Answer
                 </button>
               )}
 
@@ -80,6 +104,17 @@ const AnswersList = ({ answers, setAnswers, isAuthenticated, navigate }) => {
                     <p className="text-sm text-gray-500">
                       By {reply.author?.name ?? "Unknown"}
                     </p>
+                    {isAuthenticated &&
+                      reply.author._id === localStorage.getItem("user_id") && (
+                        <button
+                          key={reply._id}
+                          value={reply._id}
+                          onClick={handldeDeleteReply}
+                          className="mt-2 px-4 py-2 bg-red-600 text-white rounded"
+                        >
+                          Delete Reply
+                        </button>
+                      )}
                   </div>
                 ))}
               </div>

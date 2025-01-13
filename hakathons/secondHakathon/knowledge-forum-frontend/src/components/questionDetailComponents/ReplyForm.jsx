@@ -1,11 +1,12 @@
 import { useState } from "react";
 
+//eslint-disable-next-line
 const ReplyForm = ({ answerId, handleAddReply }) => {
   const [newReply, setNewReply] = useState("");
 
   return (
     <form
-      onSubmit={(e) => handleAddReply(e, answerId, newReply)}
+      onSubmit={(e) => handleAddReply(e, answerId, newReply, setNewReply)}
       className="mt-2"
     >
       <textarea
