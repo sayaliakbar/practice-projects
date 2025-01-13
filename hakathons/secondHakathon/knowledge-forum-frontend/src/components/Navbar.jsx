@@ -17,8 +17,17 @@ const Navbar = ({ onSearch }) => {
 
   const handleLogin = () => navigate("/login");
   const handleLogout = () => {
+    
     logout();
     navigate("/");
+  };
+
+  const hanldeAskClick = () => {
+    if (isAuthenticated) {
+      navigate("/create-question");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -38,14 +47,13 @@ const Navbar = ({ onSearch }) => {
         />
       )}
 
-      <div className="space-x-4">
+      <div className="space-x-4 flex items-center">
         <button
-          onClick={() => navigate("/create-question")}
+          onClick={hanldeAskClick}
           className="px-4 py-2 bg-indigo-600 text-white rounded"
         >
           Ask
         </button>
-
         {isAuthenticated ? (
           <button
             onClick={handleLogout}
@@ -60,6 +68,9 @@ const Navbar = ({ onSearch }) => {
           >
             Login
           </button>
+        )}
+        {isAuthenticated && (
+          <h1>{localStorage.getItem("user_name").split(" ")[0]}</h1>
         )}
       </div>
     </nav>

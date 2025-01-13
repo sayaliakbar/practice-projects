@@ -4,8 +4,10 @@ import api from "../api/api";
 import QuestionDetails from "../components/questionDetailComponents/QuestionDetails";
 import AnswersList from "../components/questionDetailComponents//AnswerList";
 import AddAnswerForm from "../components/questionDetailComponents/AddAnswerForm";
+import useAuthStore from "../state/authStore";
 
 const QuestionDetailPage = () => {
+  const { isAuthenticated } = useAuthStore();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -34,8 +36,6 @@ const QuestionDetailPage = () => {
     return () => controller.abort();
   }, [id]);
 
-  const isAuthenticated = () => !!localStorage.getItem("auth_token");
-
   const deleteQuestion = async () => {
     if (!isAuthenticated()) {
       navigate("/login");
@@ -63,6 +63,7 @@ const QuestionDetailPage = () => {
           <QuestionDetails
             question={question}
             deleteQuestion={deleteQuestion}
+            isAuthenticated={isAuthenticated}
           />
           <AnswersList
             answers={answers}

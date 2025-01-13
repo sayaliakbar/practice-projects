@@ -17,10 +17,12 @@ const LoginPage = () => {
     try {
       // Send login request to the backend
       const response = await api.post("/auth/login", { email, password });
-      const { token } = response.data;
+      console.log(response.data);
+      const { token, id, name } = response.data;
+      console.log(id);
 
       // Save the token and update Zustand store
-      login(token);
+      login(token, id, name);
       navigate("/"); // Redirect to homepage after login
     } catch (err) {
       console.error(err);
@@ -32,9 +34,7 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center">
       <form onSubmit={handleLogin} className="bg-white p-6 shadow rounded w-80">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
-
         {error && <p className="text-red-500 mb-2">{error}</p>}
-
         <input
           type="email"
           placeholder="Email"
@@ -51,9 +51,15 @@ const LoginPage = () => {
         />
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white p-2 rounded"
+          className="w-full bg-indigo-600 mb-2 text-white p-2 rounded"
         >
           Login
+        </button>{" "}
+        <button
+          onClick={() => navigate("/register")}
+          className="w-full bg-red-600 text-white p-2 rounded"
+        >
+          Register
         </button>
       </form>
     </div>
