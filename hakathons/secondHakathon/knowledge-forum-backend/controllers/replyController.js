@@ -24,8 +24,12 @@ const addReply = async (req, res, next) => {
 
     answer.replies.push(reply._id);
     await answer.save();
+    const populatedReply = await Reply.findById(reply._id).populate(
+      "author",
+      "name email" // Specify fields to include from the author (e.g., name, email)
+    );
 
-    res.status(201).json(reply);
+    res.status(201).json(populatedReply);
   } catch (error) {
     next(error);
   }
