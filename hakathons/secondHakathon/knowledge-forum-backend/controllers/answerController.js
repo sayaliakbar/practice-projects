@@ -10,6 +10,7 @@ const addAnswer = async (req, res, next) => {
   const { questionId } = req.params;
 
   try {
+    // Find the question by ID
     const question = await Question.findById(questionId);
     if (!question)
       throw new CustomError(`Question with id ${questionId} not found`, 404);
@@ -25,7 +26,13 @@ const addAnswer = async (req, res, next) => {
     question.answers.push(answer._id);
     await question.save();
 
-    res.status(201).json(answer);
+    // Populate the author field in the newly created answer
+    const populatedAnswer = await Answer.findById(answer._id).populate(
+      "author",
+      "name email" // Specify fields to include from the author (e.g., name, email)
+    );
+
+    res.status(201).json(populatedAnswer);
   } catch (error) {
     next(error);
   }
