@@ -96,11 +96,17 @@ const deleteQuestionById = async (req, res, next) => {
     if (!question)
       throw new CustomError(`Question with id ${req.params.id} not found`, 404);
 
-    // Manually delete related answers before deleting the question
-    await Answer.deleteMany({ question: question._id });
-    await Reply.deleteMany({ question: question._id });
+    // Find all answers related to the question
+    const answers = await Answer.find({ question: question._id });
 
-    // Now delete the question
+    // Delete all replies associated with each answer
+    const answerIds = answers.map((answer) => answer._id);
+    await Reply.deleteMany({ answer: { $in: answerIds } });
+
+    // Delete all answers related to the question
+    await Answer.deleteMany({ question: question._id });
+
+    // Finally, delete the question itself
     await question.deleteOne();
 
     res.json({ message: "Question deleted" });
