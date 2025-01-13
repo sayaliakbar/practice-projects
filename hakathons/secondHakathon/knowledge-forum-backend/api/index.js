@@ -36,7 +36,7 @@ app.use("/api/questions", require("../routes/questionRoutes"));
 app.use("/api/answers", require("../routes/answerRoutes"));
 app.use("/api/auth", require("../routes/authRoutes"));
 app.use("/api/tags", require("../routes/tagRoutes"));
-app.use("/api/replies", require("../routes/replyRoutes"));
+app.use("/api/reply", require("../routes/replyRoutes"));
 
 // Enable CORS for frontend access
 app.use(
