@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import FormInput from "../components/createQuestionPage.jsx/FormInput";
+import FormInput from "../components/createQuestionPage/FormInput";
 import TagSelector from "../components/TagSelector";
 
 import api from "../api/api";
