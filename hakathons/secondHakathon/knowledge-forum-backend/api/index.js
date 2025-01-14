@@ -41,7 +41,10 @@ app.use("/api/reply", require("../routes/replyRoutes"));
 // Enable CORS for frontend access
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow frontend during development
+    origin: [
+      "http://localhost:5173", //Development origin
+      "https://knowledge-forum-frontend.vercel.app/", //Production Frontend URL
+    ],
     credentials: true, // Allow sending cookies and headers
   })
 );
