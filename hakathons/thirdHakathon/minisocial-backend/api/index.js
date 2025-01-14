@@ -1,8 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const connectDB = require("./config/db");
-const { errorHandler } = require("./middlewares/errorMiddleware");
+const connectDB = require("../config/db");
+const { errorHandler } = require("../middlewares/errorMiddleware");
 const cors = require("cors");
 
 dotenv.config();
@@ -23,25 +23,25 @@ if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
 
 app.use(express.json());
 
-// Enable CORS before defining routes
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:5173", // Development origin
-//       "https://knowledge-forum-frontend.vercel.app", // Production frontend
-//     ],
-//     credentials: true,
-//   })
-// );
+//Enable CORS before defining routes
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // Development origin
+      // "https://knowledge-forum-frontend.vercel.app", // Production frontend
+    ],
+    credentials: true,
+  })
+);
 
 // Define API routes
 
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/posts", require("./routes/postRoutes"));
+app.use("/api/auth", require("../routes/authRoutes"));
+app.use("/api/users", require("../routes/userRoutes"));
+app.use("/api/posts", require("../routes/postRoutes"));
 
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.redirect("/api/posts");
 });
 
 // Error handling middleware

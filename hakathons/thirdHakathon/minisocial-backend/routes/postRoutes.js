@@ -6,6 +6,7 @@ const {
   createPost,
   updatePost,
   deletePost,
+  likePost,
 } = require("../controllers/postController");
 const { protect } = require("../middlewares/authMiddleware");
 
@@ -17,5 +18,6 @@ router
   .get(getPostById)
   .put(protect, validatePost, updatePost)
   .delete(protect, deletePost);
+router.route("/:id/like").post(protect, likePost);
 
 module.exports = router;

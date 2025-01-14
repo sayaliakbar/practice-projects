@@ -1,7 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const Post = require("../models/Post");
-const mongoose = require("mongoose");
 
 // Generate JWT Token
 const generateToken = (id) => {
@@ -40,6 +39,7 @@ const loginUser = async (req, res, next) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        posts: user.posts,
         token: generateToken(user._id),
       });
     } else {
@@ -61,7 +61,11 @@ const displayUsers = async (req, res, next) => {
 
 const displayUserById = async (req, res, next) => {
   try {
-    const user = await User.findById(req.params.id).select("-password");
+    const user = await User.findById(req.params.id)
+      .select("-password")
+      .populate({
+        path: "posts",
+      });
     if (!user) {
       res.status(404).json({ message: "User not found" });
     }
@@ -82,12 +86,12 @@ const deleteUser = async (req, res, next) => {
     }
 
     // Delete all posts by user
-    await Post.deleteMany({ user: req.params.id });
+    await Post.deleteMany({ author: userId });
 
     //Remove the user from likes in other posts
     await Post.updateMany(
       { "likes.user": userId },
-      { $pull: { likes: { user: userId } } }
+      { $pull: { likes: { author: userId } } }
     );
 
     await user.deleteOne();
