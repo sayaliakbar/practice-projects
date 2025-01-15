@@ -2,8 +2,78 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 
 const getPosts = async (req, res) => {
-  const posts = await Post.find().populate("author", "name");
-  res.status(200).json(posts);
+  try {
+    // Destructure and provide default values for query parameters
+    let {
+      page = 1,
+      limit = 10,
+      search = "",
+      sortBy = "createdAt",
+      sortOrder = "desc",
+    } = req.query;
+
+    // Convert page and limit to integers
+    page = parseInt(page);
+    limit = parseInt(limit);
+
+    // Validate page and limit to ensure they're positive integers
+    if (page <= 0 || limit <= 0) {
+      return res
+        .status(400)
+        .json({ message: "Page and limit must be positive integers" });
+    }
+
+    // Validate sortOrder: should be either 'asc' or 'desc'
+    const order = sortOrder === "asc" ? 1 : sortOrder === "desc" ? -1 : null;
+    if (order === null) {
+      return res
+        .status(400)
+        .json({ message: "sortOrder must be either 'asc' or 'desc'" });
+    }
+
+    // Validate sortBy field - only allow certain fields to be used for sorting
+    const validSortFields = ["createdAt", "title", "author"];
+    if (!validSortFields.includes(sortBy)) {
+      return res.status(400).json({
+        message: `sortBy must be one of the following: ${validSortFields.join(
+          ", "
+        )}`,
+      });
+    }
+
+    // Build the search query if there's a search term
+    const searchQuery = search
+      ? {
+          $or: [
+            { title: { $regex: search, $options: "i" } }, // Case insensitive search in title
+            { content: { $regex: search, $options: "i" } }, // Case insensitive search in content
+          ],
+        }
+      : {};
+
+    // Fetch the posts with pagination, search, and sorting
+    const posts = await Post.find(searchQuery)
+      .populate("author", "name") // Populate the author's name
+      .sort({ [sortBy]: order }) // Sort by the field specified in `sortBy` (default: `createdAt`)
+      .skip((page - 1) * limit) // Skip records for pagination
+      .limit(limit); // Limit the number of records per page
+
+    // Get the total count of posts for pagination metadata
+    const totalPosts = await Post.countDocuments(searchQuery);
+
+    // Send the response with pagination metadata
+    res.status(200).json({
+      posts,
+      pagination: {
+        currentPage: page,
+        totalPages: Math.ceil(totalPosts / limit),
+        totalPosts,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 };
 
 const getPostById = async (req, res) => {

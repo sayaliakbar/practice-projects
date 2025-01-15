@@ -8,7 +8,7 @@ const {
   deletePost,
   likePost,
 } = require("../controllers/postController");
-const { protect } = require("../middlewares/authMiddleware");
+const protect = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 

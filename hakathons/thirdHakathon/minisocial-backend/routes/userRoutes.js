@@ -4,12 +4,13 @@ const {
   displayUsers,
   deleteUser,
   displayUserById,
-} = require("../controllers/authController");
+} = require("../controllers/userController.js");
+const isAdmin = require("../middlewares/adminMiddleware");
 
-const { protect } = require("../middlewares/authMiddleware");
+const protect = require("../middlewares/authMiddleware");
 
-router.get("/", displayUsers);
-router.get("/:id", displayUserById);
+router.get("/", isAdmin, displayUsers);
+router.get("/:id", protect, displayUserById);
 router.delete("/:id", protect, deleteUser);
 
 module.exports = router;

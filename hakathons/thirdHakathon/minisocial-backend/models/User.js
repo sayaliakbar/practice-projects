@@ -8,29 +8,39 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      validate: {
-        validator: function (v) {
-          return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
-        },
-        message: (props) => `${props.value} is not a valid email!`,
-      },
     },
     password: { type: String, required: true },
-    posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+    posts: {
+      type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+      default: [],
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"], // Flexible for future roles
+      default: "user",
+      required: true,
+    },
   },
+
   { timestamps: true }
 );
 
 // Hash password before saving
 UserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
-  this.password = await bcrypt.hash(this.password, 10);
+  if (!this.isModified("password")) return next(); // Skip if password isn't modified
+  if (!this.password) return next(new Error("Password is required")); // Handle empty passwords
+  this.password = await bcrypt.hash(this.password, 10); // Hash the password
   next();
 });
 
 // Compare passwords
 UserSchema.methods.comparePassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
+  try {
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    console.error("Error comparing passwords:", error);
+    throw new Error("Password comparison failed");
+  }
 };
 
 module.exports = mongoose.model("User", UserSchema);

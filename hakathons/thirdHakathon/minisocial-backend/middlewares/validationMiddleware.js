@@ -1,28 +1,40 @@
 const { body, validationResult } = require("express-validator");
 
 const validateRegister = [
-  body("name").notEmpty().withMessage("Name is required"),
+  // Validate name
+  body("name")
+    .notEmpty()
+    .withMessage("Name is required")
+    .isLength({ max: 30 })
+    .withMessage("Name must not exceed 30 characters"),
+
+  // Validate email
   body("email")
     .isEmail()
-    .withMessage("Email is required")
-    .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-    .withMessage("Email format is invalid")
+    .withMessage("Invalid email format") // Automatically checks for valid email format
     .normalizeEmail()
     .isLength({ max: 50 })
-    .withMessage("Email is too long"),
+    .withMessage("Email must not exclude 50 characters"),
+
+  // Validate password
   body("password")
     .isLength({ min: 6 })
     .withMessage("Password must be at least 6 characters long")
-    .notEmpty()
-    .withMessage("Password is required")
-    .isAlphanumeric()
-    .withMessage("Password must be alphanumeric")
-    .isLength({ max: 20 })
-    .withMessage("Password is too long"),
+    .isLength({ max: 50 })
+    .withMessage("Password must not exceed 50 characters")
+    .matches(/^[A-Za-z0-9@#$%^&+=!]+$/)
+    .withMessage(
+      "Password must be alphanumeric and may include special characters like @, #, $, %, ^, &, +, =, !"
+    ),
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({
+        errors: errors.array().map((error) => ({
+          field: error.param,
+          message: error.msg,
+        })),
+      });
     }
     next();
   },
@@ -31,25 +43,30 @@ const validateRegister = [
 const validateLogin = [
   body("email")
     .isEmail()
-    .withMessage("Email is required")
-    .normalizeEmail()
+    .withMessage("Invalid email format") // Step 1: Verify email format
+    .normalizeEmail() // Step 2: Sanitize and standardize
     .isLength({ max: 50 })
-    .withMessage("Email is too long")
-    .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-    .withMessage("Email format is invalid"),
+    .withMessage("Email must not exceed 50 characters"), // Step 3: Prevent excessively long input
+
   body("password")
     .isLength({ min: 6 })
     .withMessage("Password must be at least 6 characters long")
-    .notEmpty()
-    .withMessage("Password is required")
-    .isAlphanumeric()
-    .withMessage("Password must be alphanumeric")
-    .isLength({ max: 20 })
-    .withMessage("Password is too long"),
+    .isLength({ max: 50 })
+    .withMessage("Password must not exceed 50 characters")
+    .matches(/^[A-Za-z0-9@#$%^&+=!]+$/)
+    .withMessage(
+      "Password must be alphanumeric and may include special characters like @, #, $, %, ^, &, +, =, !"
+    ),
+
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({
+        errors: errors.array().map((error) => ({
+          field: error.param,
+          message: error.msg,
+        })),
+      });
     }
     next();
   },
