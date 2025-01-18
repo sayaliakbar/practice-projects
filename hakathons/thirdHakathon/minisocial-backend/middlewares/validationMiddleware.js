@@ -72,12 +72,14 @@ const validateLogin = [
   },
 ];
 
-validatePost = [
+const validatePost = [
   body("content")
-    .isLength({ min: 1 })
-    .withMessage("Post text is required")
+    .trim() // Remove whitespace from the beginning and end of the input
+    .notEmpty()
+    .withMessage("Content is required")
     .isLength({ max: 500 })
-    .withMessage("Post text is too long"),
+    .withMessage("Text is too long, maximum 500 characters"),
+
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

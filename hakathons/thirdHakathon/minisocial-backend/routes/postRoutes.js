@@ -13,6 +13,7 @@ const protect = require("../middlewares/authMiddleware");
 const router = express.Router();
 
 router.route("/").get(getPosts).post(protect, validatePost, createPost);
+
 router
   .route("/:id")
   .get(getPostById)

@@ -1,0 +1,1031 @@
+{
+	"info": {
+		"_postman_id": "f416d54a-24e0-47b0-8f0b-853f87cac985",
+		"name": "MiniSocial APP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40547796"
+	},
+	"item": [
+		{
+			"name": "Auth APIs",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ali Akbar\",\r\n    \"email\": \"sayaliakbar@gmail.com\",\r\n    \"password\" : \"ali123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ali Akbar\",\r\n    \"email\": \"sayaliakbar@gmail.com\",\r\n    \"password\": \"ali123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10a-ZXVQR7V+/6HAWlZznh+12A7tCwc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 06:34:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"67860567fd055631dc2ad62c\",\n    \"name\": \"Ali Akbar\",\n    \"email\": \"sayaliakbar@gmail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODYwNTY3ZmQwNTU2MzFkYzJhZDYyYyIsImlhdCI6MTczNjgzNjQ1NSwiZXhwIjoxNzM3NDQxMjU1fQ.anZlfrWIcf_OJANcYDpljLg2Ry99F3RiGCEvf6i68H8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"auth_token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"danish@gmail.com\",\r\n    \"password\": \"danish123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"sayaliakbar@gmail.com\",\r\n    \"password\": \"ali123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10a-GtgAHQaPuX4ZYkfDfCUhM1CkW0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 06:39:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"67860567fd055631dc2ad62c\",\n    \"name\": \"Ali Akbar\",\n    \"email\": \"sayaliakbar@gmail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODYwNTY3ZmQwNTU2MzFkYzJhZDYyYyIsImlhdCI6MTczNjgzNjc3NiwiZXhwIjoxNzM3NDQxNTc2fQ._zJ0qT3i4iqY0u_EEybJiwE8yiVT2mOjbI3L0hnj268\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User APIs",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users?page=1&limit=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-uiiP4iokTQPj2j+unZ2YYo6H5FY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 06:35:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67860567fd055631dc2ad62c\",\n        \"name\": \"Ali Akbar\",\n        \"email\": \"sayaliakbar@gmail.com\",\n        \"createdAt\": \"2025-01-14T06:34:15.861Z\",\n        \"updatedAt\": \"2025-01-14T06:34:15.861Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"678605b0fd055631dc2ad62f\",\n        \"name\": \"Danish\",\n        \"email\": \"danish@gmail.com\",\n        \"createdAt\": \"2025-01-14T06:35:28.089Z\",\n        \"updatedAt\": \"2025-01-14T06:35:28.089Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6787420d5037b472f25ccdc0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "67860567fd055631dc2ad62c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-JfRv29sgtzbL9UkO3RpB9bM5KAM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 06:38:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"67860567fd055631dc2ad62c\",\n    \"name\": \"Ali Akbar\",\n    \"email\": \"sayaliakbar@gmail.com\",\n    \"createdAt\": \"2025-01-14T06:34:15.861Z\",\n    \"updatedAt\": \"2025-01-14T06:34:15.861Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67860b7a9060d4662a49cbc7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User By ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "678605b0fd055631dc2ad62f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-+BFCXZBji7vrbkrwyE5s2YKViik\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 06:48:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post APIs",
+			"item": [
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Get All Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/posts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "954"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ba-WHtZ8TFZxotUu0HZffeTBZMcbAE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 07:22:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"678610327ba7fceb5e50d9ee\",\n        \"content\": \"This is the first post\",\n        \"user\": {\n            \"_id\": \"67860b549060d4662a49cbc0\",\n            \"name\": \"Naeem\"\n        },\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T07:20:18.633Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"678610497ba7fceb5e50d9f1\",\n        \"content\": \"This is the second post\",\n        \"user\": {\n            \"_id\": \"67860b549060d4662a49cbc0\",\n            \"name\": \"Naeem\"\n        },\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T07:20:41.949Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6786105b7ba7fceb5e50d9f4\",\n        \"content\": \"This is the third post by naeem\",\n        \"user\": {\n            \"_id\": \"67860b549060d4662a49cbc0\",\n            \"name\": \"Naeem\"\n        },\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T07:20:59.887Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6786107d7ba7fceb5e50d9f8\",\n        \"content\": \"This is the 1st post by danish\",\n        \"user\": {\n            \"_id\": \"67860b459060d4662a49cbbd\",\n            \"name\": \"Danish\"\n        },\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T07:21:33.946Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"678610827ba7fceb5e50d9fb\",\n        \"content\": \"This is the 2nd post by danish\",\n        \"user\": {\n            \"_id\": \"67860b459060d4662a49cbbd\",\n            \"name\": \"Danish\"\n        },\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T07:21:38.878Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"This is the newest post by hammad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"This is the 2nd post by danish\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/posts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-TdGj2Q8wlUTDjmBapXjdGkoDxKM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 07:21:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": \"This is the 2nd post by danish\",\n    \"user\": \"67860b459060d4662a49cbbd\",\n    \"likes\": [],\n    \"_id\": \"678610827ba7fceb5e50d9fb\",\n    \"createdAt\": \"2025-01-14T07:21:38.878Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Post By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/posts/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Post By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/posts/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "678610827ba7fceb5e50d9fb"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c1-pWCAiAl1MJ+YTKqP3XwRN5ZOtCg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 07:22:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678610827ba7fceb5e50d9fb\",\n    \"content\": \"This is the 2nd post by danish\",\n    \"user\": {\n        \"_id\": \"67860b459060d4662a49cbbd\",\n        \"name\": \"Danish\"\n    },\n    \"likes\": [],\n    \"createdAt\": \"2025-01-14T07:21:38.878Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Post By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/posts/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "678610827ba7fceb5e50d9fb"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Post By ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/posts/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "678610827ba7fceb5e50d9fb"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-xjtL9DrpJUon0s/GGpVx5HsVysY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 07:25:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post removed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Post By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"This is updated post\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/posts/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "678610327ba7fceb5e50d9ee"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Updated Post By ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"This is updated post\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/posts/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "678614c7bd94b0c799ed5a58"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f-qi0enUu7h/onZ03vZ8+UbC9t8CY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 07:41:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678614c7bd94b0c799ed5a58\",\n    \"content\": \"This is updated post\",\n    \"user\": \"67860b459060d4662a49cbbd\",\n    \"likes\": [],\n    \"createdAt\": \"2025-01-14T07:39:51.309Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Like Post By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Like Post By ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/posts/:id/like",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										":id",
+										"like"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "67862c6ec0e878a8e76d9970"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-f4/+yoJJhTFNdja372OduRzedWA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jan 2025 11:27:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post unliked\",\n    \"post\": {\n        \"_id\": \"67862c6ec0e878a8e76d9970\",\n        \"content\": \"This is the newest post by Ali\",\n        \"user\": \"67862c59c0e878a8e76d996c\",\n        \"likes\": [],\n        \"createdAt\": \"2025-01-14T09:20:46.003Z\",\n        \"__v\": 2\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuthStore from "../store/authStore";
-import apiClient from "../api/apiClient"; // Replace with your API module if necessary
+import apiClient from "../api/apiClient";
+import useErrorHandler from "../hooks/errorHandler";
 
-const LoginPage = () => {
+const Login = () => {
+  const { handleError } = useErrorHandler();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -21,20 +23,23 @@ const LoginPage = () => {
         password,
       });
 
-      const { token, id, name } = response.data;
+      const { token, id, name, role } = response.data;
 
       // Save the token and update Zustand store
-      login(token, id, name);
+      login(token, id, name, role);
       navigate("/"); // Redirect to homepage after login
     } catch (err) {
-      console.error(err);
-      setError("Invalid email or password");
+      setError(handleError(err));
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <form onSubmit={handleLogin} className="bg-white p-6 shadow rounded w-80">
+      <form
+        noValidate
+        onSubmit={handleLogin}
+        className="bg-white p-6 shadow rounded w-80"
+      >
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         {error && <p className="text-red-500 mb-2">{error}</p>}
         <input
@@ -58,7 +63,7 @@ const LoginPage = () => {
           Login
         </button>{" "}
         <button
-          onClick={() => navigate("/register")}
+          onClick={() => navigate("/signup")}
           className="w-full bg-red-600 text-white p-2 rounded"
         >
           Register
@@ -67,5 +72,4 @@ const LoginPage = () => {
     </div>
   );
 };
-
-export default LoginPage;
+export default Login;

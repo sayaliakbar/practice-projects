@@ -125,10 +125,13 @@ const deletePost = async (req, res) => {
   if (!post) {
     res.status(404).json({ message: "Post not found" });
   }
-  if (post.author.toString() !== req.user._id.toString()) {
-    res
-      .status(401)
-      .json({ message: "You are not authorized to create a post" });
+  if (
+    req.user.role !== "admin" &&
+    post.author.toString() !== req.user._id.toString()
+  ) {
+    return res
+      .status(403)
+      .json({ message: "You are not authorized to delete this post" });
   }
 
   await post.deleteOne();

@@ -1,23 +1,19 @@
-import useStore from "../store/useStore";
-import apiClient from "../api/apiClient";
+import usePostStore from "../store/usePostStore";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-  const addPost = useStore((state) => state.addPost);
+  const { createPost, error } = usePostStore();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const content = e.target.content.value;
-
-    try {
-      const response = await apiClient.post("api/posts", { content });
-      console.log(response.data);
-      addPost(response.data);
-      e.target.reset();
-    } catch (err) {
-      console.error("Failed to create post:", err);
+    const content = e.target.content.value.trim();
+    const success = await createPost(content);
+    if (success) {
+      navigate("/");
     }
   };
-
   return (
     <div>
       <h1 className="font-bold">Create Post</h1>
@@ -25,6 +21,8 @@ const CreatePost = () => {
         <div className="form-group mb-2">
           <label htmlFor="content">Content:</label>
           <br />
+
+          {error && <p className="text-red-500 mb-2">{error}</p>}
           <textarea className="border w-full" id="content" name="content" />
         </div>
         <button className="bg-blue-600 text-white px-2" type="submit">
@@ -34,5 +32,4 @@ const CreatePost = () => {
     </div>
   );
 };
-
 export default CreatePost;
