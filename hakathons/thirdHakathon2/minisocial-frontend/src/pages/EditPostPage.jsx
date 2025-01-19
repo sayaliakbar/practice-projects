@@ -7,37 +7,48 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
-import API from "../api/clientApi";
+
+import postStore from "../state/postStore";
+import { handleError } from "../utils/errorHandler";
 
 const EditPostPage = () => {
   const { id } = useParams();
   const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [errors, setErrors] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
+  const { fetchPost, updatePost, post } = postStore();
+
   useEffect(() => {
-    const fetchPost = async () => {
+    const fetchPostData = async () => {
       try {
-        const response = await API.get(`/posts/${id}`);
-        setContent(response.data.content);
+        setLoading(true);
+        await fetchPost(id);
+        setContent(post.content);
+      } catch (err) {
+        handleError(err, setErrors);
+      } finally {
         setLoading(false);
-      } catch (error) {
-        console.error("Failed to fetch post:", error);
       }
     };
 
-    fetchPost();
-  }, [id]);
+    fetchPostData();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.put(`/posts/${id}`, { content });
-      alert("Post updated successfully!");
-      navigate("/");
-    } catch (error) {
-      console.error("Failed to update post:", error);
-      alert("Error updating post. Please try again.");
+      setLoading(true);
+      await updatePost(id, { content });
+      setTimeout(() => {
+        navigate(`/posts/${id}`);
+      }, 1000);
+    } catch (err) {
+      handleError(err, setErrors);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,7 +57,7 @@ const EditPostPage = () => {
       <CircularProgress />
     </div>
   ) : (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-[calc(100vh-64px)] bg-gray-100">
       <Box
         className="p-8 bg-white shadow-md rounded-lg flex flex-col gap-4"
         sx={{ width: "100%", maxWidth: 400 }}
@@ -67,6 +78,7 @@ const EditPostPage = () => {
           />
           <Button
             type="submit"
+            disabled={loading || !content.trim()}
             variant="contained"
             fullWidth
             className="bg-blue-500 hover:bg-blue-600 text-white"

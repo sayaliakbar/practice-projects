@@ -36,6 +36,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
+
+    borderRadius: "4px",
     [theme.breakpoints.up("sm")]: {
       width: "12ch",
       "&:focus": {
@@ -46,18 +48,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchBar() {
-  const { filterPosts } = postStore();
+  const { filterPosts, search } = postStore();
   const searchPost = (e) => {
     filterPosts(e.target.value);
   };
 
   return (
-    <Search onChange={searchPost}>
+    <Search sx={{ flexGrow: 1 }}>
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
       <StyledInputBase
+        onChange={searchPost}
         placeholder="Search…"
+        value={search}
         inputProps={{ "aria-label": "search" }}
       />
     </Search>

@@ -18,29 +18,30 @@ const CreatePostPage = () => {
   const [errors, setErrors] = useState(null);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+
   const { createPost } = postStore();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    await createPost({ content })
-      .then(() => {
-        setSuccess(true);
-        setTimeout(() => {
-          navigate("/"); // Redirect to home page
-        }, 1000);
-      })
-      .catch((err) => {
-        handleError(err, setErrors);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    try {
+      setLoading(true);
+      await createPost({ content });
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    } catch (err) {
+      handleError(err, setErrors);
+    } finally {
+      setSuccess(true);
+      setContent("");
+      setErrors(null);
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] bg-gray-100">
       {errors &&
         errors.map((error, index) => (
           <Alert severity="error" key={index} className="mb-2">
@@ -67,7 +68,6 @@ const CreatePostPage = () => {
             className="mb-6"
             multiline
             rows={4}
-            value={content}
             onChange={(e) => {
               setContent(e.target.value);
               setErrors(null); // Clear errors on input change

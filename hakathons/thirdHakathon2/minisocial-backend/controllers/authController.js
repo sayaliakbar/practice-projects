@@ -22,12 +22,7 @@ const registerUser = async (req, res, next) => {
     const user = await User.create({ name, email, password, role: userRole });
 
     // Respond with user info and token
-    res.status(201).json({
-      id: user._id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user._id, userRole), // Ensure `generateToken` is implemented correctly
-    });
+    res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
     console.error("Error during registration:", error.message);
     next(error); // Pass the error to the error handling middleware
@@ -61,7 +56,6 @@ const loginUser = async (req, res, next) => {
       id: user._id,
       name: user.name,
       email: user.email,
-      posts: user.posts,
       role: user.role, // Include the role in the response (optional)
       token: generateToken(user._id, user.role), // Include role in the JWT
     });

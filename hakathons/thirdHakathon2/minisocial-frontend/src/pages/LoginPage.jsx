@@ -41,7 +41,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center flex-col bg-gray-100 h-screen">
+      <div className="flex items-center justify-center flex-col bg-gray-100 h-[calc(100vh-64px)]">
         <div>
           <Stack sx={{ width: "100%" }} spacing={2}>
             {errors && (

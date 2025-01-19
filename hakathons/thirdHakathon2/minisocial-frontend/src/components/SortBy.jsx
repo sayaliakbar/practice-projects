@@ -1,7 +1,9 @@
 import { MenuItem, FormControl, Select, InputLabel, Box } from "@mui/material";
+import usePostStore from "../state/postStore";
 
-//eslint-disable-next-line
-const SortBy = ({ value, onChange }) => {
+const SortBy = () => {
+  const { sortBy, setSortBy } = usePostStore();
+
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth variant="outlined">
@@ -9,8 +11,8 @@ const SortBy = ({ value, onChange }) => {
         <Select
           labelId="sort-by-label"
           id="sort-by-select"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
           label="Sort By"
         >
           <MenuItem value="author">Author</MenuItem>

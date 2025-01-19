@@ -2,8 +2,13 @@ import { Box, IconButton, Typography } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-//eslint-disable-next-line
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+import usePostStore from "../state/postStore";
+
+const Pagination = () => {
+  const { totalPages, currentPage } = usePostStore();
+
+  const onPageChange = usePostStore((state) => state.setCurrentPage);
+
   // Handle page navigation
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -19,39 +24,36 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <>
-      {totalPages && (
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mt: 2,
-            gap: 2,
-          }}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 2,
+        }}
+      >
+        <IconButton
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          aria-label="Previous Page"
         >
-          <IconButton
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            aria-label="Previous Page"
-          >
-            <ArrowBackIosNewIcon />
-          </IconButton>
+          <ArrowBackIosNewIcon />
+        </IconButton>
 
-          {/* Page Information */}
-          <Typography variant="body1">
-            Page {currentPage} of {totalPages}
-          </Typography>
+        {/* Page Information */}
+        <Typography variant="body1">
+          Page {currentPage} of {totalPages}
+        </Typography>
 
-          {/* Next Button */}
-          <IconButton
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            aria-label="Next Page"
-          >
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </Box>
-      )}
+        {/* Next Button */}
+        <IconButton
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          aria-label="Next Page"
+        >
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
     </>
   );
 };

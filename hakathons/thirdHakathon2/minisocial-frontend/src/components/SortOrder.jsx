@@ -1,15 +1,17 @@
 import { ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
 
-//eslint-disable-next-line
-const SortOrder = ({ value, onChange }) => {
+import usePostStore from "../state/postStore";
+
+const SortOrder = () => {
+  const { sortOrder, setSortOrder } = usePostStore();
   return (
     <Box>
       <ToggleButtonGroup
-        value={value}
+        value={sortOrder}
         exclusive
-        onChange={(e, newValue) => {
-          if (newValue) {
-            onChange(newValue);
+        onChange={(event, newSortOrder) => {
+          if (newSortOrder !== null) {
+            setSortOrder(newSortOrder);
           }
         }}
         aria-label="Sort Order"

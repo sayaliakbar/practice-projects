@@ -1,9 +1,12 @@
 import { AppBar, Toolbar, Button, Typography } from "@mui/material";
+import DrawerComponent from "./DrawerComponent";
 import useAuthStore from "../state/authStore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuthStore();
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -13,20 +16,25 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex-0">
-      <AppBar position="static">
-        <Toolbar>
+    <AppBar position="static">
+      <Toolbar className="flex justify-between">
+        <div className="flex items-center space-x-2 w-full sm:w-fit">
           <Typography
-            className="cursor-pointer "
+            className="cursor-pointer w-fit"
             onClick={() => navigate("/")}
             variant="h6"
-            sx={{ flexGrow: 1 }}
           >
             MiniSocial
           </Typography>
+          {location.pathname === "/" && <SearchBar />}
+        </div>
 
-          {isAuthenticated ? (
-            <>
+        {isAuthenticated ? (
+          <>
+            <div className="sm:hidden">
+              <DrawerComponent />
+            </div>
+            <div className="hidden sm:flex">
               <Button color="inherit" onClick={() => navigate("/create-post")}>
                 Create Post
               </Button>
@@ -43,15 +51,17 @@ const Navbar = () => {
               <Button color="inherit" onClick={handleLogout}>
                 Logout
               </Button>
-            </>
-          ) : (
+            </div>
+          </>
+        ) : (
+          <div className="hidden sm:flex">
             <Button color="inherit" onClick={() => navigate("/login")}>
               Login
             </Button>
-          )}
-        </Toolbar>
-      </AppBar>
-    </div>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 

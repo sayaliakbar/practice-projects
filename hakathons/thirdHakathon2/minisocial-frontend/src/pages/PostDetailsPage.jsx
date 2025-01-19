@@ -1,57 +1,61 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CircularProgress,
-  Button,
-} from "@mui/material";
-import API from "../api/clientApi";
-import { useNavigate } from "react-router-dom";
+import { Card, CardContent, Typography, CircularProgress } from "@mui/material";
 import useAuthStore from "../state/authStore";
+import usePostStore from "../state/postStore";
+
+import SettingButtons from "../components/SettingButtons";
+import ShowLikes from "../components/ShowLikes";
+
+import timeAgo from "../utils/timeAgo";
+import { handleError } from "../utils/errorHandler";
 
 const PostDetailsPage = () => {
   const { id } = useParams();
-  const [post, setPost] = useState(null);
+
+  const { post, fetchPost } = usePostStore();
   const { user } = useAuthStore();
 
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const loadPost = async () => {
       try {
-        const response = await API.get(`/posts/${id}`);
-        setPost(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Failed to fetch post:", error);
+        setLoading(true);
+        await fetchPost(id);
+      } catch (err) {
+        handleError(err, setErrors);
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchPost();
-  }, [id]);
+    loadPost();
+  }, []);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <CircularProgress />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-64">
+  //       <CircularProgress />
+  //     </div>
+  //   );
+  // }
 
-  if (!post) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <Typography variant="h6">Post not found.</Typography>
-      </div>
-    );
-  }
+  // if (!post) {
+  //   return (
+  //     <div className="flex justify-center items-center h-64">
+  //       <Typography variant="h6">Post not found.</Typography>
+  //     </div>
+  //   );
+  // }
 
-  return (
-    <div className="p-4 bg-gray-100 min-h-screen">
+  return loading ? (
+    <div className="flex justify-center items-center h-64">
+      <CircularProgress />
+    </div>
+  ) : (
+    <div className="p-4 bg-gray-100 min-h-[calc(100vh-64px)]">
       <Card className="shadow-md max-w-2xl mx-auto">
         <CardContent>
           <Typography variant="h5" className="mb-2">
@@ -61,37 +65,12 @@ const PostDetailsPage = () => {
             By: {post.author.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" className="mt-4">
-            Created At: {new Date(post.createdAt).toLocaleString()}
+            Posted: {timeAgo(post.createdAt)}
           </Typography>
-          <div className="mt-4 flex justify-between">
+          <ShowLikes likes={post.likes} />
+          <div>
             {user && (user._id === post.author.id || user.role === "admin") && (
-              <>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="mt-4"
-                  onClick={() => navigate(`/posts/${id}/edit`)}
-                >
-                  Edit Post
-                </Button>
-                <Button
-                  variant="contained"
-                  color="error"
-                  className="mt-4"
-                  onClick={async () => {
-                    try {
-                      await API.delete(`/posts/${id}`);
-                      alert("Post deleted successfully!");
-                      navigate("/");
-                    } catch (error) {
-                      console.error("Failed to delete post:", error);
-                      alert("Error deleting post. Please try again.");
-                    }
-                  }}
-                >
-                  Delete Post
-                </Button>
-              </>
+              <SettingButtons post={post} user={user} renderPosts={fetchPost} />
             )}
           </div>
         </CardContent>

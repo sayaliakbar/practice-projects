@@ -53,7 +53,8 @@ const getPosts = async (req, res) => {
 
     // Fetch the posts with pagination, search, and sorting
     const posts = await Post.find(searchQuery)
-      .populate("author", "name") // Populate the author's name
+      .populate("author", "name")
+      .populate("likes", "name")
       .sort({ [sortBy]: order }) // Sort by the field specified in `sortBy` (default: `createdAt`)
       .skip((page - 1) * limit) // Skip records for pagination
       .limit(limit); // Limit the number of records per page
@@ -157,7 +158,6 @@ const deletePost = async (req, res) => {
 };
 
 const likePost = async (req, res) => {
-  console.log(req);
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {

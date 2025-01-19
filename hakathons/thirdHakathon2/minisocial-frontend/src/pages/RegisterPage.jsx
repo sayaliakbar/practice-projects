@@ -48,7 +48,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-100 h-screen">
+    <div className="flex flex-col items-center justify-center  bg-gray-100 h-[calc(100vh-64px)]">
       {errors &&
         errors.map((error, index) => (
           <Alert severity="error" key={index} className="mb-2">
