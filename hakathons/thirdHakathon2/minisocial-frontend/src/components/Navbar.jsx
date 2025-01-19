@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar className="flex justify-between">
-        <div className="flex items-center space-x-2 w-full sm:w-fit">
+        <div className="flex items-center space-x-2 w-full sm:w-fit justify-between">
           <Typography
             className="cursor-pointer w-fit"
             onClick={() => navigate("/")}
@@ -27,13 +27,13 @@ const Navbar = () => {
             MiniSocial
           </Typography>
           {location.pathname === "/" && <SearchBar />}
+          <div className="sm:hidden flex items-center">
+            <DrawerComponent />
+          </div>
         </div>
 
         {isAuthenticated ? (
           <>
-            <div className="sm:hidden">
-              <DrawerComponent />
-            </div>
             <div className="hidden sm:flex">
               <Button color="inherit" onClick={() => navigate("/create-post")}>
                 Create Post

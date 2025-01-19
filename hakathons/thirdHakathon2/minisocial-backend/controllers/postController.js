@@ -135,6 +135,7 @@ const updatePost = async (req, res) => {
       .json({ message: "You are not authorized to update this post" });
   }
   post.content = req.body.content;
+
   const updatedPost = await post.save();
   res.status(200).json(updatedPost);
 };

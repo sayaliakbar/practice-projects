@@ -18,7 +18,7 @@ const UsersPage = () => {
       try {
         const response = await API.get("/users");
         setUsers(response.data.users);
-        console.log(response.data);
+
         setLoading(false);
       } catch (err) {
         setError(err.response.data.message);

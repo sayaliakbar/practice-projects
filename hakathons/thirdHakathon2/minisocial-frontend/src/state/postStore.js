@@ -1,13 +1,10 @@
 import { create } from "zustand";
 import api from "../api/clientApi";
-import { handleError } from "../utils/errorHandler";
 
 const usePostStore = create((set, get) => ({
   posts: [],
   myPosts: [],
   post: null,
-  errors: [],
-  loading: false,
   search: "",
   sortBy: "createdAt",
   sortOrder: "desc",
@@ -15,10 +12,10 @@ const usePostStore = create((set, get) => ({
   page: 1,
   totalPages: 0,
   currentPage: 0,
+  edit: true,
 
   // State Setters
-  setErrors: (errors) => set({ errors }),
-  setLoading: (loading) => set({ loading }),
+  setEdit: (edit) => get().updateAndFetch({ edit }),
   setLimit: (limit) => get().updateAndFetch({ limit }),
   setCurrentPage: (page) => get().updateAndFetch({ page }),
   setSortBy: (sortBy) => get().updateAndFetch({ sortBy }),
@@ -61,7 +58,9 @@ const usePostStore = create((set, get) => ({
   // Fetch single post by ID
   fetchPost: async (postId) => {
     const response = await api.get(`/posts/${postId}`);
+
     set({ post: response.data });
+    return response;
   },
 
   // Create a new post
@@ -73,8 +72,13 @@ const usePostStore = create((set, get) => ({
 
   // Update an existing post
   updatePost: async (postId, data) => {
-    await api.put(`/posts/${postId}`, data);
-    get().fetchPosts(); //
+    const response = await api.put(`/posts/${postId}`, data);
+
+    set({ post: response.data });
+
+    get().fetchPost(postId);
+
+    return response;
   },
 
   // Delete a post
@@ -82,9 +86,6 @@ const usePostStore = create((set, get) => ({
     await api.delete(`/posts/${postId}`);
     // Refresh posts after deletion
   },
-
-  // Clear errors
-  clearError: () => set({ errors: null }),
 }));
 
 export default usePostStore;

@@ -105,7 +105,7 @@ const RegisterPage = () => {
               loading && <CircularProgress size={20} color="inherit" />
             } // Add loading icon
           >
-            {loading ? "Creating..." : "Create Post"}
+            {loading ? "Registering..." : "Register"}
           </Button>
         </form>
         <Typography

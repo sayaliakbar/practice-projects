@@ -5,19 +5,28 @@ const SortBy = () => {
   const { sortBy, setSortBy } = usePostStore();
 
   return (
-    <Box sx={{ minWidth: 200 }}>
+    <Box sx={{ minWidth: 90 }}>
       <FormControl fullWidth variant="outlined">
-        <InputLabel id="sort-by-label">Sort By</InputLabel>
+        <InputLabel sx={{ fontSize: "0.75rem" }} id="sort-by-label">
+          Sort By
+        </InputLabel>
         <Select
+          sx={{ fontSize: "0.75rem", height: 40 }}
           labelId="sort-by-label"
           id="sort-by-select"
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
           label="Sort By"
         >
-          <MenuItem value="author">Author</MenuItem>
-          <MenuItem value="content">Title</MenuItem>
-          <MenuItem value="createdAt">Created At</MenuItem>
+          <MenuItem sx={{ fontSize: "0.75rem" }} value="author">
+            Author
+          </MenuItem>
+          <MenuItem sx={{ fontSize: "0.75rem" }} value="content">
+            Title
+          </MenuItem>
+          <MenuItem sx={{ fontSize: "0.75rem" }} value="createdAt">
+            Posted
+          </MenuItem>
         </Select>
       </FormControl>
     </Box>

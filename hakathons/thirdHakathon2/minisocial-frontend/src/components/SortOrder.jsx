@@ -5,8 +5,9 @@ import usePostStore from "../state/postStore";
 const SortOrder = () => {
   const { sortOrder, setSortOrder } = usePostStore();
   return (
-    <Box>
+    <Box sx={{ minWidth: 90, height: 40 }}>
       <ToggleButtonGroup
+        sx={{ height: 40 }}
         value={sortOrder}
         exclusive
         onChange={(event, newSortOrder) => {
@@ -16,11 +17,19 @@ const SortOrder = () => {
         }}
         aria-label="Sort Order"
       >
-        <ToggleButton value="asc" aria-label="Ascending">
-          Ascending
+        <ToggleButton
+          sx={{ fontSize: ".75rem" }}
+          value="asc"
+          aria-label="Ascending"
+        >
+          Asc
         </ToggleButton>
-        <ToggleButton value="desc" aria-label="Descending">
-          Descending
+        <ToggleButton
+          value="desc"
+          sx={{ fontSize: ".75rem" }}
+          aria-label="Descending"
+        >
+          Desc
         </ToggleButton>
       </ToggleButtonGroup>
     </Box>

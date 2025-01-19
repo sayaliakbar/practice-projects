@@ -57,7 +57,7 @@ const LoginPage = () => {
         </div>
         <Box className="p-8 bg-white shadow-md rounded-lg flex flex-col gap-4 w-full max-w-md">
           <Typography variant="h4" className="text-center mb-4">
-            Login
+            Sign In
           </Typography>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <TextField

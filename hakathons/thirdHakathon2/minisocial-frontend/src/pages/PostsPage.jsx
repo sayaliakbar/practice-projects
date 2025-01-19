@@ -83,9 +83,9 @@ const PostsPage = () => {
             posts.map((post) => (
               <Card key={post._id} className="shadow-md ">
                 <CardContent className="flex flex-col justify-between h-full">
-                  <div className="">
-                    <Typography variant="h6" className="break">
-                      {post.content.slice(0, 50)}
+                  <div>
+                    <Typography className="truncate" variant="h6">
+                      {post.content}
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
                       By: {post.author.name}

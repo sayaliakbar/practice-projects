@@ -72,7 +72,9 @@ const MyPostsPage = () => {
               {myPosts.map((myPost) => (
                 <Card key={myPost._id} className="shadow-md">
                   <CardContent>
-                    <Typography variant="h6">{myPost.content}</Typography>
+                    <Typography className="truncate" variant="h6">
+                      {myPost.content}
+                    </Typography>
                     <Typography variant="body2" color="textSecondary">
                       Posted: {timeAgo(myPost.createdAt)}
                     </Typography>

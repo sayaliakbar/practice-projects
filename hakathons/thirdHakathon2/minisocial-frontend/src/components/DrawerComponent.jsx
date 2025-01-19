@@ -7,13 +7,26 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { Menu } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
+import useAuthStore from "../state/authStore";
+
+import {
+  Menu,
+  Home,
+  Article,
+  Add,
+  Login,
+  Logout,
+  PersonAdd,
+  PeopleAlt,
+} from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
 export default function TemporaryDrawer() {
+  const { isAuthenticated, logout, user } = useAuthStore();
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -22,29 +35,81 @@ export default function TemporaryDrawer() {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        <ListItem disablePadding onClick={() => navigate("/")}>
+          <ListItemButton>
+            <ListItemIcon>
+              <Home />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
+        {isAuthenticated && (
+          <>
+            <ListItem disablePadding onClick={() => navigate("/my-posts")}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Article />
+                </ListItemIcon>
+                <ListItemText primary="My Posts" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding onClick={() => navigate("/create-post")}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Add />
+                </ListItemIcon>
+                <ListItemText primary="Create Post" />
+              </ListItemButton>
+            </ListItem>
+          </>
+        )}
+      </List>
+      {user.role === "admin" && (
+        <>
+          <ListItem disablePadding onClick={() => navigate("/users")}>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <PeopleAlt />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary="Users" />
             </ListItemButton>
           </ListItem>
-        ))}
-      </List>
+        </>
+      )}
+
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {!isAuthenticated && (
+          <>
+            <ListItem disablePadding onClick={() => navigate("/register")}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <PersonAdd />
+                </ListItemIcon>
+                <ListItemText primary="Register" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding onClick={() => navigate("/login")}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Login />
+                </ListItemIcon>
+                <ListItemText primary="Sign In" />
+              </ListItemButton>
+            </ListItem>
+          </>
+        )}
+
+        {isAuthenticated && (
+          <ListItem disablePadding onClick={logout}>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <Logout />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary="Sign Out" />
             </ListItemButton>
           </ListItem>
-        ))}
+        )}
       </List>
     </Box>
   );

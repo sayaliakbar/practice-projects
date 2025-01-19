@@ -9,7 +9,6 @@ import CreatePostPage from "./pages/CreatePostPage";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import MyPostsPage from "./pages/MyPostsPage";
-import EditPostPage from "./pages/EditPostPage";
 
 const App = () => {
   return (
@@ -68,14 +67,7 @@ const App = () => {
               </PrivateRoute>
             }
           />
-          <Route
-            path="/posts/:id/edit"
-            element={
-              <PrivateRoute>
-                <EditPostPage />
-              </PrivateRoute>
-            }
-          />
+
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </Router>

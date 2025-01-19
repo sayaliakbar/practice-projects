@@ -19,6 +19,7 @@ const SettingButtons = ({ post, user, renderPosts }) => {
     fetchMyPosts,
     likePost,
     fetchPost,
+    setEdit,
   } = postStore();
 
   const navigate = useNavigate();
@@ -40,16 +41,24 @@ const SettingButtons = ({ post, user, renderPosts }) => {
     }
   };
   const handlePostDetails = (id) => {
+    setEdit(true);
     navigate(`/posts/${id}`);
   };
 
   const handleEditPost = async (id) => {
-    navigate(`/posts/${id}/edit`);
+    if (location.pathname != `/posts/${id}`) {
+      navigate(`/posts/${id}/`);
+    }
+    setEdit(false);
   };
 
   const handleDeletePost = async (id) => {
     try {
-      await deletePost(id);
+      if (location.pathname === `/posts/${id}`) {
+        await deletePost(id);
+      } else {
+        await deletePost(id);
+      }
     } catch (err) {
       handleError(err, setErrors);
     } finally {
@@ -57,8 +66,8 @@ const SettingButtons = ({ post, user, renderPosts }) => {
         fetchPosts();
       } else if (renderPosts === fetchMyPosts) {
         fetchMyPosts(user.id);
-      } else if (renderPosts === fetchPost) {
-        fetchPost(id);
+      } else {
+        navigate("/");
       }
     }
   };

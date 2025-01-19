@@ -13,15 +13,18 @@ export default function PostPerPage() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Post Per Page</InputLabel>
+    <Box sx={{ minWidth: 80 }} className="hidden sm:flex">
+      <FormControl fullWidth variant="outlined">
+        <InputLabel sx={{ fontSize: ".75rem" }} id="demo-simple-select-label">
+          Posts
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={limit}
           label="Post"
           onChange={handleChange}
+          sx={{ fontSize: ".75rem", height: 40 }}
         >
           <MenuItem value={10}>10</MenuItem>
           <MenuItem value={20}>20</MenuItem>
