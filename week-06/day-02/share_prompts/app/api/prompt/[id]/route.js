@@ -4,9 +4,10 @@ import Prompt from "@models/prompt";
 // GET (read)
 export const GET = async (req, { params }) => {
   try {
+    const { id } = await params;
     await connectToDB();
 
-    const prompt = await Prompt.findById(params.id).populate("creator");
+    const prompt = await Prompt.findById(id).populate("creator");
 
     if (!prompt) {
       return new Response("Prompt not found", { status: 404 });
@@ -21,10 +22,13 @@ export const GET = async (req, { params }) => {
 // PATCH (update)
 export const PATCH = async (req, { params }) => {
   const { prompt, tag } = await req.json();
+
   try {
+    const { id } = await params;
+
     await connectToDB();
 
-    const existingPrompt = await Prompt.findById(params.id);
+    const existingPrompt = await Prompt.findById(id);
 
     if (!existingPrompt) {
       return new Response("Prompt not found", { status: 404 });
@@ -44,9 +48,11 @@ export const PATCH = async (req, { params }) => {
 // DELETE (delete)
 export const DELETE = async (req, { params }) => {
   try {
+    const { id } = await params;
+
     await connectToDB();
 
-    await Prompt.findByIdAndDelete(params.id);
+    await Prompt.findByIdAndDelete(id);
 
     return new Response("Prompt deleted successfully", { status: 200 });
   } catch (error) {

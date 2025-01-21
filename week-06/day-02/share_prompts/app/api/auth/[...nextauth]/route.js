@@ -1,11 +1,10 @@
-import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+const NextAuth = require("next-auth").default;
+const GoogleProvider = require("next-auth/providers/google").default;
 
 import User from "@models/user";
 import { connectToDB } from "@utils/database";
 
 const handler = NextAuth({
-  debug: false,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -15,11 +14,15 @@ const handler = NextAuth({
 
   callbacks: {
     async session({ session }) {
-      const sessionUser = await User.findOne({ email: session.user.email });
+      try {
+        const sessionUser = await User.findOne({ email: session.user.email });
 
-      session.user.id = sessionUser._id.toString();
+        session.user.id = sessionUser._id.toString();
 
-      return session;
+        return session;
+      } catch (error) {
+        console.log("Error during session callback:", error);
+      }
     },
 
     async signIn({ profile }) {
@@ -36,13 +39,11 @@ const handler = NextAuth({
             username: profile.name.replace(/\s/g, "").toLowerCase(),
             image: profile.picture,
           });
-
-          return true;
         }
 
         return true;
       } catch (error) {
-        console.log(error);
+        console.log("Error during sign-in:", error);
         return false;
       }
     },

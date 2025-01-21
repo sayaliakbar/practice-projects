@@ -1,22 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-import PromptCard from "./PromptCard";
-
-const PromptCardList = ({ data, handleTagClick }) => {
-  return (
-    <div className="mt-16 prompt_layout">
-      {data.map((post) => (
-        <PromptCard
-          key={post._id}
-          post={post}
-          handleTagClick={handleTagClick}
-        />
-      ))}
-    </div>
-  );
-};
+import PromptCardList from "./PromptCardList";
 
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
@@ -28,10 +13,14 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/prompt");
-      const data = await response.json();
+      try {
+        const response = await fetch("/api/prompt");
+        const data = await response.json();
 
-      setPosts(data);
+        setPosts(data);
+      } catch (error) {
+        console.log("Error fetching posts:", error);
+      }
     };
 
     fetchPosts();
@@ -39,9 +28,11 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form action="" className="relative w-full flex-center">
+      <form className="relative w-full flex-center">
         <input
           type="text"
+          name="search"
+          id="search"
           placeholder="Search for a tag or a username"
           value={searchText}
           onChange={handleSearchChange}
@@ -50,7 +41,12 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList data={posts} handleTagClick={() => {}} />
+      <PromptCardList
+        data={posts}
+        handleTagClick={() => {
+          console.log("tag clicked");
+        }}
+      />
     </section>
   );
 };

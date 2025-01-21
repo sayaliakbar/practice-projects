@@ -15,21 +15,23 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         onSubmit={handleSubmit}
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
-        <label htmlFor="">
+        <label htmlFor={type === "Create" ? "write-prompt" : "edit-prompt"}>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Your AI Prompt
           </span>
         </label>
+
         <textarea
           value={post.prompt}
           onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-          name="write-prompt"
-          id="write-prompt"
+          name={type === "Create" ? "write-prompt" : "edit-prompt"}
+          id={type === "Create" ? "write-prompt" : "edit-prompt"}
           placeholder="Write your prompt here..."
           required
           className="form_textarea"
         ></textarea>
-        <label htmlFor="">
+
+        <label htmlFor={type === "Create" ? "write-tags" : "edit-tags"}>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Tag <span>(#product, #webdevelopment, #idea)</span>
           </span>
@@ -37,8 +39,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            name="write-tags"
-            id="write-tags"
+            name={type === "Create" ? "write-tags" : "edit-tags"}
+            id={type === "Create" ? "write-tags" : "edit-tags"}
             placeholder="#tags"
             required
             className="form_input"
